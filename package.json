@@ -2,6 +2,8 @@
   "name": "portfolio-rivera-da",
   "version": "0.0.0",
   "scripts": {
+    "deploy": "ng build && firebase deploy",
+
     "ng": "ng",
     "start": "ng serve -o --port 4200",
     "build": "ng build",
