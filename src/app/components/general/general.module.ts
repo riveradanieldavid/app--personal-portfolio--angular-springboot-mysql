@@ -18,7 +18,7 @@ import { FooterComponent } from './footer/footer.component';
   // AL CREAR NUEVOS MÓDULOS CON cli, ESTE NO PUEDE HACERLO TODO BIEN...
   // LE FALTÓ EXPORTAR ESTOS COMPONENTES DE ABAJO. 
   // SÍNTOMAS: NO PODER DELCARAR COMPONENTES EN "app.component.html"
-  // exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent]
   // Y FALTÓ IMPORTAR LOS NUEVOS MÓDULOS CREADOS EN "app.module.ts"
   // LOS SÍNTOMAS FUERON NO PODER DECLARAR COMPONENTES EN "routing.component.html" DEBIDO A LA FALTA DE IMPORTACIÓN DE LOS NUEVOS MÓDULOS EN "app.module.ts"
 
