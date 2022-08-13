@@ -15,4 +15,23 @@ ng g c components/home
 
 ++++++++++++++++++++++ GIT +++++++++++
 
-git add . && git commit -m "Rivera Daniel > Portfolio > S: Primeros componentes y módulos creados" && git checkout -b RiveraDa-Frontend-Estructura && git push origin RiveraDa-Frontend-Estructura && git status
+git add . 
+&& git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." 
+&& git checkout -b RiveraDa-Frontend-Estructura 
+&& git push origin RiveraDa-Frontend-Estructura 
+&& git status
+
+
+git add . 
+&& git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." 
+&& git checkout -b RiveraDa-Frontend-Estructura 
+&& git push origin RiveraDa-Frontend-Estructura 
+&& git status
+
+git add . 
+&& git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." 
+&& git checkout -b RiveraDa-Frontend-Estructura 
+&& git push origin RiveraDa-Frontend-Estructura 
+&& git status
+
+git add . && git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." && git push origin RiveraDa-Frontend-HtmlCss && git status
