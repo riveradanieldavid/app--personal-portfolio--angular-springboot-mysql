@@ -7,6 +7,7 @@ ng g c components/general/header && ng g c components/general/footer
 DENTRO home: COMPONENTE routing Y COMPONENTES HIJOS...
 ng g c components/home/routing && ng g c components/home/about  && ng g c components/home/banner && ng g c components/home/experience && ng g c components/home/education && ng g c components/home/skills && ng g c components/home/projects && ng g c components/home/contact
 
+COMPONENTE home
 ng g c components/home
 
 
