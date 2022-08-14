@@ -19,6 +19,8 @@ a {
 
 body {
   max-width: 90%;
-  background-color: aqua;
+  display: block;
+  margin: auto;
+  /* background-color: aqua; */
   border: 1px solid #000;
 }

@@ -18,6 +18,13 @@ ng g c components/home
 UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Header: logo y links"
+git push origin RiveraDa-Frontend-HtmlCssV2
+git status
+
+
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Estructura V.2"
 git checkout -b RiveraDa-Frontend-HtmlCssV2
