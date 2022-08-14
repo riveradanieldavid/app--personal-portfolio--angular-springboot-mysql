@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // AQUI SE DECIDE QUE COMPONENTE/S SERVIRAN DE CONETENEDORES DE OTROS COMPONENTES...
+// AL ESTABLECER NUEVO COMPONENTE CONTENEDOR... SE DEBE REGISTRAR AL RESTO DE COMPONENTES A SOLICITAR...
 // THIS  "import" IMPLEMENTS THE CHILDS COMPONENTS OF "app.comoponent.html"
 import { HomeComponent } from './components/home/home.component';
 // THE COMPONENT ON TOP ALREADY CONTAINS ALL CHILDS OF "app.comoponent.html"
