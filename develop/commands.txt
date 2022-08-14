@@ -15,10 +15,20 @@ ng g c components/home
 
 ++++++++++++++++++++++ GIT +++++++++++
 
-git add . 
-&& git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." 
-&& git checkout -b RiveraDa-Frontend-Estructura 
-&& git push origin RiveraDa-Frontend-Estructura 
-&& git status
+UPLOAD TO GIT REPOSITORY IN BRANCHES.
+EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
-git add . && git commit -m "Rivera Daniel > Portfolio > S: Routing básico aplicado..." && git push origin RiveraDa-Frontend-HtmlCss && git status
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estructura V.2"
+git checkout -b RiveraDa-Frontend-HtmlCssV2
+git push origin RiveraDa-Frontend-HtmlCssV2
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estructura V.2"
+git push origin RiveraDa-Frontend-HtmlCssV2
+git status
+
+
+
+
