@@ -1,4 +1,23 @@
-﻿MODULOS general Y home
+﻿++++++++++++++++++++++ MODULES AND COMPONENTS +++++++++++
+
+
+
+
+
+
+
+
+
+
+
+COMPONENTE 
+ng g c components/home/sharedComponents/article-general-experience/articleImage 
+ng g c components/home/sharedComponents/article-general-experience/articleText
+
+COMPONENTE del header: logo y links
+ng g c components/general/header/logo && ng g c components/general/header/links
+
+MODULOS general Y home
 ng g m components/general && ng g m components/home
 
 COMPONENTES header y footer DENTRO general
@@ -13,17 +32,22 @@ ng g c components/home
 
 
 
-++++++++++++++++++++++ GIT +++++++++++
 
+++++++++++++++++++++++ GIT +++++++++++
 UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
+
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estructura básica componentes finalizada. Header, Banner, Componente común finalizados."
+git push origin RiveraDa-Frontend-HtmlCssV2
+git status
 
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Header: logo y links"
 git push origin RiveraDa-Frontend-HtmlCssV2
 git status
-
 
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Estructura V.2"

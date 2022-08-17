@@ -10,6 +10,9 @@ import { ProjectsComponent } from './projects/projects.component';
 // THIS COUPLE OF BELOW WAS NOT REGISTERED!. WAS REQUIRED SO TO home COMPONENT TO CONTAIN OTHERS COMPONENTS
 import { HomeComponent } from './home.component';
 import { ContactComponent } from './contact/contact.component';
+import { ArticleGeneralExperienceComponent } from './sharedComponents/article-general-experience/article-general-experience.component';
+import { ArticleImageComponent } from './sharedComponents/article-general-experience/article-image/article-image.component';
+import { ArticleTextComponent } from './sharedComponents/article-general-experience/article-text/article-text.component';
 
 
 
@@ -22,7 +25,10 @@ import { ContactComponent } from './contact/contact.component';
     SkillsComponent,
     ProjectsComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    ArticleGeneralExperienceComponent,
+    ArticleImageComponent,
+    ArticleTextComponent
   ],
   imports: [
     CommonModule

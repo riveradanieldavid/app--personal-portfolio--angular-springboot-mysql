@@ -1,45 +1,4 @@
-.spacer {
-  flex: 1;
-}
+/* .spacer {
+  flex: 10;
+} */
 
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-}
-
-.toolbar img {
-  margin: 0 16px;
-}
-
-.toolbar #github-logo {
-  height: auto;
-  margin: 0 8px;
-}
-
-.toolbar #linkedin-logo {
-  height: auto;
-  margin: 0 8px;
-}
-
-.toolbar #github-logo:hover,
-.toolbar #linkedin-logo:hover {
-  opacity: 0.8;
-}
-
-@media screen and (max-width: 575px) {
-  .logo {
-    width: 100px;
-  }
-  #linkedin-logo,
-  #github-logo {
-    width: 18px;
-  }
-}
