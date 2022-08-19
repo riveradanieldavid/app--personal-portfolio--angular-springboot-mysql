@@ -1,10 +1,7 @@
 .article-image {
-  /* border: 1px solid; */
   margin: 10px;
-  /* display: flex; */
-  /* align-items: center; */
-  /* height: 88%; */
 }
+
 .article-image img {
   width: 5rem;
   border-radius: 50%;

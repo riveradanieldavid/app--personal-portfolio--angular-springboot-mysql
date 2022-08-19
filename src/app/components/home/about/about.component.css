@@ -1,0 +1,6 @@
+.about {
+  display: flex;
+  border: 1px solid;
+  margin: 10px;
+  background-color: wheat;
+}

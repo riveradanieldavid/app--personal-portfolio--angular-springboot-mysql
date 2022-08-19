@@ -1,0 +1,102 @@
+﻿{
+    "Header.LogoText": "Argentina programa",
+    "Header.Links.User": "Rivera Daniel",
+    "Banner.Sentence": [
+        "Porque toda casa es hecha por alguno, pero el que hace todas las cosas es Dios <span><cite>\"Hebreos 3:4\"</cite></span>"
+    ],
+    "About.Title": "Mi nombre es Rivera Daniel",
+    "About.Description": [
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+        "Iste soluta cum nostrum eaque voluptates quae voluptatibus repudiandae.",
+        "Nobis impedit veritatis quam at et neque asperiores, pariatur atque similique dignissimos. ratione."
+    ],
+    "Experience.Title": "Experiencia laboral.",
+    "Experience.Features": [
+        {
+            "Image": "./assets/images/experience/formar.jpg",
+            "Title": "Fundación Formar",
+            "Description": "Trabajo en equipo modalidad SCRUM. Base de datos SQL. Diversas páginas dinámicas. Armado de carrito de compras.",
+            "Date": "2021-2022",
+            "Technologies": "Node Js | Express | Javascript | Html-Css | Mysql | Api-Rest"
+        },
+        {
+            "Image": "./assets/images/experience/vicentefeitosa.jpg",
+            "Title": "Vicente Feito S.A.",
+            "Description": "Maquetado Html Css. Autenticación. Formularios. Mantenimiento de sitio.",
+            "Date": "2001",
+            "Technologies": "Html-Css"
+        }
+    ],
+    "Education.Title": "Experiencia laboral.",
+    "Education.Features": [
+        {
+            "Image": "./assets/images/education/emn3.jpg",
+            "Title": "Bachiller",
+            "Description": "Escuela Media Normal Bernardino Rivadavia.",
+            "Date": "1995-2000",
+            "Nivel": "Promedio 8"
+        },
+        {
+            "Image": "./assets/images/education/institutorichard.jpg",
+            "Title": "Richard Institute",
+            "Description": "Lectocomprensión e inglés conversacional..",
+            "Date": "Actualmente",
+            "Nivel": "Báscio."
+        }
+    ],
+    "skills": [
+        {
+            "skillname": "HTML",
+            "skillvalue": "100%"
+        },
+        {
+            "skillname": "CSS",
+            "skillvalue": "95%"
+        },
+        {
+            "skillname": "JAVASCRIPT",
+            "skillvalue": "90%"
+        },
+        {
+            "skillname": "JAVA",
+            "skillvalue": "80%"
+        },
+        {
+            "skillname": "ANGULAR",
+            "skillvalue": "75%"
+        },
+        {
+            "skillname": "BOOTSTRAP",
+            "skillvalue": "65%"
+        },
+        {
+            "skillname": "REACT",
+            "skillvalue": "50%"
+        },
+        {
+            "skillname": "VUE",
+            "skillvalue": "40%"
+        }
+    ],
+    "Projects.Title": "Mis proyectos",
+    "Projects.Features": [
+        {
+            "Image": "./assets/images/projects/portfolio.jpg",
+            "Title": "Portfolio personal",
+            "Description": "Aplicación con información de laboral personal editable.",
+            "Technologies": "Angular | Springboot | Mysql | POO | Html-Css | Mysql | Api-Rest"
+        },
+        {
+            "Image": "./assets/images/projects/roma.jpg",
+            "Title": "Roma",
+            "Description": "Aplicación e-commerce de venta de indumentaria textil",
+            "Technologies": "Node Js | Express | Javascript | Html-Css | Mysql | Api-Rest"
+        },
+        {
+            "Image": "./assets/images/projects/mercadoliebre.jpg",
+            "Title": "Mercadoliebre",
+            "Description": "Template Html Css",
+            "Technologies": "Html-Css"
+        }
+    ]
+}

@@ -1,12 +1,12 @@
-.article-text {
+.about-text {
   margin: 10px;
   /* border: 1px solid; */
 }
 
-.article-text h1 {
+.about-text h1 {
   margin: 0 0 20px 0;
 }
 
-.article-text p {
+.about-text p {
   max-width: 33rem;
 }

@@ -13,6 +13,14 @@ import { ContactComponent } from './contact/contact.component';
 import { ArticleGeneralExperienceComponent } from './sharedComponents/article-general-experience/article-general-experience.component';
 import { ArticleImageComponent } from './sharedComponents/article-general-experience/article-image/article-image.component';
 import { ArticleTextComponent } from './sharedComponents/article-general-experience/article-text/article-text.component';
+import { AboutImageComponent } from './about/about-image/about-image.component';
+import { AboutTextComponent } from './about/about-text/about-text.component';
+import { ExperienceImageComponent } from './experience/experience-image/experience-image.component';
+import { ExperienceTextComponent } from './experience/experience-text/experience-text.component';
+import { EducationImageComponent } from './education/education-image/education-image.component';
+import { EducationTextComponent } from './education/education-text/education-text.component';
+import { ProjectsImageComponent } from './projects/projects-image/projects-image.component';
+import { ProjectsTextComponent } from './projects/projects-text/projects-text.component';
 
 
 
@@ -28,7 +36,15 @@ import { ArticleTextComponent } from './sharedComponents/article-general-experie
     ContactComponent,
     ArticleGeneralExperienceComponent,
     ArticleImageComponent,
-    ArticleTextComponent
+    ArticleTextComponent,
+    AboutImageComponent,
+    AboutTextComponent,
+    ExperienceImageComponent,
+    ExperienceTextComponent,
+    EducationImageComponent,
+    EducationTextComponent,
+    ProjectsImageComponent,
+    ProjectsTextComponent
   ],
   imports: [
     CommonModule

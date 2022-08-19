@@ -5,25 +5,28 @@ FRONTEND ANGULAR
     home
         sharedComponents
             article-general-experience
-                articleImage
-                    img
-                articleText
-                    title
-                    description
+                article-general-title
+                    article-general-feature
+                        articleImage
+                            img
+                        articleText
+                            title
+                            description
         header
             logo
                 logoAp.img
                 "Argentina Programa-#YoProgramo"
             links
+                links
+                    github
+                    linkedin
                 user
                     signup
                     signin
                     signout
-                links
-                    github
-                    linkedin
         banner
             banner.jpg
+            sentence
         about
             article-general-experience
         experience
