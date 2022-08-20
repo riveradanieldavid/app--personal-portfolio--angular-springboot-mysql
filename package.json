@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "deploy": "ng build && firebase deploy",
-
     "ng": "ng",
     "start": "ng serve -o --port 4200 --live-reload false",
     "build": "ng build",
@@ -20,6 +19,7 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@reactivex/rxjs": "^6.6.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

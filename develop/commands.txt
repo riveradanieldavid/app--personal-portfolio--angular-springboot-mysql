@@ -22,7 +22,7 @@ EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
 git add .
-git commit -m "Rivera Daniel > Portfolio > S: Artículos de experiencias"
+git commit -m "Rivera Daniel > Portfolio > S: Conexion db"
 git push origin RiveraDa-Frontend-HtmlCssV2
 git status
 
