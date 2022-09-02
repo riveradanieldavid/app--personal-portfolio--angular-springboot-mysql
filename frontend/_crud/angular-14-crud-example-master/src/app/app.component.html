@@ -1,0 +1,19 @@
+<div>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">bezKoder</a>
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <!-- "routerLink" INVOKES THE ROUTES (path) ESTABLISHED IN "app-routing-module.ts" FOR EACH LINK OF HERE -->
+        <a routerLink="tutorials" class="nav-link">Tutorials</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link">Add</a>
+      </li>
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    <!-- DECLARATED COMPONENTS ON "app routing" ARE THROW HERE AND DISPLAYED IN BROWSER -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

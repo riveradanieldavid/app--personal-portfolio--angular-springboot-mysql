@@ -1,0 +1,84 @@
+.spacer {
+  flex: 10;
+}
+
+.header-content {
+  background-color: #1C2025;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+/* 
+#user {
+  color: #fff;
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #291B24;
+  color: white;
+  font-weight: 600;
+}
+
+#user,
+.links img {
+  margin: 0 16px;
+}
+
+.links #github-logo {
+  height: auto;
+  margin: 0 8px;
+}
+
+.links #linkedin-logo {
+  height: auto;
+  margin: 0 8px;
+}
+
+.links #github-logo:hover,
+.links #linkedin-logo:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 575px) {
+  #linkedin-logo,
+  #github-logo {
+    width: 18px;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #291B24;
+  color: white;
+  font-weight: 600;
+}
+
+.header img {
+  margin: 0 16px;
+}
+
+.logo{
+  margin: 10px;
+}
+
+@media screen and (max-width: 575px) {
+  .logo {
+    width: 100px;
+  }
+}
+ */

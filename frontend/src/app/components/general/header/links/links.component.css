@@ -1,0 +1,52 @@
+#user {
+  color: #fff;
+}
+
+.links a {
+  margin: 3px;
+}
+
+.links {
+  margin: 0 9px 0;
+}
+
+/* 
+
+.links {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #291B24;
+  color: white;
+  font-weight: 600;
+}
+
+#user,
+.links img {
+  margin: 0 16px;
+}
+
+.links #github-logo {
+  height: auto;
+  margin: 0 8px;
+}
+
+.links #linkedin-logo {
+  height: auto;
+  margin: 0 8px;
+}
+
+.links #github-logo:hover,
+.links #linkedin-logo:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 575px) {
+  #linkedin-logo,
+  #github-logo {
+    width: 18px;
+  }
+} */
