@@ -12,10 +12,28 @@
   top: 48%;
   width: 25%;
   font-size: 1.1rem;
+  font-family: emoji;
 }
 
 .sentence span {
   display: table;
   font-size: small;
   margin: 14px;
+}
+
+.author {
+  position: absolute;
+  right: 13px;
+  color: white;
+  bottom: -20px;
+  /* width: 17%; */
+  font-size: 12px;
+}
+
+.author span {
+  display: table;
+  font-size: 9px;
+  margin: 14px 0 14px;
+  text-align: right;
+  display: block;
 }
