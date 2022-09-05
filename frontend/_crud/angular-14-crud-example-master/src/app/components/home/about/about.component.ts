@@ -3,13 +3,14 @@ import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-abouts',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
+export class AboutsComponent implements OnInit {
+
   abouts?: About[];
-  currentAbout: About = {};
+  ccccurrentAbout: About = {};
   currentIndex = -1;
   title = '';
 
@@ -19,6 +20,7 @@ export class AboutComponent implements OnInit {
     this.retrieveAbouts();
   }
 
+  // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
   retrieveAbouts(): void {
     this.aboutService.getAll()
       .subscribe({
@@ -32,16 +34,14 @@ export class AboutComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveAbouts();
-    this.currentAbout = {};
+    this.ccccurrentAbout = {};
     this.currentIndex = -1;
   }
 
+  // SHOW ARTICE TO EDIT
   setActiveAbout(about: About, index: number): void {
-    this.currentAbout = about;
+    this.ccccurrentAbout = about;
     this.currentIndex = index;
   }
-
-
-
 
 }
