@@ -5,11 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component';
-import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
-import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component';
-import { AboutComponent } from './components/about/about.component';
+import { AddTutorialComponent } from './components/home/tutorials/add-tutorial/add-tutorial.component';
+import { TutorialDetailsComponent } from './components/home/tutorials/tutorial-details/tutorial-details.component';
+import { TutorialsListComponent } from './components/home/tutorials/tutorials-list/tutorials-list.component';
+import { AboutComponent } from './components/home/about/about.component';
 import { HomeComponent } from './components/home/home.component';
+import { TutorialsComponent } from './components/home/tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home.component';
     TutorialDetailsComponent,
     TutorialsListComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    TutorialsComponent
   ],
   imports: [
     BrowserModule,

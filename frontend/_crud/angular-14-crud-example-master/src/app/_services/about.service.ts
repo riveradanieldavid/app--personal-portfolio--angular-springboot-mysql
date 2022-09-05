@@ -3,7 +3,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { About } from '../models/about.model';
+import { About } from '../_models/about.model';
 
 // THIS API CAN CONNECT TO LOCAL SERVER OR HEROKU SERVER:
 //  HERE YOU CHOICE CONNECT THE FRONTEND TO A LOCAL BACKEND OR A REMOTE BACKEND:

@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 // import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import { authInterceptorProviders } from './components/_helpers/auth.interceptor';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeModule } from './components/home/home.module';
 // import { GeneralModule } from './components/general/general.module'; // IMPORTING MODULE CAUSES RELOAD OF PAGE. BUT RUN
 import { HeaderComponent } from './components/general/header/header.component';
