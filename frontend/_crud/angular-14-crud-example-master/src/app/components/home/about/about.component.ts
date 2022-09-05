@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Tutorial } from 'src/app/_models/tutorial.model';
-import { TutorialService } from 'src/app/_services/tutorial.service';
-
+import { About } from 'src/app/_models/about.model';
+import { AboutService } from 'src/app/_services/about.service';
 
 @Component({
   selector: 'app-about',
@@ -9,22 +8,22 @@ import { TutorialService } from 'src/app/_services/tutorial.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  tutorials?: Tutorial[];
-  currentTutorial: Tutorial = {};
+  abouts?: About[];
+  currentAbout: About = {};
   currentIndex = -1;
   title = '';
 
-  constructor(private tutorialService: TutorialService) { }
+  constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.retrieveTutorials();
+    this.retrieveAbouts();
   }
 
-  retrieveTutorials(): void {
-    this.tutorialService.getAll()
+  retrieveAbouts(): void {
+    this.aboutService.getAll()
       .subscribe({
         next: (data) => {
-          this.tutorials = data;
+          this.abouts = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -32,13 +31,13 @@ export class AboutComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveTutorials();
-    this.currentTutorial = {};
+    this.retrieveAbouts();
+    this.currentAbout = {};
     this.currentIndex = -1;
   }
 
-  setActiveTutorial(tutorial: Tutorial, index: number): void {
-    this.currentTutorial = tutorial;
+  setActiveAbout(about: About, index: number): void {
+    this.currentAbout = about;
     this.currentIndex = index;
   }
 

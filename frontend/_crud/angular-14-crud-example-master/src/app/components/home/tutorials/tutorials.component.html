@@ -1,1 +1,27 @@
-<p>tutorials works!</p>
+<div class="list row">
+  <div class="col-md-6">
+    <h4>Tutorials</h4>
+
+    <!-- SHOW ALL ARTICLES (ngFor) -->
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let tutorial of tutorials; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)"
+      >
+        <h6>{{ tutorial.title }}</h6>
+        <p>{{ tutorial.description }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SHOW ARTICLE TO EDIT -->
+  <div class="col-md-6">
+    <app-tutorial-details
+      [viewMode]="true"
+      [currentTutorial]="ccccurrentTutorial"
+    >
+    </app-tutorial-details>
+  </div>
+</div>

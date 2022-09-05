@@ -5,20 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTutorialComponent } from './components/home/tutorials/add-tutorial/add-tutorial.component';
-import { TutorialDetailsComponent } from './components/home/tutorials/tutorial-details/tutorial-details.component';
-import { TutorialsListComponent } from './components/home/tutorials/tutorials-list/tutorials-list.component';
-import { AboutComponent } from './components/home/about/about.component';
-import { HomeComponent } from './components/home/home.component';
 import { TutorialsComponent } from './components/home/tutorials/tutorials.component';
+import { TutorialDetailsComponent } from './components/home/tutorials/tutorial-details/tutorial-details.component';
+import { AddTutorialComponent } from './components/home/tutorials/add-tutorial/add-tutorial.component';
+import { AboutComponent } from './components/home/about/about.component';
+import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
+import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTutorialComponent,
+    TutorialsComponent,
     TutorialDetailsComponent,
-    TutorialsListComponent,
+    AddTutorialComponent,
     AboutComponent,
+    AboutDetailsComponent,
+    AddAboutComponent,
     HomeComponent,
     TutorialsComponent
   ],

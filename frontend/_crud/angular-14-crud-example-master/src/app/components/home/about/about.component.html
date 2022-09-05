@@ -1,23 +1,24 @@
-<p>about works!</p>
 <div class="list row">
   <div class="col-md-6">
-    <h4>Experiecia</h4>
+    <h4>About</h4>
+
+    <!-- SHOW ALL ARTICLES (ngFor) -->
     <ul class="list-group">
       <li
         class="list-group-item"
-        *ngFor="let tutorial of tutorials; let i = index"
+        *ngFor="let about of abouts; let i = index"
         [class.active]="i == currentIndex"
-        (click)="setActiveTutorial(tutorial, i)"
+        (click)="setActiveAbout(about, i)"
       >
-        <h6>{{ tutorial.title }}</h6>
-        <p>{{ tutorial.description }}</p>
+        <h6>{{ about.title }}</h6>
+        <p>{{ about.description }}</p>
       </li>
     </ul>
   </div>
+
+  <!-- SHOW ARTICLE TO EDIT -->
   <div class="col-md-6">
-    <app-tutorial-details
-      [viewMode]="true"
-      [currentTutorial]="currentTutorial"
-    ></app-tutorial-details>
+    <!-- <app-about-details [viewMode]="true" [currentAbout]="ccccurrentAbout"> -->
+    <!-- </app-about-details> -->
   </div>
 </div>

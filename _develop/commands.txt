@@ -1,4 +1,4 @@
-﻿MODULOS general Y home
+MODULOS general Y home
 ng g m components/general && ng g m components/home
 
 COMPONENTES header y footer DENTRO general
@@ -18,6 +18,16 @@ ng g c components/home/sharedComponents/article-general-experience
 
 UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Creado About crud."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Reordenamiento carpetas en general. Analizando crud."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
 
 git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-crud
 git add .
