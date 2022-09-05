@@ -11,9 +11,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { authInterceptorProviders } from './components/_helpers/auth.interceptor';
 import { HomeModule } from './components/home/home.module';
-// import { GeneralModule } from './components/general/general.module';
+// import { GeneralModule } from './components/general/general.module'; // IMPORTING MODULE CAUSES RELOAD OF PAGE. BUT RUN
 import { HeaderComponent } from './components/general/header/header.component';
 import { FooterComponent } from './components/general/footer/footer.component';
+import { HomeEditComponent } from './components/home-edit/home-edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FooterComponent } from './components/general/footer/footer.component';
     LoginComponent,
     ProfileComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeEditComponent
   ],
   // NEW MODULES MUST BE DECLARED HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   imports: [
@@ -29,7 +31,7 @@ import { FooterComponent } from './components/general/footer/footer.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // GeneralModule,
+    // GeneralModule, // IMPORTING MODULE CAUSES RELOAD OF PAGE. BUT RUN
     HomeModule
   ],
   providers: [authInterceptorProviders],

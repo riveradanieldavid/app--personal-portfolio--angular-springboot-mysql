@@ -19,7 +19,21 @@ ng g c components/home/sharedComponents/article-general-experience
 UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
+git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-crud
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: About backend creado. Header reordenado. Abalizando y modificando tutorials."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
 
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: banner autor agregado."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-authdone
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Login logrado."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-authdone
+git status
 
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Conexion db"
