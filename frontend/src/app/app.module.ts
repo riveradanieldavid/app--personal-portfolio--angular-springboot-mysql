@@ -16,6 +16,10 @@ import { HeaderComponent } from './components/general/header/header.component';
 import { FooterComponent } from './components/general/footer/footer.component';
 import { HomeEditComponent } from './components/home-edit/home-edit.component';
 
+import { AboutComponent } from './components/home/about/about.component';
+import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
+import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,11 @@ import { HomeEditComponent } from './components/home-edit/home-edit.component';
     ProfileComponent,
     HeaderComponent,
     FooterComponent,
-    HomeEditComponent
+    HomeEditComponent,
+    AboutComponent,
+    AboutDetailsComponent,
+    AddAboutComponent,
+
   ],
   // NEW MODULES MUST BE DECLARED HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   imports: [

@@ -8,22 +8,23 @@ import { AboutService } from 'src/app/_services/about.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  abouts?: About[];
-  currentAbout: About = {};
+  about?: About[];
+  ccccurrentAbout: About = {};
   currentIndex = -1;
   title = '';
 
   constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.retrieveAbouts();
+    this.retrieveAbout();
   }
 
-  retrieveAbouts(): void {
+  // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
+  retrieveAbout(): void {
     this.aboutService.getAll()
       .subscribe({
         next: (data) => {
-          this.abouts = data;
+          this.about = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -31,17 +32,15 @@ export class AboutComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveAbouts();
-    this.currentAbout = {};
+    this.retrieveAbout();
+    this.ccccurrentAbout = {};
     this.currentIndex = -1;
   }
 
+  // SHOW ARTICE TO EDIT
   setActiveAbout(about: About, index: number): void {
-    this.currentAbout = about;
+    this.ccccurrentAbout = about;
     this.currentIndex = index;
   }
-
-
-
 
 }

@@ -5,6 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
+import { AboutComponent } from './components/home/about/about.component';
+import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
+import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
+
 // "routes" CONST USES "Routes" FROM "@angular/router"
 // MAKES VISIBLE "routing.component.html" FILE  WHICH CONTAINS  COMPONENTS OF VIEWS
 const routes: Routes = [
@@ -13,7 +18,12 @@ const routes: Routes = [
   // { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+
+  { path: 'abouts', component: AboutComponent },
+  { path: 'about/:id', component: AboutDetailsComponent },
+  { path: 'abouts/add', component: AddAboutComponent },
+
 ];
 
 @NgModule({

@@ -3,13 +3,12 @@ import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
 
 @Component({
-  selector: 'app-abouts',
+  selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutsComponent implements OnInit {
-
-  abouts?: About[];
+export class AboutComponent implements OnInit {
+  about?: About[];
   ccccurrentAbout: About = {};
   currentIndex = -1;
   title = '';
@@ -17,15 +16,15 @@ export class AboutsComponent implements OnInit {
   constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.retrieveAbouts();
+    this.retrieveAbout();
   }
 
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
-  retrieveAbouts(): void {
+  retrieveAbout(): void {
     this.aboutService.getAll()
       .subscribe({
         next: (data) => {
-          this.abouts = data;
+          this.about = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -33,7 +32,7 @@ export class AboutsComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveAbouts();
+    this.retrieveAbout();
     this.ccccurrentAbout = {};
     this.currentIndex = -1;
   }

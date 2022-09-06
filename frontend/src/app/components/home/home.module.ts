@@ -1,7 +1,7 @@
 // HOW MUST BE  REGISTER COMPONENTS IN HIS MODULE SO THAT RUN ALSO, THESE DUE BE UNREGISTERED IF THE PREVIOUSLY REGISTERED COMPONENT IS ELIMINATED...
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AboutComponent } from './about/about.component';
+// import { AboutComponent } from './about/about.component';
 import { BannerComponent } from './banner/banner.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
@@ -26,7 +26,7 @@ import { ProjectsTextComponent } from './projects/projects-text/projects-text.co
 
 @NgModule({
   declarations: [
-    AboutComponent,
+    // AboutComponent,
     BannerComponent,
     ExperienceComponent,
     EducationComponent,

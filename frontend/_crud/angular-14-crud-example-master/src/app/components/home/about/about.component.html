@@ -6,7 +6,7 @@
     <ul class="list-group">
       <li
         class="list-group-item"
-        *ngFor="let about of abouts; let i = index"
+        *ngFor="let about of about; let i = index"
         [class.active]="i == currentIndex"
         (click)="setActiveAbout(about, i)"
       >
