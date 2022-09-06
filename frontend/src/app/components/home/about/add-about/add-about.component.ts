@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
+import { ActivatedRoute, Router } from '@angular/router';  // ADDED BY ME
+
 
 @Component({
   selector: 'app-add-about',
@@ -15,7 +17,10 @@ export class AddAboutComponent {
   };
   submitted = false;
 
-  constructor(private aboutService: AboutService) { }
+  constructor(
+    private aboutService: AboutService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   saveAbout(): void {
     const data = {
@@ -27,7 +32,8 @@ export class AddAboutComponent {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.submitted = true;
+          this.router.navigate(['/abouts']);
+          // this.submitted = true; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -42,3 +48,4 @@ export class AddAboutComponent {
   }
 
 }
+

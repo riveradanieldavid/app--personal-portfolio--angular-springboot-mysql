@@ -7,6 +7,13 @@
   /* padding: 10px; */
   width: 100%;
 }
+.logo {
+  flex-flow: wrap;
+  display: flex;
+}
+.spacer {
+  flex: auto;
+}
 
 .links {
   margin: 0 9px 0;
@@ -18,4 +25,20 @@
 }
 .auth {
   display: flex;
+}
+.navmenu {
+  overflow: hidden;
+}
+.menu {
+  display: flex;
+  height: 47px;
+  align-items: center;
+  flex-direction: column;
+}
+.menu li {
+  margin-top: -12px;
+}
+.menu li:hover {
+  background-color: cornflowerblue;
+  border-radius: 23px;
 }

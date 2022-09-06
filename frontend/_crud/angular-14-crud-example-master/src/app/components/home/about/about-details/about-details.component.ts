@@ -60,7 +60,7 @@ export class AboutDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/about']);
+          this.router.navigate(['/abouts']);
         },
         error: (e) => console.error(e)
       });

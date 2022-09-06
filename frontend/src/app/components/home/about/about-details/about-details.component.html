@@ -10,10 +10,7 @@
       <label><strong>Description:</strong></label>
       {{ currentAbout.description }}
     </div>
-    <a
-      class="badge badge-warning"
-      routerLink="/about/{{ currentAbout.id }}"
-    >
+    <a class="badge badge-warning" routerLink="/about/{{ currentAbout.id }}">
       Edit
     </a>
   </div>
@@ -27,7 +24,7 @@
 <!-- EDIT MODE -->
 <ng-template #editable>
   <div *ngIf="currentAbout.id" class="edit-form">
-    <h4>details.component - editMode</h4>
+    <h4>Editando Item</h4>
 
     <!-- FORM -->
     <form>
@@ -50,8 +47,8 @@
           id="description"
           [(ngModel)]="currentAbout.description"
           name="description "
-          rows="4"
-          cols="50"
+          rows="10"
+          cols="70"
         >
         here
       </textarea
