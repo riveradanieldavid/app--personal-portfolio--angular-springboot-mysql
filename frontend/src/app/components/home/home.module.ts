@@ -21,6 +21,7 @@ import { EducationImageComponent } from './education/education-image/education-i
 import { EducationTextComponent } from './education/education-text/education-text.component';
 import { ProjectsImageComponent } from './projects/projects-image/projects-image.component';
 import { ProjectsTextComponent } from './projects/projects-text/projects-text.component';
+import { RoutingComponent } from './routing/routing.component';
 
 
 
@@ -44,7 +45,8 @@ import { ProjectsTextComponent } from './projects/projects-text/projects-text.co
     EducationImageComponent,
     EducationTextComponent,
     ProjectsImageComponent,
-    ProjectsTextComponent
+    ProjectsTextComponent,
+    RoutingComponent
   ],
   imports: [
     CommonModule
