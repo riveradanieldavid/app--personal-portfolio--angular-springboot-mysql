@@ -21,6 +21,11 @@ UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estilos. Redirección página. Puertos. Correciones."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-acabando
+git status
+
 git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-crud-acabando
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: About CRUD implementado en portfolio."
