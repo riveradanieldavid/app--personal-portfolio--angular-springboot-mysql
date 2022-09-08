@@ -1,12 +1,45 @@
-<div class="banner">
-  <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
-  <p class="sentence">
-    "Porque toda casa es hecha por alguno, pero el que hace todas las cosas es
-    Dios"
-    <span><cite>Hebreos 3:4</cite></span>
-  </p>
-  <p class="author">
-    Space Hubble Telescope Watches Star Clusters on a Collision Course
-    <span><cite>NASA / S.Dupuis</cite></span>
-  </p>
-</div>
+<!-- RESTRICT VIEW TO UNAUTHORIZED USERS -->
+<!-- IF isLoggedIn FAIL: FORBIDDEN -->
+<div *ngIf="!isLoggedIn; else editMode">FORBIDDEN</div>
+
+<!-- CONTENT FOR AUTHORIZED USERS -->
+<!-- ELSE SHOW ARTICLE -->
+<ng-template #editMode>
+  <!-- IMAGE BANNER -->
+  <div class="banner">
+    <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
+    <p class="sentence">
+      "Porque toda casa es hecha por alguno, pero el que hace todas las cosas es
+      Dios"
+      <span><cite>Hebreos 3:4</cite></span>
+    </p>
+    <p class="author">
+      Space Hubble Telescope Watches Star Clusters on a Collision Course
+      <span><cite>NASA / S.Dupuis</cite></span>
+    </p>
+  </div>
+  <!-- STANDARD VIEW ARTICLE -->
+  <div class="list row">
+    <div class="col-md-6">
+      <h4>Banner</h4>
+      <!-- SHOW ALL ARTICLES (ngFor) -->
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let banner of banner; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveBanner(banner, i)"
+        >
+          <h6>{{ banner.title }}</h6>
+          <p>{{ banner.description }}</p>
+        </li>
+      </ul>
+    </div>
+    <!-- SHOW ARTICLE TO EDIT -->
+    <div class="col-md-6">
+      <app-banner-details [viewMode]="true" [currentBanner]="ccccurrentBanner">
+      </app-banner-details>
+    </div>
+  </div>
+  <!-- STANDARD VIEW ARTICLE /-->
+</ng-template>

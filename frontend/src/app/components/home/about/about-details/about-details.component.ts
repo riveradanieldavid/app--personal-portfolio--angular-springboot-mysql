@@ -8,22 +8,24 @@ import { About } from 'src/app/_models/about.model';
   templateUrl: './about-details.component.html',
   styleUrls: ['./about-details.component.css']
 })
+
 export class AboutDetailsComponent implements OnInit {
 
+  // ATTRIBUTES
   @Input() viewMode = false;
-
   @Input() currentAbout: About = {
     title: '',
     description: ''
   };
-
   message = '';
 
+  // CONSTRUCTOR
   constructor(
     private aboutService: AboutService,
     private route: ActivatedRoute,
     private router: Router) { }
 
+  // DATA AVAILABLE
   ngOnInit(): void {
     if (!this.viewMode) {
       this.message = '';
@@ -31,6 +33,7 @@ export class AboutDetailsComponent implements OnInit {
     }
   }
 
+  // GET DATA FROM DB
   getAbout(id: string): void {
     this.aboutService.get(id)
       .subscribe({
@@ -42,19 +45,23 @@ export class AboutDetailsComponent implements OnInit {
       });
   }
 
+  // UPDATE DATA AND PUT IN DB
   updateAbout(): void {
     this.message = '';
-
     this.aboutService.update(this.currentAbout.id, this.currentAbout)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message : 'This about was updated successfully!';
+          // ADDED
+          this.router.navigate(['/abouts']);
+          // ADDED /
+          // this.message = res.message ? res.message : 'This about was updated successfully!'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
   }
 
+  // DELETE DATA FROM DB
   deleteAbout(): void {
     this.aboutService.delete(this.currentAbout.id)
       .subscribe({

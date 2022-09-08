@@ -15,8 +15,7 @@
       </div>
     </a>
 
-    <!----------------- MENU ----------------->
-    <!-- HOME AND BOARDS -->
+    <!-- HOME -->
     <ul class="navbar-nav mr-auto menu" routerLinkActive="active">
       <li class="nav-item">
         <!--routerLink NO RELOAD PAGE-->
@@ -24,18 +23,20 @@
       </li>
     </ul>
 
-    <!-- ABOUT -->
-    <ul class="navbar-nav mr-auto menu">
+    <!----------------- MENU EDIT ARTICLES FORBIDDEN----------------->
+
+    <!-- BANNER -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a routerLink="banner" class="nav-link">Banner</a>
+        <a routerLink="banners" class="nav-link">Banner</a>
       </li>
       <li class="nav-item">
-        <a routerLink="banner/add" class="nav-link">Add</a>
+        <a routerLink="banners/add" class="nav-link">Add</a>
       </li>
     </ul>
 
     <!-- ABOUT -->
-    <ul class="navbar-nav mr-auto menu">
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
         <a routerLink="abouts" class="nav-link">About</a>
       </li>
@@ -44,18 +45,21 @@
       </li>
     </ul>
 
-    <!-- ABOUT -->
-    <ul class="navbar-nav mr-auto menu">
+    <!-- EXPERIENCE -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a routerLink="abouts" class="nav-link">Educación</a>
+        <a routerLink="experiences" class="nav-link">Experiencia</a>
       </li>
       <li class="nav-item">
-        <a routerLink="abouts/add" class="nav-link">Add</a>
+        <a routerLink="experiences/add" class="nav-link">Add</a>
       </li>
     </ul>
 
+    <!----------------- MENU EDIT ARTICLES FORBIDDEN--------------- / -->
+
     <div class="spacer"></div>
 
+    <!----------------- MENU AUTH AND LINKS----------------->
     <!-- LINKS -->
     <div class="links">
       <a
@@ -125,25 +129,30 @@
         </svg>
       </a>
 
-      <!-- SIGNUP AND LOGIN -->
+      <!-- ACCES ADMIN ONLY  -->
+      <!-- SIGNIN -->
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
         <li class="nav-item">
           <a href="/login" class="nav-link" routerLink="login">Sign In</a>
         </li>
       </ul>
 
-      <!-- PROFILE AND LOGOUT -->
       <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
         <li class="nav-item">
           <a href="/profile" class="nav-link" routerLink="profile">
             Editar Portfolio
           </a>
         </li>
+
+        <!-- SIGNOUT -->
         <li class="nav-item">
           <a href class="nav-link" (click)="logout()">Sign Out</a>
         </li>
       </ul>
     </div>
+    <!-- ACCES ADMIN ONLY  /  -->
+
+    <!----------------- MENU AUTH AND LINKS--------------- / -->
   </div>
 </nav>
 
@@ -152,3 +161,5 @@
 <!-- <div class="container">
   <router-outlet></router-outlet>
 </div> -->
+
+<!--------------------------------------------------- NAVBAR ------------------------------------------------- / -->

@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch SpringBootDataJpaApplication",
+            "request": "launch",
+            "mainClass": "com.bezkoder.spring.datajpa.SpringBootDataJpaApplication",
+            "projectName": "spring-boot-data-jpa"
+        },
+        {
+            "type": "java",
+            "name": "Launch SpringBootSecurityJwtApplication",
+            "request": "launch",
+            "mainClass": "com.bezkoder.springjwt.SpringBootSecurityJwtApplication",
+            "projectName": "spring-boot-security-jwt"
+        }
+    ]
+}

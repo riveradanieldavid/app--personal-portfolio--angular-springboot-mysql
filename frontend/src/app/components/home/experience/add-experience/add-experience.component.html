@@ -1,0 +1,40 @@
+<div>
+  <div class="submit-form">
+    <h4>Añadiendo experiencia</h4>
+    <div *ngIf="!submitted">
+      <!-- FORM -->
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="experience.title"
+          name="title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="experience.description"
+          name="description"
+          rows="10"
+          cols="70"
+        ></textarea>
+      </div>
+
+      <button (click)="saveExperience()" class="btn btn-success">Submit</button>
+      <!-- FORM /-->
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Experience was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newExperience()">Add</button>
+    </div>
+  </div>
+</div>

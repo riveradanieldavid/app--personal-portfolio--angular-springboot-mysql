@@ -20,6 +20,14 @@ import { AboutComponent } from './components/home/about/about.component';
 import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
 import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
 
+import { BannerComponent } from './components/home/banner/banner.component';
+import { BannerDetailsComponent } from './components/home/banner/banner-details/banner-details.component';
+import { AddBannerComponent } from './components/home/banner/add-banner/add-banner.component';
+
+import { ExperienceComponent } from './components/home/experience/experience.component';
+import { ExperienceDetailsComponent } from './components/home/experience/experience-details/experience-details.component';
+import { AddExperienceComponent } from './components/home/experience/add-experience/add-experience.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +39,12 @@ import { AddAboutComponent } from './components/home/about/add-about/add-about.c
     AboutComponent,
     AboutDetailsComponent,
     AddAboutComponent,
+    BannerComponent,
+    BannerDetailsComponent,
+    AddBannerComponent,
+    ExperienceComponent,
+    ExperienceDetailsComponent,
+    AddExperienceComponent,
 
   ],
   // NEW MODULES MUST BE DECLARED HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

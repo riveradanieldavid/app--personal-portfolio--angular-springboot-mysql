@@ -1,1 +1,35 @@
-<p>experience works!</p>
+<!-- RESTRICT VIEW TO UNAUTHORIZED USERS -->
+<!-- IF isLoggedIn FAIL: FORBIDDEN -->
+<div *ngIf="!isLoggedIn; else editMode">FORBIDDEN</div>
+
+<!-- CONTENT FOR AUTHORIZED USERS -->
+<!-- ELSE SHOW ARTICLE -->
+<ng-template #editMode>
+  <!--STANDARD VIEW ARTICLE -->
+  <div class="list row">
+    <div class="col-md-6">
+      <h4>Experience</h4>
+      <!-- SHOW ALL ARTICLES (ngFor) -->
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let experience of experience; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveExperience(experience, i)"
+        >
+          <h6>{{ experience.title }}</h6>
+          <p>{{ experience.description }}</p>
+        </li>
+      </ul>
+    </div>
+    <!-- SHOW ARTICLE TO EDIT -->
+    <div class="col-md-6">
+      <app-experience-details
+        [viewMode]="true"
+        [currentExperience]="ccccurrentExperience"
+      >
+      </app-experience-details>
+    </div>
+  </div>
+  <!-- STANDARD VIEW ARTICLE /-->
+</ng-template>

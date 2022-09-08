@@ -10,6 +10,14 @@ import { AboutComponent } from './components/home/about/about.component';
 import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
 import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
 
+import { BannerComponent } from './components/home/banner/banner.component';
+import { BannerDetailsComponent } from './components/home/banner/banner-details/banner-details.component';
+import { AddBannerComponent } from './components/home/banner/add-banner/add-banner.component';
+
+import { ExperienceComponent } from './components/home/experience/experience.component';
+import { ExperienceDetailsComponent } from './components/home/experience/experience-details/experience-details.component';
+import { AddExperienceComponent } from './components/home/experience/add-experience/add-experience.component';
+
 // "routes" CONST USES "Routes" FROM "@angular/router"
 // MAKES VISIBLE "routing.component.html" FILE  WHICH CONTAINS  COMPONENTS OF VIEWS
 const routes: Routes = [
@@ -23,6 +31,14 @@ const routes: Routes = [
   { path: 'abouts', component: AboutComponent },
   { path: 'about/:id', component: AboutDetailsComponent },
   { path: 'abouts/add', component: AddAboutComponent },
+
+  { path: 'banners', component: BannerComponent },
+  { path: 'banner/:id', component: BannerDetailsComponent },
+  { path: 'banners/add', component: AddBannerComponent },
+
+  { path: 'experiences', component: ExperienceComponent },
+  { path: 'experience/:id', component: ExperienceDetailsComponent },
+  { path: 'experiences/add', component: AddExperienceComponent },
 
 ];
 
