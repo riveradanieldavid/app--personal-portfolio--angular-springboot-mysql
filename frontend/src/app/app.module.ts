@@ -28,6 +28,22 @@ import { ExperienceComponent } from './components/home/experience/experience.com
 import { ExperienceDetailsComponent } from './components/home/experience/experience-details/experience-details.component';
 import { AddExperienceComponent } from './components/home/experience/add-experience/add-experience.component';
 
+import { ProjectComponent } from './components/home/project/project.component';
+import { ProjectDetailsComponent } from './components/home/project/project-details/project-details.component';
+import { AddProjectComponent } from './components/home/project/add-project/add-project.component';
+
+import { EducationComponent } from './components/home/education/education.component';
+import { EducationDetailsComponent } from './components/home/education/education-details/education-details.component';
+import { AddEducationComponent } from './components/home/education/add-education/add-education.component';
+
+import { SkillComponent } from './components/home/skill/skill.component';
+import { SkillDetailsComponent } from './components/home/skill/skill-details/skill-details.component';
+import { AddSkillComponent } from './components/home/skill/add-skill/add-skill.component';
+
+import { ContactComponent } from './components/home/contact/contact.component';
+import { ContactDetailsComponent } from './components/home/contact/contact-details/contact-details.component';
+import { AddContactComponent } from './components/home/contact/add-contact/add-contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +61,18 @@ import { AddExperienceComponent } from './components/home/experience/add-experie
     ExperienceComponent,
     ExperienceDetailsComponent,
     AddExperienceComponent,
+    ProjectComponent,
+    ProjectDetailsComponent,
+    AddProjectComponent,
+    EducationComponent,
+    EducationDetailsComponent,
+    AddEducationComponent,
+    SkillComponent,
+    SkillDetailsComponent,
+    AddSkillComponent,
+    ContactComponent,
+    ContactDetailsComponent,
+    AddContactComponent,
 
   ],
   // NEW MODULES MUST BE DECLARED HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

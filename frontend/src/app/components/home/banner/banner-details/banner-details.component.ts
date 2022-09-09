@@ -8,29 +8,28 @@ import { Banner } from 'src/app/_models/banner.model';
   templateUrl: './banner-details.component.html',
   styleUrls: ['./banner-details.component.css']
 })
+
 export class BannerDetailsComponent implements OnInit {
-
+  // ATTRIBUTES
   @Input() viewMode = false;
-
   @Input() currentBanner: Banner = {
     title: '',
     description: ''
   };
-
   message = '';
-
+  // CONSTRUCTOR
   constructor(
     private bannerService: BannerService,
     private route: ActivatedRoute,
     private router: Router) { }
-
+  // DATA AVAILABLE
   ngOnInit(): void {
     if (!this.viewMode) {
       this.message = '';
       this.getBanner(this.route.snapshot.params["id"]);
     }
   }
-
+  // GET DATA FROM DB
   getBanner(id: string): void {
     this.bannerService.get(id)
       .subscribe({
@@ -41,20 +40,22 @@ export class BannerDetailsComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-
+  // UPDATE DATA AND PUT IN DB
   updateBanner(): void {
     this.message = '';
-
     this.bannerService.update(this.currentBanner.id, this.currentBanner)
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message : 'This banner was updated successfully!';
+          // ADDED
+          this.router.navigate(['/banners']);
+          // ADDED /
+          // this.message = res.message ? res.message : 'This banner was updated successfully!'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
   }
-
+  // DELETE DATA FROM DB
   deleteBanner(): void {
     this.bannerService.delete(this.currentBanner.id)
       .subscribe({

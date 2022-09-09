@@ -42,3 +42,10 @@
   background-color: cornflowerblue;
   border-radius: 23px;
 }
+ul.home {
+  padding: 14px;
+}
+.yoprogramo {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}

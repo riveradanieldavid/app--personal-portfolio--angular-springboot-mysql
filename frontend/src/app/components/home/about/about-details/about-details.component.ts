@@ -10,7 +10,6 @@ import { About } from 'src/app/_models/about.model';
 })
 
 export class AboutDetailsComponent implements OnInit {
-
   // ATTRIBUTES
   @Input() viewMode = false;
   @Input() currentAbout: About = {
@@ -18,13 +17,11 @@ export class AboutDetailsComponent implements OnInit {
     description: ''
   };
   message = '';
-
   // CONSTRUCTOR
   constructor(
     private aboutService: AboutService,
     private route: ActivatedRoute,
     private router: Router) { }
-
   // DATA AVAILABLE
   ngOnInit(): void {
     if (!this.viewMode) {
@@ -32,7 +29,6 @@ export class AboutDetailsComponent implements OnInit {
       this.getAbout(this.route.snapshot.params["id"]);
     }
   }
-
   // GET DATA FROM DB
   getAbout(id: string): void {
     this.aboutService.get(id)
@@ -44,7 +40,6 @@ export class AboutDetailsComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-
   // UPDATE DATA AND PUT IN DB
   updateAbout(): void {
     this.message = '';
@@ -60,7 +55,6 @@ export class AboutDetailsComponent implements OnInit {
         error: (e) => console.error(e)
       });
   }
-
   // DELETE DATA FROM DB
   deleteAbout(): void {
     this.aboutService.delete(this.currentAbout.id)

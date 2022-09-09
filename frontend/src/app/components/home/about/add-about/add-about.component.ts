@@ -10,27 +10,26 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './add-about.component.html',
   styleUrls: ['./add-about.component.css']
 })
-export class AddAboutComponent {
 
+export class AddAboutComponent {
   // ATTRIBUTES
   about: About = {
     title: '',
     description: ''
   };
   submitted = false;
-
   // CONSTRUCTOR
   constructor(
     private aboutService: AboutService,
     private route: ActivatedRoute,
     private router: Router) { }
-
   // SAVE DATA
   saveAbout(): void {
     const data = {
       title: this.about.title,
       description: this.about.description
     };
+    // SERVICE
     this.aboutService.create(data)
       .subscribe({
         next: (res) => {

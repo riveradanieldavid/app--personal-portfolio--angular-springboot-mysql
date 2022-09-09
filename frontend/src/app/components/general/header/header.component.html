@@ -16,10 +16,10 @@
     </a>
 
     <!-- HOME -->
-    <ul class="navbar-nav mr-auto menu" routerLinkActive="active">
+    <ul class="navbar-nav mr-auto menu home" routerLinkActive="active">
       <li class="nav-item">
         <!--routerLink NO RELOAD PAGE-->
-        <a href="/home" class="nav-link" routerLink="home">Home</a>
+        <a href="/home" class="nav-link" routerLink="home">HOME</a>
       </li>
     </ul>
 
@@ -48,13 +48,49 @@
     <!-- EXPERIENCE -->
     <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
-        <a routerLink="experiences" class="nav-link">Experiencia</a>
+        <a routerLink="experiences" class="nav-link">Experiencias</a>
       </li>
       <li class="nav-item">
         <a routerLink="experiences/add" class="nav-link">Add</a>
       </li>
     </ul>
 
+    <!-- PROJECT -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="projects" class="nav-link">Proyectos</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="projects/add" class="nav-link">Add</a>
+      </li>
+    </ul>
+    <!-- EDUCATION -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="educations" class="nav-link">Educaión</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="educations/add" class="nav-link">Add</a>
+      </li>
+    </ul>
+    <!-- SKILL -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="skills" class="nav-link">Habilidades</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="skills/add" class="nav-link">Add</a>
+      </li>
+    </ul>
+    <!-- CONTACT -->
+    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a routerLink="contacts" class="nav-link">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="contacts/add" class="nav-link">Add</a>
+      </li>
+    </ul>
     <!----------------- MENU EDIT ARTICLES FORBIDDEN--------------- / -->
 
     <div class="spacer"></div>
@@ -137,14 +173,8 @@
         </li>
       </ul>
 
+      <!-- SIGNOUT -->
       <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-        <li class="nav-item">
-          <a href="/profile" class="nav-link" routerLink="profile">
-            Editar Portfolio
-          </a>
-        </li>
-
-        <!-- SIGNOUT -->
         <li class="nav-item">
           <a href class="nav-link" (click)="logout()">Sign Out</a>
         </li>
