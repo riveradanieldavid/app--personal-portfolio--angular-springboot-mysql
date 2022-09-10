@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 // import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 import { AboutComponent } from './components/home/about/about.component';
 import { AboutDetailsComponent } from './components/home/about/about-details/about-details.component';
@@ -40,12 +39,11 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   // { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomeComponent },
 
   { path: 'abouts', component: AboutComponent },
-  { path: 'about/:id', component: AboutDetailsComponent },
+  { path: 'about/edit/:id', component: AboutDetailsComponent },
   { path: 'abouts/add', component: AddAboutComponent },
 
   { path: 'banners', component: BannerComponent },

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
 // ADDED
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../../../_services/token-storage.service';
 // ADDED /
 
 @Component({
@@ -11,18 +12,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-about.component.css']
 })
 
-export class AddAboutComponent {
+export class AddAboutComponent implements OnInit {
   // ATTRIBUTES
   about: About = {
     title: '',
     description: ''
   };
   submitted = false;
+  // ADDED
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string;
+  // ADDED /
   // CONSTRUCTOR
   constructor(
     private aboutService: AboutService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    // ADDED
+    private tokenStorageService: TokenStorageService
+    // ADDED /
+  ) { }
   // SAVE DATA
   saveAbout(): void {
     const data = {
@@ -50,6 +62,19 @@ export class AddAboutComponent {
       description: ''
     };
   }
+  // DATA AVAILABLE
+  ngOnInit(): void {
+    // ADDED
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.username = user.username;
+    }
+    // ADDED /
 
+
+  }
 }
-

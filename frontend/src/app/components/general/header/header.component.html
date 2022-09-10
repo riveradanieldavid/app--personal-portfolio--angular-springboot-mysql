@@ -36,11 +36,11 @@
     </ul>
 
     <!-- ABOUT -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="abouts" class="nav-link">About</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="abouts/add" class="nav-link">Add</a>
       </li>
     </ul>
@@ -64,6 +64,7 @@
         <a routerLink="projects/add" class="nav-link">Add</a>
       </li>
     </ul>
+
     <!-- EDUCATION -->
     <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
@@ -73,6 +74,7 @@
         <a routerLink="educations/add" class="nav-link">Add</a>
       </li>
     </ul>
+
     <!-- SKILL -->
     <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
@@ -82,6 +84,7 @@
         <a routerLink="skills/add" class="nav-link">Add</a>
       </li>
     </ul>
+
     <!-- CONTACT -->
     <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
       <li class="nav-item">
@@ -113,9 +116,9 @@
           width="22"
           height="22"
         >
-          <rect width="512" height="512" rx="15%" style="fill: #fff" />
+          <rect width="512" height="512" rx="15%" style="fill: #fff;" />
           <path
-            style="fill: #343a40"
+            style="fill: #343a40;"
             d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71
                 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22
                 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51
@@ -142,13 +145,13 @@
           x="0px"
           y="0px"
           viewBox="0 0 382 382"
-          style="enable-background: new 0 0 382 382"
+          style="enable-background: new 0 0 382 382;"
           xml:space="preserve"
           width="22"
           height="22"
         >
           <path
-            style="fill: #fff"
+            style="fill: #fff;"
             d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
                   C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z
                   M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056

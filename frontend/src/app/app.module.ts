@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 // import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeModule } from './components/home/home.module';
@@ -48,7 +47,6 @@ import { AddContactComponent } from './components/home/contact/add-contact/add-c
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfileComponent,
     HeaderComponent,
     FooterComponent,
     HomeEditComponent,

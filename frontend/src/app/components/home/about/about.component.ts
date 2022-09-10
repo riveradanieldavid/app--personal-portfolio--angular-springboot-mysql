@@ -8,10 +8,9 @@ import { TokenStorageService } from '../../../_services/token-storage.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent implements OnInit {
-
   // ATTRIBUTES
   about?: About[];
   ccccurrentAbout: About = {};
@@ -26,11 +25,12 @@ export class AboutComponent implements OnInit {
   // ADDED /
 
   // CONSTRUCTOR
-  constructor(private aboutService: AboutService,
+  constructor(
+    private aboutService: AboutService,
     // ADDED
     private tokenStorageService: TokenStorageService
-    // ADDED /
-  ) { }
+  ) // ADDED /
+  {}
 
   // DATA AVAILABLE
   ngOnInit(): void {
@@ -48,14 +48,13 @@ export class AboutComponent implements OnInit {
   }
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
   retrieveAbout(): void {
-    this.aboutService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.about = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
+    this.aboutService.getAll().subscribe({
+      next: (data) => {
+        this.about = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
   }
 
   refreshList(): void {
@@ -68,5 +67,4 @@ export class AboutComponent implements OnInit {
     this.ccccurrentAbout = about;
     this.currentIndex = index;
   }
-
 }

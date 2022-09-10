@@ -22,6 +22,10 @@ EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
 
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Vista editable y no editable. Restricciones. Orden."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-acabando
+git status
  
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Tablas db completadas. Backend y frontend actualizado."
