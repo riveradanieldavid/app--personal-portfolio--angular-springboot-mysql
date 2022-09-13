@@ -48,9 +48,9 @@ export class BannerDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/banners']);
+          // this.router.navigate(['/banners']);
           // ADDED /
-          // this.message = res.message ? res.message : 'This banner was updated successfully!'; // ORIGINAL
+          this.message = res.message ? res.message : 'Actualizado'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -61,10 +61,23 @@ export class BannerDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/banners']);
+          this.router.navigate(['/banners'])
+          // ADDED
+          window.location.reload();
+          // ADDED
         },
         error: (e) => console.error(e)
       });
   }
 
+  // ADDED
+  confirmDelete() {
+    if (window.confirm('Borrar item seleccionado?')) {
+      this.deleteBanner()
+    }
+  }
+  // ADDED /
+
 }
+
+

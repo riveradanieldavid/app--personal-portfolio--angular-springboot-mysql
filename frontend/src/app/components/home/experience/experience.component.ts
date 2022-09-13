@@ -8,10 +8,9 @@ import { TokenStorageService } from '../../../_services/token-storage.service';
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
-  styleUrls: ['./experience.component.css']
+  styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
-
   // ATTRIBUTES
   experience?: Experience[];
   ccccurrentExperience: Experience = {};
@@ -26,11 +25,12 @@ export class ExperienceComponent implements OnInit {
   // ADDED /
 
   // CONSTRUCTOR
-  constructor(private experienceService: ExperienceService,
+  constructor(
+    private experienceService: ExperienceService,
     // ADDED
     private tokenStorageService: TokenStorageService
-    // ADDED /
-  ) { }
+  ) // ADDED /
+  { }
 
   // DATA AVAILABLE
   ngOnInit(): void {
@@ -48,14 +48,13 @@ export class ExperienceComponent implements OnInit {
   }
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
   retrieveExperience(): void {
-    this.experienceService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.experience = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
+    this.experienceService.getAll().subscribe({
+      next: (data) => {
+        this.experience = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e),
+    });
   }
 
   refreshList(): void {
@@ -68,5 +67,5 @@ export class ExperienceComponent implements OnInit {
     this.ccccurrentExperience = experience;
     this.currentIndex = index;
   }
-
+  
 }

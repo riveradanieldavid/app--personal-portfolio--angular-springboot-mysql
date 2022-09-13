@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Experience } from 'src/app/_models/experience.model';
 import { ExperienceService } from 'src/app/_services/experience.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Experience } from 'src/app/_models/experience.model';
 
 @Component({
   selector: 'app-experience-details',
@@ -48,9 +48,9 @@ export class ExperienceDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/experiences']);
+          // this.router.navigate(['/experiences']);
           // ADDED /
-          // this.message = res.message ? res.message : 'This experience was updated successfully!'; // ORIGINAL
+          this.message = res.message ? res.message : 'Actualizado'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -61,10 +61,23 @@ export class ExperienceDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/experiences']);
+          this.router.navigate(['/experiences'])
+          // ADDED
+          window.location.reload();
+          // ADDED
         },
         error: (e) => console.error(e)
       });
   }
 
+  // ADDED
+  confirmDelete() {
+    if (window.confirm('Borrar item seleccionado?')) {
+      this.deleteExperience()
+    }
+  }
+  // ADDED /
+
 }
+
+

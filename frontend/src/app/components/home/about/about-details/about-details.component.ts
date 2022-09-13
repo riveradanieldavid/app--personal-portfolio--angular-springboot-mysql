@@ -48,9 +48,9 @@ export class AboutDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/abouts']);
+          // this.router.navigate(['/abouts']);
           // ADDED /
-          // this.message = res.message ? res.message : 'This about was updated successfully!'; // ORIGINAL
+          this.message = res.message ? res.message : 'Actualizado'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -61,10 +61,23 @@ export class AboutDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/abouts']);
+          this.router.navigate(['/abouts'])
+          // ADDED
+          window.location.reload();
+          // ADDED
         },
         error: (e) => console.error(e)
       });
   }
 
+  // ADDED
+  confirmDelete() {
+    if (window.confirm('Borrar item seleccionado?')) {
+      this.deleteAbout()
+    }
+  }
+  // ADDED /
+
 }
+
+

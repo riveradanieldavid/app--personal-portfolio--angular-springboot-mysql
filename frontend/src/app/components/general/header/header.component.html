@@ -26,11 +26,11 @@
     <!----------------- MENU EDIT ARTICLES FORBIDDEN----------------->
 
     <!-- BANNER -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="banners" class="nav-link">Banner</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item"  *ngIf="isLoggedIn">
         <a routerLink="banners/add" class="nav-link">Add</a>
       </li>
     </ul>
@@ -46,51 +46,51 @@
     </ul>
 
     <!-- EXPERIENCE -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="experiences" class="nav-link">Experiencias</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="experiences/add" class="nav-link">Add</a>
       </li>
     </ul>
 
     <!-- PROJECT -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="projects" class="nav-link">Proyectos</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="projects/add" class="nav-link">Add</a>
       </li>
     </ul>
 
     <!-- EDUCATION -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="educations" class="nav-link">Educaión</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="educations/add" class="nav-link">Add</a>
       </li>
     </ul>
 
     <!-- SKILL -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="skills" class="nav-link">Habilidades</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="skills/add" class="nav-link">Add</a>
       </li>
     </ul>
 
     <!-- CONTACT -->
-    <ul class="navbar-nav mr-auto menu" *ngIf="isLoggedIn">
+    <ul class="navbar-nav mr-auto menu">
       <li class="nav-item">
         <a routerLink="contacts" class="nav-link">Contacto</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isLoggedIn">
         <a routerLink="contacts/add" class="nav-link">Add</a>
       </li>
     </ul>

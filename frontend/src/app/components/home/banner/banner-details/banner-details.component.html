@@ -1,33 +1,53 @@
-<!-- VIEW MODE. ELSE EDIT MODE (BELOW) -->
-<div *ngIf="viewMode; else editable">
+<!------------------------------------ ANALIZED ERASABLE  --------------------------------------->
+<!------------------ VIEW MODE. ELSE EDIT MODE (BELOW) ----------------->
+<!-- viewMode ORIGINAL -->
+<!-- !viewMode ADDED -->
+<!-- !viewMode TO SHOW EDITING FORM DIRECTLY -->
+<div *ngIf="!viewMode; else editable">
+  <!-- IF currentBanner.id TRUE-->
   <div *ngIf="currentBanner.id">
     <h4>banner.details.component - viewMode</h4>
+    <!-- TITLE -->
     <div>
       <label><strong>Title:</strong></label>
       {{ currentBanner.title }}
     </div>
+    <!-- DESCRIPTION -->
     <div>
       <label><strong>Description:</strong></label>
       {{ currentBanner.description }}
     </div>
-    <a class="badge badge-warning" routerLink="/banner/{{ currentBanner.id }}">
+    <!-- LINK TO EDITE MODE -->
+    <a
+      class="badge badge-warning"
+      routerLink="/banner/edit/{{ currentBanner.id }}"
+    >
       Edit
     </a>
+    <!-- LINK TO EDITE MODE / -->
   </div>
+  <!-- IF currentBanner.id TRUE / -->
 
   <div *ngIf="!currentBanner">
     <br />
     <p>Please click on a Banner...</p>
   </div>
 </div>
+<!------------------ VIEW MODE. ELSE EDIT MODE (BELOW) ---------------/ -->
+<!------------------------------------ ANALIZED ERASABLE / --------------------------------------->
 
-<!-- EDIT MODE -->
+<!-- OPTION 2 -->
+<!-- ERASE VIEW MODE BLOCK (above) -->
+<!-- ERASE ng-template (below) -->
+<!-- ADD <div *ngIf="viewMode">edit mode...</div> (below) -->
+
+<!-------------- EDIT MODE VIEW------------------>
 <ng-template #editable>
   <div *ngIf="currentBanner.id" class="edit-form">
-    <h4>Editando Item</h4>
-
+    <h4>Editando Banner</h4>
     <!-- FORM -->
     <form>
+      <!-- TITLE -->
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -38,41 +58,48 @@
           name="title"
         />
       </div>
-
+      <!-- TITLE / -->
+      <!-- DESCRIPTION -->
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Descripción</label>
         <textarea
           type="text"
           class="form-control"
           id="description"
           [(ngModel)]="currentBanner.description"
           name="description "
-          rows="10"
-          cols="70"
-        >
-        here
-      </textarea
-        >
+          rows="5"
+          cols="40"
+        ></textarea>
       </div>
+      <!-- DESCRIPTION / -->
     </form>
     <!-- FORM /-->
-
-    <button class="badge badge-danger mr-2" (click)="deleteBanner()">
-      Delete
+    <!-- DELETE -->
+    <button class="badge badge-danger mr-2" (click)="confirmDelete()">
+      Eliminar
     </button>
-
+    <!-- DELETE / -->
+    <!-- UPDATE -->
     <button
       type="submit"
       class="badge badge-success mb-2"
       (click)="updateBanner()"
     >
-      Update
+      Actualizar
     </button>
-    <p>{{ message }}</p>
+    <!-- MESSAGE "This banner was updated successfully" -->
+    <p class="{{ message ? 'message' : '' }}">
+      {{ message }}
+    </p>
+    <!-- MESSAGE "This banner was updated successfully" / -->
+    <!-- UPDATE / -->
   </div>
-
+  <!-- IF currentBanner.id FAIL -->
   <div *ngIf="!currentBanner.id">
     <br />
-    <p>Cannot access this Banner...</p>
+    <p>Seleccione un item a editar</p>
+    <!-- IF currentBanner.id FAIL / -->
   </div>
 </ng-template>
+<!-------------- EDIT MODE VIEW----------------/ -->

@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
     // ADDED
     private tokenStorageService: TokenStorageService
   ) // ADDED /
-  {}
+  { }
 
   // DATA AVAILABLE
   ngOnInit(): void {
@@ -67,4 +67,5 @@ export class AboutComponent implements OnInit {
     this.ccccurrentAbout = about;
     this.currentIndex = index;
   }
+  
 }
