@@ -1,11 +1,11 @@
 <!-- SHOW ALL ARTICLES (ngFor) -->
 <div
-  class="banner"
+  class="bannerImage"
   *ngFor="let banner of banner; let i = index"
   [class.active]="i == currentIndex"
   (click)="setActiveBanner(banner, i)"
 >
-  <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
+  <!-- <img src="./assets/images/banner/hubble0.jpg" alt="banner" /> -->
   <p class="sentence">
     {{ banner.description }}
     <span>

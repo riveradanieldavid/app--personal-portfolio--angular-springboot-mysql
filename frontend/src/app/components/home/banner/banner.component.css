@@ -1,5 +1,11 @@
-.banner {
+.bannerImage {
   position: relative;
+  background-image: url('src/assets/images/banner/hubble1.jpg');
+  height: 558px;
+  background-position: top;
+  width: auto;
+  background-size: cover;
+  margin: auto;
 }
 .banner img {
   width: 100%;

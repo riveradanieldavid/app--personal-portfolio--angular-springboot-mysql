@@ -21,6 +21,16 @@ UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
+git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Home Module habilitado. Acabando estructura final v1."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Diálogo eliminar. Modo publico no editable."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-acabando
+git status
 
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Vista editable y no editable. Restricciones. Orden."

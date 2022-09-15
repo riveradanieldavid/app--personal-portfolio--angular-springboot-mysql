@@ -31,7 +31,7 @@ import { AddContactComponent } from './components/home/contact/add-contact/add-c
 // "routes" CONST USES "Routes" FROM "@angular/router"
 // MAKES VISIBLE "routing.component.html" FILE  WHICH CONTAINS  COMPONENTS OF VIEWS
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   // { path: 'register', component: RegisterComponent },
@@ -40,7 +40,7 @@ const routes: Routes = [
   // { path: 'banners', component: BannerComponent },
   // { path: 'banner/:id', component: BannerDetailsComponent },
   // THIS TO RUN HomeModule /
-  { path: 'home/banners/add', component: AddBannerComponent },
+  // { path: 'home/banners/add', component: AddBannerComponent }, // NO ADDING BANNERS
   // THIS TO RUN HomeModule /
 
   { path: 'abouts/add', component: AddAboutComponent },
