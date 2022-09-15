@@ -21,7 +21,4 @@
     },
     "peacock.color": "#007fff",
     "autoHide.autoHideSideBar": true,
-    "scm.autoReveal": false,
-    "explorer.autoReveal": false,
-    "problems.autoReveal": false
 }

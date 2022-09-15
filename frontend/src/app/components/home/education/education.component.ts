@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Education } from 'src/app/_models/education.model';
 import { EducationService } from 'src/app/_services/education.service';
 // ADDED
-import { TokenStorageService } from '../../../_services/token-storage.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({

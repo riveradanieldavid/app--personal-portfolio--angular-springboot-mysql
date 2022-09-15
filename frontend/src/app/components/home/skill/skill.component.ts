@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Skill } from 'src/app/_models/skill.model';
 import { SkillService } from 'src/app/_services/skill.service';
 // ADDED
-import { TokenStorageService } from '../../../_services/token-storage.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/_models/experience.model';
 import { ExperienceService } from 'src/app/_services/experience.service';
 // ADDED
-import { TokenStorageService } from '../../../_services/token-storage.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
@@ -67,5 +67,5 @@ export class ExperienceComponent implements OnInit {
     this.ccccurrentExperience = experience;
     this.currentIndex = index;
   }
-  
+
 }

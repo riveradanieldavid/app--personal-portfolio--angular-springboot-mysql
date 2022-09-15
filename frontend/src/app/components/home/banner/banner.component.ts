@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Banner } from 'src/app/_models/banner.model';
 import { BannerService } from 'src/app/_services/banner.service';
 // ADDED
-import { TokenStorageService } from '../../../_services/token-storage.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({

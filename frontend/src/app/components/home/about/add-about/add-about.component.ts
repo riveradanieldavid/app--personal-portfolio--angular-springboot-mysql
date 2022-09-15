@@ -3,7 +3,7 @@ import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
 // ADDED
 import { ActivatedRoute, Router } from '@angular/router';
-import { TokenStorageService } from '../../../../_services/token-storage.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({

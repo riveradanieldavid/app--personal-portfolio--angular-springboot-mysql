@@ -1,55 +1,33 @@
-<!-- RESTRICT VIEW TO UNAUTHORIZED USERS -->
-<!-- IF isLoggedIn FAIL: FORBIDDEN -->
-<div *ngIf="!isLoggedIn; else editMode">FORBIDDEN</div>
+<!-- SHOW ALL ARTICLES (ngFor) -->
+<div
+  class="banner"
+  *ngFor="let banner of banner; let i = index"
+  [class.active]="i == currentIndex"
+  (click)="setActiveBanner(banner, i)"
+>
+  <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
+  <p class="sentence">
+    {{ banner.description }}
+    <span>
+      <cite>{{ banner.title }}</cite>
+    </span>
+  </p>
+</div>
+<!-- SHOW ALL ARTICLES (ngFor) / -->
 
 <!-- CONTENT FOR AUTHORIZED USERS -->
-<!-- ELSE SHOW ARTICLE -->
-<ng-template #editMode>
-  <!-- IMAGE BANNER -->
-  <!-- <div class="banner">
-    <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
-    <p class="sentence">
-      "Porque toda casa es hecha por alguno, pero el que hace todas las cosas es
-      Dios"
-      <span><cite>Hebreos 3:4</cite></span>
-    </p>
-    <p class="author">
-      Space Hubble Telescope Watches Star Clusters on a Collision Course
-      <span><cite>NASA / S.Dupuis</cite></span>
-    </p>
-  </div> -->
-  <!-- IMAGE BANNER / -->
-
-  <!-- SHOW ALL ARTICLES (ngFor) -->
-  <div
-    class="banner"
-    *ngFor="let banner of banner; let i = index"
-    [class.active]="i == currentIndex"
-    (click)="setActiveBanner(banner, i)"
-  >
-    <img src="./assets/images/banner/hubble1.jpg" alt="banner" />
-    <p class="sentence">
-      {{ banner.description }}
-      <span>
-        <cite>{{ banner.title }}</cite>
-      </span>
-    </p>
+<!-- STANDARD VIEW ARTICLE -->
+<div class="list row">
+  <div class="col-md-6">
+    <!-- SHOW ALL ARTICLES (ngFor) -->
   </div>
-  <!-- SHOW ALL ARTICLES (ngFor) / -->
-
-  <!-- STANDARD VIEW ARTICLE -->
-  <div class="list row">
-    <div class="col-md-6">
-      <!-- SHOW ALL ARTICLES (ngFor) -->
-    </div>
-    <!-- SHOW ARTICLE TO EDIT -->
-    <div class="col-md-6">
-      <app-banner-details
-        [viewMode]="true"
-        [currentBanner]="ccccurrentBanner"
-      ></app-banner-details>
-    </div>
+  <!-- SHOW ARTICLE TO EDIT IF isLoggedin-->
+  <div class="col-md-6" *ngIf="isLoggedIn">
+    <app-banner-details
+      [viewMode]="true"
+      [currentBanner]="ccccurrentBanner"
+    ></app-banner-details>
   </div>
-  <!-- STANDARD VIEW ARTICLE /-->
-</ng-template>
-
+  <!-- SHOW ARTICLE TO EDIT IF isLoggedin-->
+</div>
+<!-- STANDARD VIEW ARTICLE /-->

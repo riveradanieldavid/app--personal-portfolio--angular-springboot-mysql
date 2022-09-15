@@ -1,15 +1,48 @@
 // HOW MUST BE  REGISTER COMPONENTS IN HIS MODULE SO THAT RUN ALSO, THESE DUE BE UNREGISTERED IF THE PREVIOUSLY REGISTERED COMPONENT IS ELIMINATED...
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { AboutComponent } from './about/about.component';
-// import { BannerComponent } from './banner/banner.component';
-// import { ExperienceComponent } from './experience/experience.component';
-// import { EducationComponent } from './education/education.component';
-// import { SkillComponent } from './skill/skill.component';
-// import { ProjectsComponent } from './project/project.component';
 // THIS COUPLE OF BELOW WAS NOT REGISTERED!. WAS REQUIRED SO TO home COMPONENT TO CONTAIN OTHERS COMPONENTS
 import { HomeComponent } from './home.component';
-// import { ContactComponent } from './contact/contact.component';
+
+// THIS TO RUN banner add edit
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+
+// THIS WAS THE LAST BUG LEFTOVER TO SOLVE
+import { RouterModule, Routes } from '@angular/router';
+// THIS TO RUN banner add edit /
+
+// THIS TO RUN banner add edit
+import { BannerComponent } from './banner/banner.component';
+import { BannerDetailsComponent } from './banner/banner-details/banner-details.component';
+import { AddBannerComponent } from './banner/add-banner/add-banner.component';
+// THIS TO RUN banner add edit /
+
+import { AboutComponent } from './about/about.component';
+import { AboutDetailsComponent } from './about/about-details/about-details.component';
+import { AddAboutComponent } from './about/add-about/add-about.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { ExperienceDetailsComponent } from './experience/experience-details/experience-details.component';
+import { AddExperienceComponent } from './experience/add-experience/add-experience.component';
+import { EducationComponent } from './education/education.component';
+import { EducationDetailsComponent } from './education/education-details/education-details.component';
+import { AddEducationComponent } from './education/add-education/add-education.component';
+import { SkillComponent } from './skill/skill.component';
+import { SkillDetailsComponent } from './skill/skill-details/skill-details.component';
+import { AddSkillComponent } from './skill/add-skill/add-skill.component';
+import { ProjectComponent } from './project/project.component';
+import { ProjectDetailsComponent } from './project/project-details/project-details.component';
+import { AddProjectComponent } from './project/add-project/add-project.component';
+import { ContactComponent } from './contact/contact.component';
+import { ContactDetailsComponent } from './contact/contact-details/contact-details.component';
+import { AddContactComponent } from './contact/add-contact/add-contact.component';
+
+
+
+
+
 import { ArticleGeneralExperienceComponent } from './sharedComponents/article-general-experience/article-general-experience.component';
 import { ArticleImageComponent } from './sharedComponents/article-general-experience/article-image/article-image.component';
 import { ArticleTextComponent } from './sharedComponents/article-general-experience/article-text/article-text.component';
@@ -27,14 +60,37 @@ import { RoutingComponent } from './routing/routing.component';
 
 @NgModule({
   declarations: [
-    // AboutComponent,
-    // BannerComponent,
-    // ExperienceComponent,
-    // EducationComponent,
-    // SkillComponent,
-    // ProjectsComponent,
+
+    // THIS TO RUN banner add edit
     HomeComponent,
-    // ContactComponent,
+    BannerComponent,
+    BannerDetailsComponent,
+    AddBannerComponent,
+    // THIS TO RUN banner add edit /
+
+    AboutComponent,
+    AboutDetailsComponent,
+    AddAboutComponent,
+    ExperienceComponent,
+    ExperienceDetailsComponent,
+    AddExperienceComponent,
+    EducationComponent,
+    EducationDetailsComponent,
+    AddEducationComponent,
+    SkillComponent,
+    SkillDetailsComponent,
+    AddSkillComponent,
+    ProjectComponent,
+    ProjectDetailsComponent,
+    AddProjectComponent,
+    ContactComponent,
+    ContactDetailsComponent,
+    AddContactComponent,
+
+
+
+
+
     ArticleGeneralExperienceComponent,
     ArticleImageComponent,
     ArticleTextComponent,
@@ -49,8 +105,27 @@ import { RoutingComponent } from './routing/routing.component';
     RoutingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
+    // THIS TO RUN banner add edit
+    BrowserModule,
+    FormsModule,
+    RouterModule,
+    // HttpClientModule,
+    // AppRoutingModule,
+    // THIS TO RUN banner add edit /
+
+  ],
+  exports: [
+    // THIS TO RUN HomeModule
+    HomeComponent,
+    // THIS TO RUN HomeModule /
+
+    // BannerComponent,
+    // BannerDetailsComponent,
+
   ]
+
 })
 export class HomeModule { }
 

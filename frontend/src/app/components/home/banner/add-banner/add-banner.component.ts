@@ -38,7 +38,7 @@ export class AddBannerComponent {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/banners']);
+          this.router.navigate(['/home']);
           // ADDED /
           // this.submitted = true; // ORIGINAL
         },
