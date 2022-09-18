@@ -13,10 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 // import { BannerComponent } from './components/home/banner/banner.component';
 // import { BannerDetailsComponent } from './components/home/banner/banner-details/banner-details.component';
 // THIS TO RUN HomeModule
-import { AddBannerComponent } from './components/home/banner/add-banner/add-banner.component';
+import { AddBannerComponent } from './components/home/banner/add-banner/add-banner.component';  // NO ADDING BANNERS
 // THIS TO RUN HomeModule /
 
-import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
+import { AddAboutComponent } from './components/home/about/add-about/add-about.component';  // NO ADDING BANNERS
 
 import { AddExperienceComponent } from './components/home/experience/add-experience/add-experience.component';
 
@@ -31,7 +31,7 @@ import { AddContactComponent } from './components/home/contact/add-contact/add-c
 // "routes" CONST USES "Routes" FROM "@angular/router"
 // MAKES VISIBLE "routing.component.html" FILE  WHICH CONTAINS  COMPONENTS OF VIEWS
 const routes: Routes = [
-  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
   // { path: 'register', component: RegisterComponent },
@@ -43,17 +43,17 @@ const routes: Routes = [
   // { path: 'home/banners/add', component: AddBannerComponent }, // NO ADDING BANNERS
   // THIS TO RUN HomeModule /
 
-  { path: 'abouts/add', component: AddAboutComponent },
+  // { path: 'abouts/add', component: AddAboutComponent },  // NO ADDING BANNERS
 
-  { path: 'experiences/add', component: AddExperienceComponent },
+  { path: 'home/experiences/add', component: AddExperienceComponent },
 
-  { path: 'projects/add', component: AddProjectComponent },
+  { path: 'home/projects/add', component: AddProjectComponent },
 
-  { path: 'educations/add', component: AddEducationComponent },
+  { path: 'home/educations/add', component: AddEducationComponent },
 
-  { path: 'skills/add', component: AddSkillComponent },
+  { path: 'home/skills/add', component: AddSkillComponent },
 
-  { path: 'contacts/add', component: AddContactComponent },
+  { path: 'home/contacts/add', component: AddContactComponent },
 
 ];
 

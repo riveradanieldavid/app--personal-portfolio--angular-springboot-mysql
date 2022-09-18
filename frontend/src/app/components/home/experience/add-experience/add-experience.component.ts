@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Experience } from 'src/app/_models/experience.model';
 import { ExperienceService } from 'src/app/_services/experience.service';
 // ADDED
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
@@ -11,18 +12,29 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-experience.component.css']
 })
 
-export class AddExperienceComponent {
+export class AddExperienceComponent implements OnInit {
   // ATTRIBUTES
   experience: Experience = {
     title: '',
     description: ''
   };
   submitted = false;
+  // ADDED
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string;
+  // ADDED /
   // CONSTRUCTOR
   constructor(
     private experienceService: ExperienceService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    // ADDED
+    private tokenStorageService: TokenStorageService
+    // ADDED /
+  ) { }
   // SAVE DATA
   saveExperience(): void {
     const data = {
@@ -50,6 +62,19 @@ export class AddExperienceComponent {
       description: ''
     };
   }
+  // DATA AVAILABLE
+  ngOnInit(): void {
+    // ADDED
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.username = user.username;
+    }
+    // ADDED /
 
+
+  }
 }
-

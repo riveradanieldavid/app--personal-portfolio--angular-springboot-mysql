@@ -43,9 +43,9 @@ import { AddContactComponent } from './contact/add-contact/add-contact.component
 
 
 
-import { ArticleGeneralExperienceComponent } from './sharedComponents/article-general-experience/article-general-experience.component';
-import { ArticleImageComponent } from './sharedComponents/article-general-experience/article-image/article-image.component';
-import { ArticleTextComponent } from './sharedComponents/article-general-experience/article-text/article-text.component';
+import { ArticleGeneralExperienceComponent } from './article-general-experience/article-general-experience.component';
+import { ArticleImageComponent } from './article-general-experience/article-image/article-image.component';
+import { ArticleTextComponent } from './article-general-experience/article-text/article-text.component';
 import { AboutImageComponent } from './about/about-image/about-image.component';
 import { AboutTextComponent } from './about/about-text/about-text.component';
 import { ExperienceImageComponent } from './experience/experience-image/experience-image.component';

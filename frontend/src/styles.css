@@ -25,4 +25,50 @@ body {
   /* border: 1px solid #000; */
   background-image: url('./assets/images/banner/hubble3.jpg');
   background-size: cover;
+  background-attachment: fixed;
 }
+
+/************ ARTICLE GENERAL EXPERIENCE **************/
+
+.title-experience {
+  height: 53px;
+}
+.article-experience-card {
+  background-color: white;
+  width: fit-content;
+  border-radius: 4px;
+  margin-top: 37px;
+}
+
+/* article-image-component */
+.article-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.article-image img {
+  width: 7rem;
+  border-radius: 27%;
+  position: absolute;
+  margin-top: -147px;
+}
+.article-header {
+  display: flex;
+  align-items: center;
+}
+
+/* article-text-component */
+.article-text {
+  margin-right: 5px;
+  max-width: 25rem;
+}
+
+/* ARTICLE DINAMIC CARD */
+.article-dynamic-card {
+  display: flex;
+}
+.image-article {
+  min-width: 12rem;
+}
+/************ ARTICLE GENERAL EXPERIENCE **************/
