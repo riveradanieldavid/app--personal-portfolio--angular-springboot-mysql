@@ -45,6 +45,29 @@
 <ng-template #editable>
   <div *ngIf="currentAbout.id" class="edit-form">
     <h4>Editando About</h4>
+    <!-- BUTTONS EDIT -->
+    <div class="article-buttons-edit">
+      <!-- DELETE -->
+      <button class="badge badge-danger mr-2" (click)="confirmDelete()">
+        Eliminar
+      </button>
+      <!-- DELETE / -->
+      <!-- UPDATE -->
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateAbout()"
+      >
+        Actualizar
+      </button>
+      <!-- MESSAGE "This about was updated successfully" -->
+      <p class="{{ message ? 'message' : '' }}">
+        {{ message }}
+      </p>
+      <!-- MESSAGE "This about was updated successfully" / -->
+      <!-- UPDATE / -->
+    </div>
+    <!-- BUTTONS EDIT / -->
     <!-- FORM -->
     <form>
       <!-- TITLE -->
@@ -69,37 +92,17 @@
           [(ngModel)]="currentAbout.description"
           name="description "
           rows="5"
-          cols="40"
+          cols="70"
         ></textarea>
       </div>
       <!-- DESCRIPTION / -->
     </form>
     <!-- FORM /-->
-    <!-- DELETE -->
-    <button class="badge badge-danger mr-2" (click)="confirmDelete()">
-      Eliminar
-    </button>
-    <!-- DELETE / -->
-    <!-- UPDATE -->
-    <button
-      type="submit"
-      class="badge badge-success mb-2"
-      (click)="updateAbout()"
-    >
-      Actualizar
-    </button>
-    <!-- MESSAGE "This about was updated successfully" -->
-    <p class="{{ message ? 'message' : '' }}">
-      {{ message }}
-    </p>
-    <!-- MESSAGE "This about was updated successfully" / -->
-    <!-- UPDATE / -->
   </div>
-  <!-- IF currentAbout.id FAIL -->
-  <div *ngIf="!currentAbout.id">
+  <!-- IF currentExperience.id FAIL -->
+  <!-- <div *ngIf="!currentExperience.id">
     <br />
     <p>Seleccione un item a editar</p>
-    <!-- IF currentAbout.id FAIL / -->
-  </div>
+  </div> -->
 </ng-template>
 <!-------------- EDIT MODE VIEW----------------/ -->

@@ -1,9 +1,30 @@
-<div class="article-text">
-  <h4>Resúmen Profesional</h4>
-  <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste soluta cum
-    nostrum eaque voluptates quae voluptatibus repudiandae nobis impedit
-    veritatis quam at et neque asperiores, pariatur atque similique dignissimos
-    ratione.
-  </p>
+
+<!---------------------STANDARD VIEW ARTICLE --------------------->
+<div class="list row">
+  <div class="col-md-6 article-text-public">
+    <!-- <h4>Acerca de</h4> -->
+    <!-- SHOW ALL ARTICLES (ngFor) -->
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let about of about; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveAbout(about, i)"
+      >
+        <h6>{{ about.title }}</h6>
+        <p>{{ about.description }}</p>
+      </li>
+    </ul>
+    <!-- SHOW ALL ARTICLES (ngFor)  / -->
+  </div>
+
+  <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
+  <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
+    <app-about-details
+      [viewMode]="true"
+      [currentAbout]="ccccurrentAbout"
+      class="article-details-edit"
+    ></app-about-details>
+  </div>
 </div>
+<!--------------------- STANDARD VIEW ARTICLE /--------------------->

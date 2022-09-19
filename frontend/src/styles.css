@@ -34,10 +34,19 @@ body {
   height: 53px;
 }
 .article-experience-card {
-  background-color: white;
-  width: fit-content;
+  /* background-color: black; */
+  /* width: fit-content; */
   border-radius: 4px;
   margin-top: 37px;
+  /* border: 1px solid white; */
+  box-shadow: 0px 0px 15px 9px white;
+}
+.article-header {
+  display: flex;
+  align-items: center;
+}
+.title-experience {
+  color: white;
 }
 
 /* article-image-component */
@@ -53,15 +62,13 @@ body {
   position: absolute;
   margin-top: -147px;
 }
-.article-header {
-  display: flex;
-  align-items: center;
-}
 
 /* article-text-component */
 .article-text {
-  margin-right: 5px;
-  max-width: 25rem;
+  /* margin-right: 20px; */
+  max-width: 77%;
+  overflow-wrap: break-word;
+  margin: 0;
 }
 
 /* ARTICLE DINAMIC CARD */
@@ -69,6 +76,94 @@ body {
   display: flex;
 }
 .image-article {
-  min-width: 12rem;
+  min-width: 14rem;
+  margin: 0 1rem 0;
 }
+.article-dynamic-card h4,
+.article-dynamic-card h5 {
+  color: white;
+  text-align: center;
+}
+.edit-form h4 {
+  color: black;
+}
+.article-text-public {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.article-text-public li {
+  /* border: 1px solid; */
+  /* box-shadow: 0px 0px 7px 1px black; */
+  /* z-index: 1; */
+  margin: 10px;
+}
+
+.list-group-item.active {
+  background-color: white;
+  color: black;
+  border-radius: 0;
+  box-shadow: 0px 0px 0px 7px blue;
+  border: none;
+  margin: 10px;
+}
+.list-group-item {
+  border: none;
+}
+.list-group-item + .list-group-item.active {
+  margin: 10px;
+}
+
+/* ARTICLE EDIT */
+.article-text-edit {
+  right: 48%;
+  z-index: 10;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: white;
+  /* border-radius: 20px; */
+  max-width: fit-content;
+  height: auto;
+  display: flex;
+  box-shadow: 0px 0px 20px 7px black;
+}
+.article-details-edit {
+  width: 100vw;
+}
+.edit-form {
+  display: flex;
+  white-space: nowrap;
+  align-items: flex-start;
+  line-height: 0;
+}
+form {
+  display: flex;
+  box-shadow: 0px 0px 0px 7px blue;
+  width: 100%;
+  /* border-radius: 4px; */
+}
+label {
+  line-height: 1.1rem;
+}
+input.form-control,
+textarea.form-control {
+  z-index: 3;
+  width: 100%;
+  /* border-radius: 4px; */
+}
+
+.article-buttons-edit {
+  align-self: flex-end;
+  margin: 1rem;
+}
+
 /************ ARTICLE GENERAL EXPERIENCE **************/
+
+@media (max-width: 700px) {
+  .article-dynamic-card {
+    display: block;
+  }
+  .edit-form {
+    display: inline;
+  }
+}
