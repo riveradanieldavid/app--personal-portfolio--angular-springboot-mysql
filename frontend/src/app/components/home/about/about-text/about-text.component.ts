@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Experience } from 'src/app/_models/experience.model';
-import { ExperienceService } from 'src/app/_services/experience.service';
+import { About } from 'src/app/_models/about.model';
+import { AboutService } from 'src/app/_services/about.service';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
-  selector: 'app-experience-image',
-  templateUrl: './experience-image.component.html',
-  styleUrls: ['./experience-image.component.css']
+  selector: 'app-about-text',
+  templateUrl: './about-text.component.html',
+  styleUrls: ['./about-text.component.css']
 })
 
-export class ExperienceImageComponent implements OnInit {
-
-
+export class AboutTextComponent implements OnInit {
   // ATTRIBUTES
-  experience?: Experience[];
-  ccccurrentExperience: Experience = {};
+  about?: About[];
+  ccccurrentAbout: About = {};
   currentIndex = -1;
   title = '';
   // ADDED
@@ -29,7 +27,7 @@ export class ExperienceImageComponent implements OnInit {
 
   // CONSTRUCTOR
   constructor(
-    private experienceService: ExperienceService,
+    private aboutService: AboutService,
     // ADDED
     private tokenStorageService: TokenStorageService
   ) // ADDED /
@@ -37,7 +35,7 @@ export class ExperienceImageComponent implements OnInit {
 
   // DATA AVAILABLE
   ngOnInit(): void {
-    this.retrieveExperience();
+    this.retrieveAbout();
     // ADDED
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
@@ -50,10 +48,10 @@ export class ExperienceImageComponent implements OnInit {
     // ADDED /
   }
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
-  retrieveExperience(): void {
-    this.experienceService.getAll().subscribe({
+  retrieveAbout(): void {
+    this.aboutService.getAll().subscribe({
       next: (data) => {
-        this.experience = data;
+        this.about = data;
         console.log(data);
       },
       error: (e) => console.error(e),
@@ -61,8 +59,14 @@ export class ExperienceImageComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveExperience();
-    this.ccccurrentExperience = {};
+    this.retrieveAbout();
+    this.ccccurrentAbout = {};
     this.currentIndex = -1;
   }
+  // SHOW ARTICE TO EDIT
+  setActiveAbout(about: About, index: number): void {
+    this.ccccurrentAbout = about;
+    this.currentIndex = index;
+  }
+
 }

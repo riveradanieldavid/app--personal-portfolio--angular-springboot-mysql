@@ -1,1 +1,24 @@
-<p>experience-image works!</p>
+<!---------------------STANDARD VIEW ARTICLE --------------------->
+<div class="list row">
+  <div class="col-md-6 article-text-public">
+    <!-- <h4>Acerca de</h4> -->
+
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
+    <ul class="list-group" >
+      <li
+        class="list-group-item"
+        *ngFor="let experience of experience; let i = index"
+        [class.active]="i == currentIndex"
+      >
+        <h6>{{ experience.title }}</h6>
+        <p>{{ experience.description }}</p>
+      </li>
+    </ul>
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
+  </div>
+</div>
+<!--------------------- STANDARD VIEW ARTICLE /--------------------->
+
+<div class="experience-image">
+  <!-- Fundación Formar -->
+</div>

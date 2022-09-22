@@ -7,11 +7,11 @@
     <ul class="list-group" *ngIf="!isLoggedIn; else editable">
       <li
         class="list-group-item"
-        *ngFor="let experience of experience; let i = index"
+        *ngFor="let about of about; let i = index"
         [class.active]="i == currentIndex"
       >
-        <h5>{{ experience.title }}</h5>
-        <p>{{ experience.description }}</p>
+        <h6>{{ about.title }}</h6>
+        <p>{{ about.description }}</p>
       </li>
     </ul>
     <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
@@ -21,12 +21,12 @@
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let experience of experience; let i = index"
+          *ngFor="let about of about; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveExperience(experience, i)"
+          (click)="setActiveAbout(about, i)"
         >
-          <h6>{{ experience.title }}</h6>
-          <p>{{ experience.description }}</p>
+          <h6>{{ about.title }}</h6>
+          <p>{{ about.description }}</p>
         </li>
       </ul>
     </ng-template>
@@ -35,11 +35,11 @@
 
   <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
   <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
-    <app-experience-details
+    <app-about-details
       [viewMode]="true"
-      [currentExperience]="ccccurrentExperience"
+      [currentAbout]="ccccurrentAbout"
       class="article-details-edit"
-    ></app-experience-details>
+    ></app-about-details>
   </div>
 </div>
 <!--------------------- STANDARD VIEW ARTICLE /--------------------->

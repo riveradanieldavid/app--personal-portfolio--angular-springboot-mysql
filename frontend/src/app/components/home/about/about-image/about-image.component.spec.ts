@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeImageComponent } from './home-image.component';
+import { AboutImageComponent } from './about-image.component';
 
-describe('HomeImageComponent', () => {
-  let component: HomeImageComponent;
-  let fixture: ComponentFixture<HomeImageComponent>;
+describe('AboutImageComponent', () => {
+  let component: AboutImageComponent;
+  let fixture: ComponentFixture<AboutImageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeImageComponent ]
+      declarations: [ AboutImageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeImageComponent);
+    fixture = TestBed.createComponent(AboutImageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

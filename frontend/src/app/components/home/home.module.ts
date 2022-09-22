@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // THIS COUPLE OF BELOW WAS NOT REGISTERED!. WAS REQUIRED SO TO home COMPONENT TO CONTAIN OTHERS COMPONENTS
 import { HomeComponent } from './home.component';
-import { HomeImageComponent } from "./_home-image/home-image.component";
-import { HomeTextComponent } from "./_home-text/home-text.component";
 
 // THIS TO RUN banner add edit
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +23,8 @@ import { AddBannerComponent } from './banner/add-banner/add-banner.component';
 import { AboutComponent } from './about/about.component';
 import { AboutDetailsComponent } from './about/about-details/about-details.component';
 import { AddAboutComponent } from './about/add-about/add-about.component';
+import { AboutImageComponent } from './about/about-image/about-image.component';
+import { AboutTextComponent } from './about/about-text/about-text.component';
 
 import { ExperienceComponent } from './experience/experience.component';
 import { ExperienceDetailsComponent } from './experience/experience-details/experience-details.component';
@@ -66,8 +66,6 @@ import { RoutingComponent } from './routing/routing.component';
 
     // THIS TO RUN banner add edit
     HomeComponent,
-    HomeImageComponent,
-    HomeTextComponent,
 
     BannerComponent,
     BannerDetailsComponent,
@@ -77,6 +75,8 @@ import { RoutingComponent } from './routing/routing.component';
     AboutComponent,
     AboutDetailsComponent,
     AddAboutComponent,
+    AboutImageComponent,
+    AboutTextComponent,
 
     ExperienceComponent,
     ExperienceDetailsComponent,
