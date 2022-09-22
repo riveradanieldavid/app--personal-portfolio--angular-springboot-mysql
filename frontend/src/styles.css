@@ -87,15 +87,20 @@ body {
   margin-bottom: 0.7rem;
 }
 
+/* PARA ABOUT */
 /* ARTICLE DINAMIC CARD */
+.about-dynamic-card,
 .article-dynamic-card {
   display: flex;
 }
+.about-image-article,
 .image-article {
   min-width: 17rem;
   max-width: 17rem;
   margin: 0 2rem 0;
 }
+/* PARA ABOUT / */
+
 .article-dynamic-card > h4,
 .article-dynamic-card > h5 {
   color: white;
@@ -189,5 +194,24 @@ textarea.form-control {
   .article-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  /* ACOMODAR TARJETAS TEXTO E IMAGEN */
+
+  .article-dynamic-card {
+    display: flex;
+  }
+  .article-text {
+    margin-right: auto;
+    width: 100%;
+  }
+  .image-article {
+    min-width: 7rem;
+    max-width: 7rem;
+    margin: 0;
+  }
+  /* TO ABOUT */
+  .about-dynamic-card {
+    display: block;
   }
 }
