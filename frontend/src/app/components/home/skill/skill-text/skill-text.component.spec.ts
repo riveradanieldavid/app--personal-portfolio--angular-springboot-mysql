@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutTextComponent } from './about-text.component';
+import { AboutTextComponent } from './skill-text.component';
 
 describe('AboutTextComponent', () => {
   let component: AboutTextComponent;

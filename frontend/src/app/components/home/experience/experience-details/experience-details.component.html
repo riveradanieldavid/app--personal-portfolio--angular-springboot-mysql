@@ -45,8 +45,31 @@
 <ng-template #editable>
   <div *ngIf="currentExperience.id" class="edit-form">
     <h4>Editando Experience</h4>
+    <!-- BUTTONS EDIT -->
+    <div class="article-buttons-edit">
+      <!-- DELETE -->
+      <button class="badge badge-danger mr-2" (click)="confirmDelete()">
+        Eliminar
+      </button>
+      <!-- DELETE / -->
+      <!-- UPDATE -->
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateExperience()"
+      >
+        Actualizar
+      </button>
+      <!-- MESSAGE "This experience was updated successfully" -->
+      <p class="{{ message ? 'message' : '' }}">
+        {{ message }}
+      </p>
+      <!-- MESSAGE "This experience was updated successfully" / -->
+      <!-- UPDATE / -->
+    </div>
+    <!-- BUTTONS EDIT / -->
     <!-- FORM -->
-    <form>
+    <form class="editable">
       <!-- TITLE -->
       <div class="form-group">
         <label for="title">Title</label>
@@ -68,32 +91,13 @@
           id="description"
           [(ngModel)]="currentExperience.description"
           name="description "
-          rows="5"
-          cols="40"
+          rows="3"
+          cols="90"
         ></textarea>
       </div>
       <!-- DESCRIPTION / -->
     </form>
     <!-- FORM /-->
-    <!-- DELETE -->
-    <button class="badge badge-danger mr-2" (click)="confirmDelete()">
-      Eliminar
-    </button>
-    <!-- DELETE / -->
-    <!-- UPDATE -->
-    <button
-      type="submit"
-      class="badge badge-success mb-2"
-      (click)="updateExperience()"
-    >
-      Actualizar
-    </button>
-    <!-- MESSAGE "This experience was updated successfully" -->
-    <p class="{{ message ? 'message' : '' }}">
-      {{ message }}
-    </p>
-    <!-- MESSAGE "This experience was updated successfully" / -->
-    <!-- UPDATE / -->
   </div>
   <!-- IF currentExperience.id FAIL -->
   <!-- <div *ngIf="!currentExperience.id">

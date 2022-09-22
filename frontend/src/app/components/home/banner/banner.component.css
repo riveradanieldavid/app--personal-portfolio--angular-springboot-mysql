@@ -6,6 +6,7 @@
   width: auto;
   background-size: cover;
   margin: auto;
+  background-attachment: fixed;
 }
 .banner img {
   width: 100%;

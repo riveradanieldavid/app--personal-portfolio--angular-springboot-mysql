@@ -28,6 +28,11 @@ body {
   background-attachment: fixed;
 }
 
+/* BOOSTRAP */
+.container {
+  min-width: 100% !important;
+}
+
 /************ ARTICLE GENERAL EXPERIENCE **************/
 
 .title-experience {
@@ -55,20 +60,23 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background: RGB(52 41 59 / 47%);
+  border-radius: 5px;
 }
 .article-image img {
-  width: 7rem;
-  border-radius: 27%;
+  width: 9rem;
+  border-radius: 67%;
   position: absolute;
-  margin-top: -147px;
+  top: 30rem;
+  box-shadow: 1px 2px 0px 1px white;
 }
 
 /* article-text-component */
 .article-text {
-  /* margin-right: 20px; */
-  max-width: 77%;
+  margin-right: 23rem;
+  width: 77%;
   overflow-wrap: break-word;
-  margin: 0;
+  /* margin: 0; */
 }
 
 /* ARTICLE DINAMIC CARD */
@@ -76,8 +84,8 @@ body {
   display: flex;
 }
 .image-article {
-  min-width: 14rem;
-  margin: 0 1rem 0;
+  min-width: 17rem;
+  margin: 0 2rem 0;
 }
 .article-dynamic-card h4,
 .article-dynamic-card h5 {
@@ -136,7 +144,7 @@ body {
   align-items: flex-start;
   line-height: 0;
 }
-form {
+form.editable {
   display: flex;
   box-shadow: 0px 0px 0px 7px blue;
   width: 100%;
@@ -153,17 +161,22 @@ textarea.form-control {
 }
 
 .article-buttons-edit {
-  align-self: flex-end;
+  /* align-self: flex-end; */
   margin: 1rem;
 }
 
 /************ ARTICLE GENERAL EXPERIENCE **************/
 
-@media (max-width: 700px) {
+@media (max-width: 767px) {
   .article-dynamic-card {
     display: block;
   }
   .edit-form {
     display: inline;
+  }
+
+  .article-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

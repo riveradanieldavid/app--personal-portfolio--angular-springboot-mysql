@@ -17,7 +17,6 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 // import { GeneralModule } from './components/general/general.module'; // IMPORTING MODULE CAUSES RELOAD OF PAGE. BUT RUN
 import { HeaderComponent } from './components/general/header/header.component';
 import { FooterComponent } from './components/general/footer/footer.component';
-import { HomeEditComponent } from './components/home-edit/home-edit.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { HomeEditComponent } from './components/home-edit/home-edit.component';
     LoginComponent,
     HeaderComponent,
     FooterComponent,
-    HomeEditComponent,
 
   ],
   // NEW MODULES MUST BE DECLARED HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

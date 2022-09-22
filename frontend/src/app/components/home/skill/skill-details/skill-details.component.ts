@@ -48,9 +48,9 @@ export class SkillDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/skills']);
+          // this.router.navigate(['/skills']);
           // ADDED /
-          // this.message = res.message ? res.message : 'This skill was updated successfully!'; // ORIGINAL
+          this.message = res.message ? res.message : 'Actualizado'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -61,10 +61,23 @@ export class SkillDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/skills']);
+          this.router.navigate(['/skills'])
+          // ADDED
+          window.location.reload();
+          // ADDED
         },
         error: (e) => console.error(e)
       });
   }
 
+  // ADDED
+  confirmDelete() {
+    if (window.confirm('Borrar item seleccionado?')) {
+      this.deleteSkill()
+    }
+  }
+  // ADDED /
+
 }
+
+

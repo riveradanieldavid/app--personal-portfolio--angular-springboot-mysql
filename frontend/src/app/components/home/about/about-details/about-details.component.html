@@ -69,7 +69,7 @@
     </div>
     <!-- BUTTONS EDIT / -->
     <!-- FORM -->
-    <form>
+    <form class="editable">
       <!-- TITLE -->
       <div class="form-group">
         <label for="title">Title</label>
@@ -91,8 +91,8 @@
           id="description"
           [(ngModel)]="currentAbout.description"
           name="description "
-          rows="5"
-          cols="70"
+          rows="3"
+          cols="90"
         ></textarea>
       </div>
       <!-- DESCRIPTION / -->
@@ -100,7 +100,7 @@
     <!-- FORM /-->
   </div>
   <!-- IF currentExperience.id FAIL -->
-  <!-- <div *ngIf="!currentExperience.id">
+  <!-- <div *ngIf="!currentAbout.id">
     <br />
     <p>Seleccione un item a editar</p>
   </div> -->

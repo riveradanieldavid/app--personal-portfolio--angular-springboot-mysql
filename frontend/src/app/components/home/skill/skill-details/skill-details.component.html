@@ -1,33 +1,76 @@
-<!-- VIEW MODE. ELSE EDIT MODE (BELOW) -->
-<div *ngIf="viewMode; else editable">
+<!------------------------------------ ANALIZED ERASABLE  --------------------------------------->
+<!------------------ VIEW MODE. ELSE EDIT MODE (BELOW) ----------------->
+<!-- viewMode ORIGINAL -->
+<!-- !viewMode ADDED -->
+<!-- !viewMode TO SHOW EDITING FORM DIRECTLY -->
+<div *ngIf="!viewMode; else editable">
+  <!-- IF currentSkill.id TRUE-->
   <div *ngIf="currentSkill.id">
     <h4>skill.details.component - viewMode</h4>
+    <!-- TITLE -->
     <div>
       <label><strong>Title:</strong></label>
       {{ currentSkill.title }}
     </div>
+    <!-- DESCRIPTION -->
     <div>
       <label><strong>Description:</strong></label>
       {{ currentSkill.description }}
     </div>
-    <a class="badge badge-warning" routerLink="/skill/{{ currentSkill.id }}">
+    <!-- LINK TO EDITE MODE -->
+    <a
+      class="badge badge-warning"
+      routerLink="/skill/edit/{{ currentSkill.id }}"
+    >
       Edit
     </a>
+    <!-- LINK TO EDITE MODE / -->
   </div>
+  <!-- IF currentSkill.id TRUE / -->
 
   <div *ngIf="!currentSkill">
     <br />
     <p>Please click on a Skill...</p>
   </div>
 </div>
+<!------------------ VIEW MODE. ELSE EDIT MODE (BELOW) ---------------/ -->
+<!------------------------------------ ANALIZED ERASABLE / --------------------------------------->
 
-<!-- EDIT MODE -->
+<!-- OPTION 2 -->
+<!-- ERASE VIEW MODE BLOCK (above) -->
+<!-- ERASE ng-template (below) -->
+<!-- ADD <div *ngIf="viewMode">edit mode...</div> (below) -->
+
+<!-------------- EDIT MODE VIEW------------------>
 <ng-template #editable>
   <div *ngIf="currentSkill.id" class="edit-form">
-    <h4>Editando Item</h4>
-
+    <h4>Editando Skill</h4>
+    <!-- BUTTONS EDIT -->
+    <div class="article-buttons-edit">
+      <!-- DELETE -->
+      <button class="badge badge-danger mr-2" (click)="confirmDelete()">
+        Eliminar
+      </button>
+      <!-- DELETE / -->
+      <!-- UPDATE -->
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateSkill()"
+      >
+        Actualizar
+      </button>
+      <!-- MESSAGE "This skill was updated successfully" -->
+      <p class="{{ message ? 'message' : '' }}">
+        {{ message }}
+      </p>
+      <!-- MESSAGE "This skill was updated successfully" / -->
+      <!-- UPDATE / -->
+    </div>
+    <!-- BUTTONS EDIT / -->
     <!-- FORM -->
-    <form>
+    <form class="editable">
+      <!-- TITLE -->
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -38,41 +81,28 @@
           name="title"
         />
       </div>
-
+      <!-- TITLE / -->
+      <!-- DESCRIPTION -->
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description">Descripción</label>
         <textarea
           type="text"
           class="form-control"
           id="description"
           [(ngModel)]="currentSkill.description"
           name="description "
-          rows="10"
-          cols="70"
-        >
-        here
-      </textarea
-        >
+          rows="3"
+          cols="90"
+        ></textarea>
       </div>
+      <!-- DESCRIPTION / -->
     </form>
     <!-- FORM /-->
-
-    <button class="badge badge-danger mr-2" (click)="deleteSkill()">
-      Delete
-    </button>
-
-    <button
-      type="submit"
-      class="badge badge-success mb-2"
-      (click)="updateSkill()"
-    >
-      Update
-    </button>
-    <p>{{ message }}</p>
   </div>
-
-  <div *ngIf="!currentSkill.id">
+  <!-- IF currentExperience.id FAIL -->
+  <!-- <div *ngIf="!currentSkill.id">
     <br />
-    <p>Cannot access this Skill...</p>
-  </div>
+    <p>Seleccione un item a editar</p>
+  </div> -->
 </ng-template>
+<!-------------- EDIT MODE VIEW----------------/ -->

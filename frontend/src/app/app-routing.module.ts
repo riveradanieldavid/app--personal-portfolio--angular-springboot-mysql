@@ -16,7 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AddBannerComponent } from './components/home/banner/add-banner/add-banner.component';  // NO ADDING BANNERS
 // THIS TO RUN HomeModule /
 
-import { AddAboutComponent } from './components/home/about/add-about/add-about.component';  // NO ADDING BANNERS
+import { AddAboutComponent } from './components/home/about/add-about/add-about.component';
 
 import { AddExperienceComponent } from './components/home/experience/add-experience/add-experience.component';
 
@@ -43,7 +43,7 @@ const routes: Routes = [
   // { path: 'home/banners/add', component: AddBannerComponent }, // NO ADDING BANNERS
   // THIS TO RUN HomeModule /
 
-  // { path: 'abouts/add', component: AddAboutComponent },  // NO ADDING BANNERS
+  { path: 'abouts/add', component: AddAboutComponent },
 
   { path: 'home/experiences/add', component: AddExperienceComponent },
 

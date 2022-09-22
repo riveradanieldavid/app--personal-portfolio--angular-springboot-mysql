@@ -1,16 +1,17 @@
-.edit-form {
-  max-width: 400px;
-  margin: auto;
-}
+/* MESSAGE EDIT ACTUALIZED */
 .message {
-  width: 100px;
-  height: auto;
+  font-size: 1.1rem;
+  font-weight: bold;
+  /* width: 100px; */
+  /* height: auto; */
   background-color: white;
   animation-name: buttonUpdate;
   animation-duration: 2s;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
+  text-align: center;
   visibility: hidden;
+  height: auto;
 }
 @keyframes buttonUpdate {
   from {
@@ -19,8 +20,9 @@
     color: white;
   }
   to {
-    visibility: visible;
     background-color: blue;
     color: white;
+    display: none;
   }
 }
+/* MESSAGE EDIT ACTUALIZED */

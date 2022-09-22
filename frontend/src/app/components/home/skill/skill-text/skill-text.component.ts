@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { About } from 'src/app/_models/about.model';
-import { AboutService } from 'src/app/_services/about.service';
+import { Skill } from 'src/app/_models/skill.model';
+import { SkillService } from 'src/app/_services/skill.service';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
-  selector: 'app-article-text',
-  templateUrl: './article-text.component.html',
-  styleUrls: ['./article-text.component.css']
+  selector: 'app-skill-text',
+  templateUrl: './skill-text.component.html',
+  styleUrls: ['./skill-text.component.css']
 })
-export class ArticleTextComponent implements OnInit {
+export class SkillTextComponent implements OnInit {
   // ATTRIBUTES
-  about?: About[];
-  ccccurrentAbout: About = {};
+  skill?: Skill[];
+  ccccurrentSkill: Skill = {};
   currentIndex = -1;
   title = '';
   // ADDED
@@ -26,7 +26,7 @@ export class ArticleTextComponent implements OnInit {
 
   // CONSTRUCTOR
   constructor(
-    private aboutService: AboutService,
+    private skillService: SkillService,
     // ADDED
     private tokenStorageService: TokenStorageService
   ) // ADDED /
@@ -34,7 +34,7 @@ export class ArticleTextComponent implements OnInit {
 
   // DATA AVAILABLE
   ngOnInit(): void {
-    this.retrieveAbout();
+    this.retrieveSkill();
     // ADDED
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
@@ -47,10 +47,10 @@ export class ArticleTextComponent implements OnInit {
     // ADDED /
   }
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
-  retrieveAbout(): void {
-    this.aboutService.getAll().subscribe({
+  retrieveSkill(): void {
+    this.skillService.getAll().subscribe({
       next: (data) => {
-        this.about = data;
+        this.skill = data;
         console.log(data);
       },
       error: (e) => console.error(e),
@@ -58,13 +58,13 @@ export class ArticleTextComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveAbout();
-    this.ccccurrentAbout = {};
+    this.retrieveSkill();
+    this.ccccurrentSkill = {};
     this.currentIndex = -1;
   }
   // SHOW ARTICE TO EDIT
-  setActiveAbout(about: About, index: number): void {
-    this.ccccurrentAbout = about;
+  setActiveSkill(skill: Skill, index: number): void {
+    this.ccccurrentSkill = skill;
     this.currentIndex = index;
   }
 
