@@ -12,14 +12,12 @@
   width: 100%;
 }
 .sentence {
-  /* text-align: center; */
   position: absolute;
   left: 33%;
   color: white;
-  top: 58%;
-  width: 22%;
-  font-size: 1.4rem;
-  font-family: math;
+  top: 48%;
+  width: 25%;
+  font-size: 1.1rem;
 }
 
 .sentence span {

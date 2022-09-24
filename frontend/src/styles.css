@@ -82,7 +82,7 @@ body {
 /* article-text-component */
 .article-text {
   margin-right: 23rem;
-  width: 77%;
+  min-width: 51%;
   overflow-wrap: break-word;
   margin-bottom: 0.7rem;
 }
@@ -112,6 +112,7 @@ body {
 .article-text-public {
   flex: 0 0 100%;
   max-width: 100%;
+  margin-bottom: 4rem;
 }
 .article-text-public li {
   border: 1px solid;
@@ -139,29 +140,31 @@ body {
 
 /* ARTICLE EDIT */
 .article-text-edit {
-  right: 48%;
+  right: auto;
   z-index: 10;
-  left: 0;
-  bottom: 0;
+  left: 22rem;
+  bottom: 17%;
   position: fixed;
-  background-color: white;
-  /* border-radius: 20px; */
-  max-width: fit-content;
-  height: auto;
-  display: flex;
-  box-shadow: 0px 0px 20px 7px black;
+  background-color: dodgerblue;
+  border-radius: 4px;
+  max-width: -moz-fit-content;
+  width: fit-content;
+  /* height: auto; */
+  /* display: flex; */
+  /* box-shadow: 0px 0px 20px 7px black; */
 }
+
 .article-details-edit {
   width: 100vw;
 }
 .edit-form {
-  display: flex;
-  white-space: nowrap;
-  align-items: flex-start;
+  /* display: flex; */
+  /* white-space: nowrap; */
+  /* align-items: flex-start; */
   line-height: 0;
 }
 form.editable {
-  display: flex;
+  /* display: flex; */
   box-shadow: 0px 0px 0px 7px blue;
   width: 100%;
   /* border-radius: 4px; */
@@ -173,17 +176,18 @@ input.form-control,
 textarea.form-control {
   z-index: 3;
   width: 100%;
-  /* border-radius: 4px; */
+  display: inline-block;
 }
 
 .article-buttons-edit {
-  /* align-self: flex-end; */
   margin: 1rem;
+  display: flex;
+  align-items: baseline;
 }
 
 /************ ARTICLE GENERAL EXPERIENCE **************/
 
-@media (max-width: 767px) {
+@media (max-width: 830px) {
   .article-dynamic-card {
     display: block;
   }
@@ -213,5 +217,11 @@ textarea.form-control {
   /* TO ABOUT */
   .about-dynamic-card {
     display: block;
+  }
+
+  /* EDITOR */
+  .article-text-edit {
+    left: 1%;
+    min-width: 97%;
   }
 }

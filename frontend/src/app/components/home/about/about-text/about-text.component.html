@@ -1,45 +1,58 @@
-<!---------------------STANDARD VIEW ARTICLE --------------------->
-<div class="list row">
-  <div class="col-md-6 article-text-public">
-    <!-- <h4>Acerca de</h4> -->
+<!-- HIDE AND SHOW ELEMENT -->
+<!-- <div (mouseenter)="showData()"> -->
+  <div (click)="showData()" (mouseleave)="hideData()">
+  <!---------------------STANDARD VIEW ARTICLE --------------------->
+  <div class="list row">
+    <div class="col-md-6 article-text-public">
+      <!-- <h4>Acerca de</h4> -->
 
-    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
-    <ul class="list-group" *ngIf="!isLoggedIn; else editable">
-      <li
-        class="list-group-item"
-        *ngFor="let about of about; let i = index"
-        [class.active]="i == currentIndex"
-      >
-        <h6>{{ about.title }}</h6>
-        <p>{{ about.description }}</p>
-      </li>
-    </ul>
-    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
-
-    <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  -->
-    <ng-template #editable>
-      <ul class="list-group">
+      <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
+      <ul class="list-group" *ngIf="!isLoggedIn; else editable">
         <li
           class="list-group-item"
           *ngFor="let about of about; let i = index"
           [class.active]="i == currentIndex"
-          (click)="setActiveAbout(about, i)"
         >
           <h6>{{ about.title }}</h6>
           <p>{{ about.description }}</p>
         </li>
       </ul>
-    </ng-template>
-    <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
-  </div>
+      <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
 
-  <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
-  <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
-    <app-about-details
-      [viewMode]="true"
-      [currentAbout]="ccccurrentAbout"
-      class="article-details-edit"
-    ></app-about-details>
+      <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  -->
+      <ng-template #editable>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let about of about; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveAbout(about, i)"
+          >
+            <h6>{{ about.title }}</h6>
+            <p>{{ about.description }}</p>
+          </li>
+        </ul>
+      </ng-template>
+      <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
+    </div>
+
+    <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
+    <!-- HIDE AND SHOW ELEMENT -->
+    <div *ngIf="element == true">
+      <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
+        <app-about-details
+          [viewMode]="true"
+          [currentAbout]="ccccurrentAbout"
+          class="article-details-edit"
+        ></app-about-details>
+      </div>
+    </div>
+    <!-- HIDE AND SHOW ELEMENT / -->
   </div>
+  <!--------------------- STANDARD VIEW ARTICLE /--------------------->
 </div>
-<!--------------------- STANDARD VIEW ARTICLE /--------------------->
+
+<!-- HIDE AND SHOW ELEMENT -->
+<!-- <div *ngIf="element == true"></div> -->
+<!-- <div (mouseenter)="showData()"></div> -->
+<!-- <button (mouseleave)="hideData()">Hide Data</button> -->
