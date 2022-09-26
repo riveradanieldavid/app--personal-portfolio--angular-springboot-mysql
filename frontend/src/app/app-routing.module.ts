@@ -43,7 +43,7 @@ const routes: Routes = [
   // { path: 'home/banners/add', component: AddBannerComponent }, // NO ADDING BANNERS
   // THIS TO RUN HomeModule /
 
-  { path: 'abouts/add', component: AddAboutComponent },
+  { path: 'home/abouts/add', component: AddAboutComponent },
 
   { path: 'home/experiences/add', component: AddExperienceComponent },
 

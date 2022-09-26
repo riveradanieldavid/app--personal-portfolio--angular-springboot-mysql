@@ -47,7 +47,7 @@ export class AddAboutComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/abouts']);
+          this.router.navigate(['/home']);
           // ADDED /
           // this.submitted = true; // ORIGINAL
         },

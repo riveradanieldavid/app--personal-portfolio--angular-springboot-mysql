@@ -4,14 +4,17 @@
     <!-- <h4>Acerca de</h4> -->
 
     <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
-    <ul class="list-group" >
+    <ul class="list-group">
       <li
         class="list-group-item"
         *ngFor="let experience of experience; let i = index"
         [class.active]="i == currentIndex"
       >
-        <h6>{{ experience.title }}</h6>
-        <p>{{ experience.description }}</p>
+        <img
+          src="../../../../../assets/images/experience/formar700.png"
+          alt="image"
+          width="100%"
+        />
       </li>
     </ul>
     <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->

@@ -59,7 +59,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: black;
+  /* background-color: black; */
   border-radius: 5px;
   margin-top: 0.7rem;
   /* height: 10rem; */
@@ -76,6 +76,8 @@ body {
 }
 .article-image > h4,
 .article-image > h5 {
+  font-size: 1.7rem;
+  font-family: serif;
   color: white;
 }
 
@@ -85,6 +87,23 @@ body {
   min-width: 51%;
   overflow-wrap: break-word;
   margin-bottom: 0.7rem;
+}
+.article-text-header {
+  margin: 0 !important;
+  display: flex;
+  align-items: baseline;
+}
+
+.icons-edit {
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: -10px -15px -11px;
+}
+
+.icons-edit img {
+  margin-left: 7px;
 }
 
 /* PARA ABOUT */
@@ -148,10 +167,11 @@ body {
   background-color: dodgerblue;
   border-radius: 4px;
   max-width: -moz-fit-content;
-  width: fit-content;
+  width: -moz-fit-content;
+  /* width: fit-content; */
   /* height: auto; */
-  /* display: flex; */
-  /* box-shadow: 0px 0px 20px 7px black; */
+  /* display: flex;
+  /* box-shadow: 0px 0px 20px 7px black;*/
 }
 
 .article-details-edit {
@@ -176,7 +196,7 @@ input.form-control,
 textarea.form-control {
   z-index: 3;
   width: 100%;
-  display: inline-block;
+  /* border-radius: 4px; */
 }
 
 .article-buttons-edit {
@@ -187,10 +207,16 @@ textarea.form-control {
 
 /************ ARTICLE GENERAL EXPERIENCE **************/
 
-@media (max-width: 830px) {
+@media (max-width: 890px) {
   .article-dynamic-card {
     display: block;
   }
+
+  .article-text-edit {
+    left: 10rem;
+    width: 1rem;
+  }
+
   .edit-form {
     display: inline;
   }
@@ -210,18 +236,36 @@ textarea.form-control {
     width: 100%;
   }
   .image-article {
-    min-width: 7rem;
-    max-width: 7rem;
-    margin: 0;
+    min-width: 10rem;
+    max-width: 10rem;
+    margin: 0 -11px 0 0;
+  }
+
+  .article-text-public li {
+    /* height: 13rem; */
   }
   /* TO ABOUT */
   .about-dynamic-card {
     display: block;
   }
+}
 
-  /* EDITOR */
+@media (max-width: 640px) {
+  .image-article {
+    display: none;
+  }
   .article-text-edit {
-    left: 1%;
-    min-width: 97%;
+    left: 0;
+  }
+}
+
+@media (max-width: 1190px) {
+  .article-text {
+    margin: auto;
+  }
+  .article-text-edit {
+    min-width: fit-content;
+    max-width: initial;
+    width: -webkit-fill-available;
   }
 }

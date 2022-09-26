@@ -1,6 +1,10 @@
 <!-- HIDE AND SHOW ELEMENT -->
-<!-- <div (mouseenter)="showData()"> -->
-  <div (click)="showData()" (mouseleave)="hideData()">
+<!-- SHOW WHEN ENTER OR LEAVE MOUSE -->
+<!-- <div (mouseenter)="showData()" (mouseleave)="hideData()"> -->
+<!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
+<div (click)="showData()" (mouseleave)="hideData()">
+  <!-- SHOW DOING CLICK -->
+  <!-- <div (click)="showData()"> -->
   <!---------------------STANDARD VIEW ARTICLE --------------------->
   <div class="list row">
     <div class="col-md-6 article-text-public">
@@ -28,6 +32,28 @@
             [class.active]="i == currentIndex"
             (click)="setActiveAbout(about, i)"
           >
+            <!-- ICONS EDITION -->
+            <div class="icons-edit">
+              <img
+                src="../../../../../assets/icons/edit/pencil-solid.svg"
+                alt=""
+                width="20"
+              />
+              <img
+                src="../../../../../assets/icons/edit/trash-solid.svg"
+                alt=""
+                width="20"
+              />
+              <!-- <li class="nav-item" *ngIf="isLoggedIn"> -->
+              <a routerLink="abouts/add" class="add">
+                <img
+                  src="../../../../assets/icons/edit/plus-solid.svg"
+                  alt=""
+                  width="20"
+                />
+              </a>
+            </div>
+            <!-- ICONS EDITION -->
             <h6>{{ about.title }}</h6>
             <p>{{ about.description }}</p>
           </li>
@@ -48,9 +74,14 @@
       </div>
     </div>
     <!-- HIDE AND SHOW ELEMENT / -->
+    <!--------------------- STANDARD VIEW ARTICLE /--------------------->
   </div>
-  <!--------------------- STANDARD VIEW ARTICLE /--------------------->
 </div>
+<!-- CLOSE DOING CLICK ON BUTTON-->
+<!-- MUST BE OUT OF <div (click)="showData()">-->
+<!-- <button (click)="hideData()">Cerrar Editor</button> -->
+
+<!-- <button (mouseleave)="hideData()">Cerrar Ventana</button> -->
 
 <!-- HIDE AND SHOW ELEMENT -->
 <!-- <div *ngIf="element == true"></div> -->

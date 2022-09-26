@@ -17,6 +17,9 @@ export class AboutDetailsComponent implements OnInit {
     description: ''
   };
   message = '';
+  // HIDE AND SHOW ELEMENT
+  element = true;
+
   // CONSTRUCTOR
   constructor(
     private aboutService: AboutService,
@@ -77,6 +80,16 @@ export class AboutDetailsComponent implements OnInit {
     }
   }
   // ADDED /
+
+  // HIDE AND SHOW ELEMENT
+  showData() {
+    return (this.element = true);
+  }
+  hideData() {
+    return (this.element = false);
+  }
+  // HIDE AND SHOW ELEMENT/
+
 
 }
 

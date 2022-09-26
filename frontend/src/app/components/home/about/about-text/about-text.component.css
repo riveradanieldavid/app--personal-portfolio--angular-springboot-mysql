@@ -1,0 +1,11 @@
+@media (max-width: 640px) {
+  .article-text-edit {
+    left: 0rem;
+  }
+}
+
+@media (max-width: 890px) {
+  .article-text-edit {
+    left: 0rem;
+  }
+}

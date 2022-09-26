@@ -24,6 +24,8 @@ export class ExperienceTextComponent implements OnInit {
   showModeratorBoard = false;
   username?: string;
   // ADDED /
+  // HIDE AND SHOW ELEMENT
+  element = true;
 
   // CONSTRUCTOR
   constructor(
@@ -68,5 +70,15 @@ export class ExperienceTextComponent implements OnInit {
     this.ccccurrentExperience = experience;
     this.currentIndex = index;
   }
+
+  // HIDE AND SHOW ELEMENT
+  showData() {
+    return (this.element = true);
+  }
+  hideData() {
+    return (this.element = false);
+  }
+  // HIDE AND SHOW ELEMENT/
+
 
 }
