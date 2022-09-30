@@ -1,33 +1,6 @@
-<!-- SHOW ALL ARTICLES (ngFor) -->
-<div
-  class="bannerImage"
-  *ngFor="let banner of banner; let i = index"
-  [class.active]="i == currentIndex"
-  (click)="setActiveBanner(banner, i)"
->
-  <!-- <img src="./assets/images/banner/hubble0.jpg" alt="banner" /> -->
-  <p class="sentence">
-    {{ banner.description }}
-    <span>
-      <cite>{{ banner.title }}</cite>
-    </span>
-  </p>
+<!-- DINAMIC CARD -->
+<div>
+  <app-banner-image></app-banner-image>
+  <app-banner-text></app-banner-text>
 </div>
-<!-- SHOW ALL ARTICLES (ngFor) / -->
-
-<!-- CONTENT FOR AUTHORIZED USERS -->
-<!-- STANDARD VIEW ARTICLE -->
-<div class="list row">
-  <div class="col-md-6">
-    <!-- SHOW ALL ARTICLES (ngFor) -->
-  </div>
-  <!-- SHOW ARTICLE TO EDIT IF isLoggedin-->
-  <div class="col-md-6" *ngIf="isLoggedIn">
-    <app-banner-details
-      [viewMode]="true"
-      [currentBanner]="ccccurrentBanner"
-    ></app-banner-details>
-  </div>
-  <!-- SHOW ARTICLE TO EDIT IF isLoggedin-->
-</div>
-<!-- STANDARD VIEW ARTICLE /-->
+<!-- DINAMIC CARD / -->

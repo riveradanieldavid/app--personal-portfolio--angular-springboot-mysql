@@ -14,6 +14,7 @@
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 /* MY RESET GENERAL CSS / */
 
@@ -159,29 +160,47 @@ body {
 
 /* ARTICLE EDIT */
 .article-text-edit {
-  right: auto;
+  right: 0px;
   z-index: 10;
-  left: 22rem;
-  bottom: 17%;
+  left: 0;
+  bottom: 0%;
   position: fixed;
   background-color: dodgerblue;
   border-radius: 4px;
-  max-width: -moz-fit-content;
-  width: -moz-fit-content;
-  /* width: fit-content; */
-  /* height: auto; */
-  /* display: flex;
-  /* box-shadow: 0px 0px 20px 7px black;*/
+  max-width: 100%;
+  margin: auto;
+  margin-left: 22rem;
 }
 
+.closeEditor {
+  position: fixed;
+  z-index: 11;
+  top: 417px;
+  right: 13px;
+  font-size: 27px;
+  background: no-repeat;
+  border: none;
+  line-height: 12px;
+  padding: 7px 10px 13px 10px;
+}
+
+.closeEditor:hover {
+  background-color: red;
+}
 .article-details-edit {
   width: 100vw;
 }
+
+.title-edition-buttons {
+  /* margin: 0 5.67rem 0;XX */
+}
 .edit-form {
   /* display: flex; */
-  /* white-space: nowrap; */
+  white-space: nowrap;
   /* align-items: flex-start; */
-  line-height: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: initial;
 }
 form.editable {
   /* display: flex; */

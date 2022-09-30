@@ -18,6 +18,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
 import { BannerDetailsComponent } from './banner/banner-details/banner-details.component';
 import { AddBannerComponent } from './banner/add-banner/add-banner.component';
+import { BannerTextComponent } from './banner/banner-text/banner-text.component';
+import { BannerImageComponent } from './banner/banner-image/banner-image.component';
 // THIS TO RUN banner add edit /
 
 import { AboutComponent } from './about/about.component';
@@ -70,6 +72,8 @@ import { RoutingComponent } from './routing/routing.component';
     BannerComponent,
     BannerDetailsComponent,
     AddBannerComponent,
+    BannerImageComponent,
+    BannerTextComponent,
     // THIS TO RUN banner add edit /
 
     AboutComponent,

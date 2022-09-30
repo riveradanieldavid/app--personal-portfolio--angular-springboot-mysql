@@ -1,0 +1,107 @@
+.bannerImage {
+  position: relative;
+  background-image: url('src/assets/images/banner/hubble1.jpg');
+  height: 558px;
+  background-position: top;
+  width: auto;
+  background-size: cover;
+  margin: auto;
+  background-attachment: fixed;
+}
+.banner img {
+  width: 100%;
+}
+.sentence {
+  position: absolute;
+  left: 33%;
+  color: white;
+  top: 48%;
+  width: 25%;
+  /* font-size: 1.1rem; */
+}
+
+.sentence span {
+  /* display: table; */
+  font-size: small;
+  margin: 14px;
+}
+
+.author {
+  position: absolute;
+  right: 13px;
+  color: white;
+  bottom: -20px;
+  /* width: 17%; */
+  font-size: 12px;
+}
+
+.author span {
+  display: table;
+  font-size: 9px;
+  margin: 14px 0 14px;
+  text-align: right;
+  display: block;
+}
+
+.article-text-public {
+  margin: 0;
+}
+
+.article-text-edit-banner {
+  left: 17%;
+  min-inline-size: auto;
+  width: 65%;
+  margin: auto;
+  margin-left: initial;
+}
+
+.icons-edit-banner {
+  position: absolute;
+  left: 67%;
+  top: 41%;
+  background-color: white;
+  padding: 5px 4px 8px;
+  border-radius: 3px;
+  width: 48px;
+  margin: auto;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+@media (min-width: 830px) {
+  .sentence {
+    width: 33%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .article-text-edit {
+    left: 0rem;
+  }
+  .article-text-edit-banner {
+    max-width: 60%;
+    inline-size: auto;
+    left: 20%;
+  }
+}
+
+@media (min-width: 890px) {
+  .article-text-edit {
+    left: 0rem;
+  }
+  .article-text-edit-banner {
+    left: 29%;
+    min-inline-size: auto;
+    width: 40%;
+  }
+}
+
+@media (min-width: 1190px) {
+  .article-text-edit-banner {
+    left: 29%;
+    min-inline-size: auto;
+    width: 40%;
+  }
+}

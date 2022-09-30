@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { About } from 'src/app/_models/about.model';
 import { AboutService } from 'src/app/_services/about.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { About } from 'src/app/_models/about.model';
 
 @Component({
   selector: 'app-about-details',
@@ -82,10 +82,10 @@ export class AboutDetailsComponent implements OnInit {
   // ADDED /
 
   // HIDE AND SHOW ELEMENT
-  showData() {
+  showEditor() {
     return (this.element = true);
   }
-  hideData() {
+  hideEditor() {
     return (this.element = false);
   }
   // HIDE AND SHOW ELEMENT/

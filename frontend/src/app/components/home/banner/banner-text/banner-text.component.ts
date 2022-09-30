@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Experience } from 'src/app/_models/experience.model';
-import { ExperienceService } from 'src/app/_services/experience.service';
+import { Banner } from 'src/app/_models/banner.model';
+import { BannerService } from 'src/app/_services/banner.service';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
-  selector: 'app-experience-text',
-  templateUrl: './experience-text.component.html',
-  styleUrls: ['./experience-text.component.css']
+  selector: 'app-banner-text',
+  templateUrl: './banner-text.component.html',
+  styleUrls: ['./banner-text.component.css']
 })
 
-export class ExperienceTextComponent implements OnInit {
+export class BannerTextComponent implements OnInit {
   // ATTRIBUTES
-  experience?: Experience[];
-  ccccurrentExperience: Experience = {};
+  banner?: Banner[];
+  ccccurrentBanner: Banner = {};
   currentIndex = -1;
   title = '';
   // ADDED
@@ -29,7 +29,7 @@ export class ExperienceTextComponent implements OnInit {
 
   // CONSTRUCTOR
   constructor(
-    private experienceService: ExperienceService,
+    private bannerService: BannerService,
     // ADDED
     private tokenStorageService: TokenStorageService
   ) // ADDED /
@@ -37,7 +37,7 @@ export class ExperienceTextComponent implements OnInit {
 
   // DATA AVAILABLE
   ngOnInit(): void {
-    this.retrieveExperience();
+    this.retrieveBanner();
     // ADDED
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
@@ -50,10 +50,10 @@ export class ExperienceTextComponent implements OnInit {
     // ADDED /
   }
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
-  retrieveExperience(): void {
-    this.experienceService.getAll().subscribe({
+  retrieveBanner(): void {
+    this.bannerService.getAll().subscribe({
       next: (data) => {
-        this.experience = data;
+        this.banner = data;
         console.log(data);
       },
       error: (e) => console.error(e),
@@ -61,13 +61,13 @@ export class ExperienceTextComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveExperience();
-    this.ccccurrentExperience = {};
+    this.retrieveBanner();
+    this.ccccurrentBanner = {};
     this.currentIndex = -1;
   }
   // SHOW ARTICE TO EDIT
-  setActiveExperience(experience: Experience, index: number): void {
-    this.ccccurrentExperience = experience;
+  setActiveBanner(banner: Banner, index: number): void {
+    this.ccccurrentBanner = banner;
     this.currentIndex = index;
   }
 
@@ -80,5 +80,6 @@ export class ExperienceTextComponent implements OnInit {
   }
   // HIDE AND SHOW ELEMENT/
 
-
 }
+
+

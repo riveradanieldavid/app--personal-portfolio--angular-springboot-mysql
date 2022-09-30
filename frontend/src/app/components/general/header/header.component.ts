@@ -19,19 +19,18 @@ export class HeaderComponent implements OnInit {
 
   // DATA AVAILABLE
   ngOnInit(): void {
+    // TOKEN IN isLoggedin
     this.isLoggedIn = !!this.tokenStorageService.getToken();
-
+    // ROLES
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
       this.username = user.username;
     }
   }
-
+  // SIGNOUT FROM TokenStorageService
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();

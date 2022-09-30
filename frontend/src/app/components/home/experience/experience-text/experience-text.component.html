@@ -1,9 +1,9 @@
 <!-- SHOW WHEN ENTER OR LEAVE MOUSE -->
-<!-- <div (mouseenter)="showData()" (mouseleave)="hideData()"> -->
+<!-- <div (mouseenter)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
-<div (click)="showData()" (mouseleave)="hideData()">
+<div (click)="showEditor()" (mouseleave)="hideEditor()">
   <!-- SHOW DOING CLICK -->
-  <!-- <div (click)="showData()"<!---------------------STANDARD VIEW ARTICLE --------------------->
+  <!-- <div (click)="showEditor()"<!---------------------STANDARD VIEW ARTICLE --------------------->
   <div class="list row">
     <div class="col-md-6 article-text-public">
       <!-- <h4>Acerca de</h4> -->
@@ -43,7 +43,7 @@
                 width="20"
               />
               <!-- <li class="nav-item" *ngIf="isLoggedIn"> -->
-              <a routerLink="abouts/add" class="add">
+              <a routerLink="experiences/add" class="add">
                 <img
                   src="../../../../assets/icons/edit/plus-solid.svg"
                   alt=""

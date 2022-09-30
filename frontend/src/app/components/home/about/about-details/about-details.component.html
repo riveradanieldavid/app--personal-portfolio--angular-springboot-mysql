@@ -1,11 +1,11 @@
 <!-- HIDE AND SHOW ELEMENT -->
 <!---------------- THIS TOOLS WORK ON EDITOR! NO ON VIEW CARDS ---------------->
 <!-- SHOW WHEN ENTER OR LEAVE MOUSE -->
-<!-- <div (mouseenter)="showData()" (mouseleave)="hideData()"> -->
+<!-- <div (mouseenter)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
-<!-- <div (click)="showData()" (mouseleave)="hideData()"> -->
+<!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- CLOSE WINDOW WITH CLICK -->
-<!-- <div  (click)="hideData()"> -->
+<!-- <div  (click)="hideEditor()"> -->
 
 <!-- <div *ngIf="element == true"> -->
 <!------------------------------------ ANALIZED ERASABLE  --------------------------------------->
@@ -54,30 +54,35 @@
 <!-------------- EDIT MODE VIEW------------------>
 <ng-template #editable>
   <div *ngIf="currentAbout.id" class="edit-form">
-    <h4>Editando About</h4>
-    <!-- BUTTONS EDIT -->
-    <div class="article-buttons-edit">
-      <!-- DELETE -->
-      <button class="badge badge-danger mr-2" (click)="confirmDelete()">
-        Eliminar
-      </button>
-      <!-- DELETE / -->
-      <!-- UPDATE -->
-      <button
-        type="submit"
-        class="badge badge-success mb-2"
-        (click)="updateAbout()"
-      >
-        Actualizar
-      </button>
-      <!-- MESSAGE "This about was updated successfully" -->
-      <p class="{{ message ? 'message' : '' }}">
-        {{ message }}
-      </p>
-      <!-- MESSAGE "This about was updated successfully" / -->
-      <!-- UPDATE / -->
+    <!-- TITLE EDITION AND BUTTONS EDIT -->
+    <div class="title-edition-buttons">
+      <h4>Editando About</h4>
+      <!-- BUTTONS EDIT -->
+      <div class="article-buttons-edit">
+        <!-- DELETE -->
+        <button  *ngIf="currentAbout.id" class="badge badge-danger mr-2" (click)="confirmDelete()">
+          Eliminar
+        </button>
+        <!-- DELETE / -->
+        <!-- UPDATE -->
+        <button
+          type="submit"
+          class="badge badge-success mb-2"
+          (click)="updateAbout()"
+        >
+          Actualizar
+        </button>
+        <!-- MESSAGE "This about was updated successfully" -->
+        <p class="{{ message ? 'message' : '' }}">
+          {{ message }}
+        </p>
+        <!-- MESSAGE "This about was updated successfully" / -->
+        <!-- UPDATE / -->
+      </div>
+      <!-- BUTTONS EDIT / -->
     </div>
-    <!-- BUTTONS EDIT / -->
+    <!-- TITLE EDITION AND BUTTONS EDIT / -->
+
     <!-- FORM -->
     <form class="editable">
       <!-- TITLE -->
@@ -101,7 +106,7 @@
           id="description"
           [(ngModel)]="currentAbout.description"
           name="description "
-          rows="7"
+          rows="5"
           cols="90"
         ></textarea>
       </div>
@@ -121,4 +126,4 @@
 <!-- </div> HIDE OR SHOW-->
 
 <!-- HIDE AND SHOW ELEMENT -->
-<!-- <button (click)="hideData()">Cerrar Editor</button> -->
+<!-- <button (click)="hideEditor()">Cerrar Editor</button> -->

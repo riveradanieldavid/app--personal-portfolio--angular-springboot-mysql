@@ -1,17 +1,13 @@
 /* MESSAGE EDIT ACTUALIZED */
 .message {
-  /* font-size: 1.1rem; */
-  /* font-weight: bold; */
-  /* background-color: white; */
   animation-name: buttonUpdate;
   animation-duration: 2s;
   border-radius: 4px;
-  padding: 10px 9px 15px;
-  /* text-align: center; */
+  padding: 0px 5px 0px;
   visibility: hidden;
   height: auto;
-  margin-left: 1rem;
-  /* margin: auto;*/
+  margin-left: 9px;
+  font-size: 13px;
 }
 @keyframes buttonUpdate {
   from {

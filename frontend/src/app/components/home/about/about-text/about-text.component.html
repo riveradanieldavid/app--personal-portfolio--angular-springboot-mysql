@@ -1,10 +1,15 @@
 <!-- HIDE AND SHOW ELEMENT -->
 <!-- SHOW WHEN ENTER OR LEAVE MOUSE -->
-<!-- <div (mouseenter)="showData()" (mouseleave)="hideData()"> -->
+<!-- <div (mouseenter)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
-<div (click)="showData()" (mouseleave)="hideData()">
-  <!-- SHOW DOING CLICK -->
-  <!-- <div (click)="showData()"> -->
+<!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
+<div *ngIf="isLoggedIn">
+  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">
+    x
+  </button>
+</div>
+<!-- SHOW DOING CLICK -->
+<div (click)="showEditor()">
   <!---------------------STANDARD VIEW ARTICLE --------------------->
   <div class="list row">
     <div class="col-md-6 article-text-public">
@@ -33,18 +38,24 @@
             (click)="setActiveAbout(about, i)"
           >
             <!-- ICONS EDITION -->
+            <!-- EDIT -->
             <div class="icons-edit">
-              <img
-                src="../../../../../assets/icons/edit/pencil-solid.svg"
-                alt=""
-                width="20"
-              />
-              <img
-                src="../../../../../assets/icons/edit/trash-solid.svg"
-                alt=""
-                width="20"
-              />
-              <!-- <li class="nav-item" *ngIf="isLoggedIn"> -->
+              <a>
+                <img
+                  src="../../../../../assets/icons/edit/pencil-solid.svg"
+                  alt=""
+                  width="20"
+                />
+              </a>
+              <!-- DELETE -->
+              <!-- <a class="add" (click)="deleteAbout()">
+                <img
+                  src="../../../../../assets/icons/edit/trash-solid.svg"
+                  alt=""
+                  width="20"
+                />
+              </a> -->
+              <!-- ADD -->
               <a routerLink="abouts/add" class="add">
                 <img
                   src="../../../../assets/icons/edit/plus-solid.svg"
@@ -64,7 +75,7 @@
 
     <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
     <!-- HIDE AND SHOW ELEMENT -->
-    <div *ngIf="element == true">
+    <div *ngIf="element == false">
       <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
         <app-about-details
           [viewMode]="true"
@@ -78,12 +89,12 @@
   </div>
 </div>
 <!-- CLOSE DOING CLICK ON BUTTON-->
-<!-- MUST BE OUT OF <div (click)="showData()">-->
-<!-- <button (click)="hideData()">Cerrar Editor</button> -->
+<!-- MUST BE OUT OF <div (click)="showEditor()">-->
+<!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
 
-<!-- <button (mouseleave)="hideData()">Cerrar Ventana</button> -->
+<!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
 
 <!-- HIDE AND SHOW ELEMENT -->
 <!-- <div *ngIf="element == true"></div> -->
-<!-- <div (mouseenter)="showData()"></div> -->
-<!-- <button (mouseleave)="hideData()">Hide Data</button> -->
+<!-- <div (mouseenter)="showEditor()"></div> -->
+<!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
