@@ -1,19 +1,41 @@
+<!-- HIDE AND SHOW ELEMENT -->
 <!-- SHOW WHEN ENTER OR LEAVE MOUSE -->
 <!-- <div (mouseenter)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
-<div (click)="showEditor()" (mouseleave)="hideEditor()">
-  <!-- SHOW DOING CLICK -->
-  <!-- <div (click)="showEditor()"<!---------------------STANDARD VIEW ARTICLE --------------------->
+<!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
+<!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X -->
+<div *ngIf="isLoggedIn">
+  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">
+    x
+  </button>
+</div>
+<div (click)="showEditor()">
+  <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X / -->
+  <!---------------------STANDARD VIEW ARTICLE --------------------->
   <div class="list row">
     <div class="col-md-6 article-text-public">
-      <!-- <h4>Acerca de</h4> -->
-
+      <!-- <div *ngFor="let experience of experience">
+        TEST
+        {{ experience.id }}
+      </div> -->
+      <!-- <div>{{ currentExperience.title }}TEST</div> -->
       <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
       <ul class="list-group" *ngIf="!isLoggedIn; else editable">
+        <!-- RETRIEVE DATA WITHOUT FOR -->
+        <!-- <li class="list-group-item">
+            {{ currentExperience.title }}
+          </li> -->
+        <!-- STYLES IN FIRST ELEMENT ONLY -->
         <li
           class="list-group-item"
-          *ngFor="let experience of experience; let i = index"
+          *ngFor="
+            let experience of experience;
+            let i = index;
+            let first = first;
+            let last = last
+          "
           [class.active]="i == currentIndex"
+          [ngClass]="{ first: first, last: last }"
         >
           <h6>{{ experience.title }}</h6>
           <p>{{ experience.description }}</p>
@@ -24,35 +46,51 @@
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  -->
       <ng-template #editable>
         <ul class="list-group">
+          <!-- RETRIEVE DATA WITHOUT FOR -->
+          <!-- <li class="list-group-item">
+              {{ currentExperience.title }}
+            </li> -->
+          <!-- STYLES IN FIRST ELEMENT ONLY -->
           <li
             class="list-group-item"
-            *ngFor="let experience of experience; let i = index"
+            *ngFor="
+              let experience of experience;
+              let i = index;
+              let first = first;
+              let last = last
+            "
             [class.active]="i == currentIndex"
+            [ngClass]="{ first: first, last: last }"
             (click)="setActiveExperience(experience, i)"
           >
             <!-- ICONS EDITION -->
+            <!-- EDIT -->
             <div class="icons-edit">
-              <img
-                src="../../../../../assets/icons/edit/pencil-solid.svg"
-                alt=""
-                width="20"
-              />
-              <img
-                src="../../../../../assets/icons/edit/trash-solid.svg"
-                alt=""
-                width="20"
-              />
-              <!-- <li class="nav-item" *ngIf="isLoggedIn"> -->
+              <a>
+                <img
+                  src="../../../../../assets/icons/edit/pencil-solid.svg"
+                  alt=""
+                  width="24"
+                />
+              </a>
+              <!-- DELETE -->
+              <!-- <a class="add" (click)="deleteExperience()">
+                <img
+                  src="../../../../../assets/icons/edit/trash-solid.svg"
+                  alt=""
+                  width="24"
+                />
+              </a> -->
+              <!-- ADD -->
               <a routerLink="experiences/add" class="add">
                 <img
                   src="../../../../assets/icons/edit/plus-solid.svg"
                   alt=""
-                  width="20"
+                  width="24"
                 />
               </a>
             </div>
             <!-- ICONS EDITION -->
-
             <h6>{{ experience.title }}</h6>
             <p>{{ experience.description }}</p>
           </li>
@@ -60,10 +98,10 @@
       </ng-template>
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
     </div>
-
+    <div></div>
     <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
     <!-- HIDE AND SHOW ELEMENT -->
-    <div *ngIf="element == true">
+    <div *ngIf="element == false">
       <div class="col-md-6 article-text-edit" *ngIf="isLoggedIn">
         <app-experience-details
           [viewMode]="true"
@@ -72,6 +110,19 @@
         ></app-experience-details>
       </div>
     </div>
+    <!-- HIDE AND SHOW ELEMENT / -->
+    <!--------------------- STANDARD VIEW ARTICLE /--------------------->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- CLOSE DOING CLICK ON BUTTON-->
+    <!-- MUST BE OUT OF <div (click)="showEditor()">-->
+    <!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
+
+    <!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
+
+    <!-- HIDE AND SHOW ELEMENT -->
+    <!-- <div *ngIf="element == true"></div> -->
+    <!-- <div (mouseenter)="showEditor()"></div> -->
+    <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
   </div>
-  <!--------------------- STANDARD VIEW ARTICLE /--------------------->
 </div>

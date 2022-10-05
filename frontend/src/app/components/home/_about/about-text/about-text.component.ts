@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Experience } from 'src/app/_models/experience.model';
-import { ExperienceService } from 'src/app/_services/experience.service';
+import { About } from 'src/app/_models/about.model';
+import { AboutService } from 'src/app/_services/about.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 // ADDED
@@ -8,15 +8,15 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
 @Component({
-  selector: 'app-experience-text',
-  templateUrl: './experience-text.component.html',
-  styleUrls: ['./experience-text.component.css']
+  selector: 'app-about-text',
+  templateUrl: './about-text.component.html',
+  styleUrls: ['./about-text.component.css']
 })
 
-export class ExperienceTextComponent implements OnInit {
+export class AboutTextComponent implements OnInit {
   // ATTRIBUTES
-  experience?: Experience[];
-  ccccurrentExperience: Experience = {};
+  about?: About[];
+  ccccurrentAbout: About = {};
   currentIndex = -1;
   title = '';
   // ADDED
@@ -31,7 +31,7 @@ export class ExperienceTextComponent implements OnInit {
 
   // ATTRIBUTES
   @Input() viewMode = false;
-  @Input() currentExperience: Experience = {
+  @Input() currentAbout: About = {
     title: '',
     description: ''
   };
@@ -39,7 +39,7 @@ export class ExperienceTextComponent implements OnInit {
 
   // CONSTRUCTOR
   constructor(
-    private experienceService: ExperienceService,
+    private aboutService: AboutService,
     // ADDED
     private tokenStorageService: TokenStorageService,
     // ADDED /
@@ -50,7 +50,7 @@ export class ExperienceTextComponent implements OnInit {
 
   // DATA AVAILABLE
   ngOnInit(): void {
-    this.retrieveExperience();
+    this.retrieveAbout();
     // ADDED
     this.isLoggedIn = !!this.tokenStorageService.getToken();
     if (this.isLoggedIn) {
@@ -62,44 +62,30 @@ export class ExperienceTextComponent implements OnInit {
     }
     // ADDED /
 
-    if (!this.viewMode) {
-      this.message = '';
-      this.getExperience1(this.route.snapshot.params["id"]);
-    }
 
   }
 
 
   // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
-  retrieveExperience(): void {
-    this.experienceService.getAll()
+  retrieveAbout(): void {
+    this.aboutService.getAll()
       .subscribe({
         next: (data) => {
-          this.experience = data;
+          this.about = data;
           console.log(data);
         },
         error: (e) => console.error(e),
       });
   }
-  getExperience1(id: string): void {
-    this.experienceService.get(1)
-      .subscribe({
-        next: (data) => {
-          this.currentExperience = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
-  }
 
   // SHOW ARTICE TO EDIT AND INDEX
   refreshList(): void {
-    this.retrieveExperience();
-    this.ccccurrentExperience = {};
+    this.retrieveAbout();
+    this.ccccurrentAbout = {};
     this.currentIndex = -1;
   }
-  setActiveExperience(experience: Experience, index: number): void {
-    this.ccccurrentExperience = experience;
+  setActiveAbout(about: About, index: number): void {
+    this.ccccurrentAbout = about;
     this.currentIndex = index;
   }
 
@@ -109,7 +95,7 @@ export class ExperienceTextComponent implements OnInit {
   }
   hideEditor() {
     return (this.element = true
-    );
+      );
   }
   // HIDE AND SHOW ELEMENT/
 
@@ -117,8 +103,8 @@ export class ExperienceTextComponent implements OnInit {
 
 
   // DELETE DATA FROM DB
-  deleteExperience(): void {
-    this.experienceService.delete(this.currentExperience.id)
+  deleteAbout(): void {
+    this.aboutService.delete(this.currentAbout.id)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -133,7 +119,7 @@ export class ExperienceTextComponent implements OnInit {
   // ADDED
   confirmDelete() {
     if (window.confirm('Borrar item seleccionado?')) {
-      this.deleteExperience()
+      this.deleteAbout()
     }
   }
   // ADDED /

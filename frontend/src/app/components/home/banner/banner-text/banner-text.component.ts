@@ -73,10 +73,10 @@ export class BannerTextComponent implements OnInit {
 
   // HIDE AND SHOW ELEMENT
   showEditor() {
-    return (this.element = true);
+    return (this.element = false);
   }
   hideEditor() {
-    return (this.element = false);
+    return (this.element = true);
   }
   // HIDE AND SHOW ELEMENT/
 

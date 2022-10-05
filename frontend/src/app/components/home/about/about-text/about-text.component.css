@@ -11,3 +11,36 @@
     margin: auto;
   }
 }
+
+.first {
+  background: none;
+  color: white;
+  position: absolute;
+  left: -19.7rem;
+  font-size: 1.7rem;
+  text-align: center;
+  top: -10px;
+  border: none;
+}
+
+.first h6 {
+  font-size: 1.7rem;
+}
+
+@media (max-width: 890px) {
+  .first {
+    background: none;
+    color: white;
+    position: relative;
+    left: auto;
+    font-size: 1.7rem;
+    text-align: center;
+    top: -38px;
+    border: none;
+    margin: -27px auto -47px !important;
+  }
+
+  .first h6 {
+    font-size: 1.7rem;
+  }
+}

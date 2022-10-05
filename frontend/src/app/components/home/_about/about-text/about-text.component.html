@@ -3,38 +3,24 @@
 <!-- <div (mouseenter)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
 <!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
-<!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X -->
 <div *ngIf="isLoggedIn">
-  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">x</button>
+  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">
+    x
+  </button>
 </div>
+<!-- SHOW DOING CLICK -->
 <div (click)="showEditor()">
-  <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X / -->
   <!---------------------STANDARD VIEW ARTICLE --------------------->
   <div class="list row">
     <div class="col-md-6 article-text-public">
-      <!-- <div *ngFor="let about of about">
-        TEST
-        {{ about.id }}
-      </div> -->
-      <!-- <div>{{ currentAbout.title }}TEST</div> -->
+      <!-- <h4>Acerca de</h4> -->
+
       <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
       <ul class="list-group" *ngIf="!isLoggedIn; else editable">
-        <!-- RETRIEVE DATA WITHOUT FOR -->
-        <!-- <li class="list-group-item">
-            {{ currentAbout.title }}
-          </li> -->
-        <!-- STYLES IN FIRST ELEMENT ONLY -->
-        <!-- [ngClass]="{ first: first, last: last }" -->
         <li
           class="list-group-item"
-          *ngFor="
-            let about of about;
-            let i = index;
-            let first = first;
-            let last = last
-          "
+          *ngFor="let about of about; let i = index"
           [class.active]="i == currentIndex"
-          [ngClass]="{ first: first, last: last }"
         >
           <h6>{{ about.title }}</h6>
           <p>{{ about.description }}</p>
@@ -45,22 +31,10 @@
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  -->
       <ng-template #editable>
         <ul class="list-group">
-          <!-- RETRIEVE DATA WITHOUT FOR -->
-          <!-- <li class="list-group-item">
-              {{ currentAbout.title }}
-            </li> -->
-          <!-- STYLES IN FIRST ELEMENT ONLY -->
-          <!-- [ngClass]="{ first: first, last: last }" -->
           <li
             class="list-group-item"
-            *ngFor="
-              let about of about;
-              let i = index;
-              let first = first;
-              let last = last
-            "
+            *ngFor="let about of about; let i = index"
             [class.active]="i == currentIndex"
-            [ngClass]="{ first: first, last: last }"
             (click)="setActiveAbout(about, i)"
           >
             <!-- ICONS EDITION -->
@@ -70,7 +44,7 @@
                 <img
                   src="../../../../../assets/icons/edit/pencil-solid.svg"
                   alt=""
-                  width="24"
+                  width="20"
                 />
               </a>
               <!-- DELETE -->
@@ -78,7 +52,7 @@
                 <img
                   src="../../../../../assets/icons/edit/trash-solid.svg"
                   alt=""
-                  width="24"
+                  width="20"
                 />
               </a> -->
               <!-- ADD -->
@@ -86,7 +60,7 @@
                 <img
                   src="../../../../assets/icons/edit/plus-solid.svg"
                   alt=""
-                  width="24"
+                  width="20"
                 />
               </a>
             </div>
@@ -98,7 +72,7 @@
       </ng-template>
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
     </div>
-    <div></div>
+
     <!-- SHOW ARTICLE TO EDIT TO THE USER REGISTERED ONLY -->
     <!-- HIDE AND SHOW ELEMENT -->
     <div *ngIf="element == false">
@@ -113,15 +87,14 @@
     <!-- HIDE AND SHOW ELEMENT / -->
     <!--------------------- STANDARD VIEW ARTICLE /--------------------->
   </div>
-  <!-- </div> -->
-  <!-- CLOSE DOING CLICK ON BUTTON-->
-  <!-- MUST BE OUT OF <div (click)="showEditor()">-->
-  <!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
-
-  <!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
-
-  <!-- HIDE AND SHOW ELEMENT -->
-  <!-- <div *ngIf="element == true"></div> -->
-  <!-- <div (mouseenter)="showEditor()"></div> -->
-  <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
 </div>
+<!-- CLOSE DOING CLICK ON BUTTON-->
+<!-- MUST BE OUT OF <div (click)="showEditor()">-->
+<!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
+
+<!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
+
+<!-- HIDE AND SHOW ELEMENT -->
+<!-- <div *ngIf="element == true"></div> -->
+<!-- <div (mouseenter)="showEditor()"></div> -->
+<!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->

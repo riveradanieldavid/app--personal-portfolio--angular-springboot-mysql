@@ -51,8 +51,6 @@
 <!-- ERASE ng-template (below) -->
 <!-- ADD <div *ngIf="viewMode">edit mode...</div> (below) -->
 
-<!-- TEST -->
-<!-- {{currentAbout.title}} -->
 <!-------------- EDIT MODE VIEW------------------>
 <ng-template #editable>
   <div *ngIf="currentAbout.id" class="edit-form">
@@ -62,11 +60,7 @@
       <!-- BUTTONS EDIT -->
       <div class="article-buttons-edit">
         <!-- DELETE -->
-        <button
-          *ngIf="currentAbout.id"
-          class="badge badge-danger mr-2"
-          (click)="confirmDelete()"
-        >
+        <button  *ngIf="currentAbout.id" class="badge badge-danger mr-2" (click)="confirmDelete()">
           Eliminar
         </button>
         <!-- DELETE / -->

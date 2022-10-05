@@ -62,6 +62,10 @@ export class AboutTextComponent implements OnInit {
     }
     // ADDED /
 
+    if (!this.viewMode) {
+      this.message = '';
+      this.getAbout1(this.route.snapshot.params["id"]);
+    }
 
   }
 
@@ -75,6 +79,16 @@ export class AboutTextComponent implements OnInit {
           console.log(data);
         },
         error: (e) => console.error(e),
+      });
+  }
+  getAbout1(id: string): void {
+    this.aboutService.get(1)
+      .subscribe({
+        next: (data) => {
+          this.currentAbout = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
       });
   }
 
@@ -95,7 +109,7 @@ export class AboutTextComponent implements OnInit {
   }
   hideEditor() {
     return (this.element = true
-      );
+    );
   }
   // HIDE AND SHOW ELEMENT/
 
