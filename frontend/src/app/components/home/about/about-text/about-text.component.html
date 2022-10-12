@@ -36,6 +36,7 @@
           [class.active]="i == currentIndex"
           [ngClass]="{ first: first, last: last }"
         >
+          {{ about.id }}
           <h6>{{ about.title }}</h6>
           <p>{{ about.description }}</p>
         </li>
@@ -91,10 +92,50 @@
               </a>
             </div>
             <!-- ICONS EDITION -->
+            {{ about.id }}
             <h6>{{ about.title }}</h6>
             <p>{{ about.description }}</p>
           </li>
         </ul>
+        <!-- DRAG AND DROP  -->
+        <div class="wrapper">
+          <mat-tab-group>
+            <!-- REORDERING LISTS -->
+            <mat-tab label="Reordering lists">
+              <div
+                cdkDropList
+                class="movie-list"
+                (cdkDropListDropped)="drop($event)"
+              >
+                <div
+                  class="list-group-item"
+                  *ngFor="
+                    let about of about;
+                    let i = index;
+                    let first = first;
+                    let last = last
+                  "
+                  cdkDrag
+                  [class.active]="i == currentIndex"
+                  [ngClass]="{ first: first, last: last }"
+                  (click)="setActiveAbout(about, i)"
+                >
+                  {{ about.id }}
+                  <h6>{{ about.title }}</h6>
+                  <p>{{ about.description }}</p>
+                </div>
+                <!-- <div class="movie-block" *ngFor="let movieName of Movies" cdkDrag>
+                  {{ movieName }}
+                </div> -->
+              </div>
+            </mat-tab>
+            <!-- REORDERING LISTS / -->
+            <!-- TRANSFER ITEMS BETWEEN LISTS -->
+
+            <!-- TRANSFER ITEMS BETWEEN LISTS / -->
+          </mat-tab-group>
+        </div>
+        <!-- DRAG AND DROP / -->
       </ng-template>
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
     </div>

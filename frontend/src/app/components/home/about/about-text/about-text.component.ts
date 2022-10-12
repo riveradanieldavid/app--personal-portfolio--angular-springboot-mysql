@@ -7,6 +7,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
 
+// DRAG AND DROP > CDK FUNCTIONALITY FOR
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+
+// UPLOAD FILE
+import { FileUploader } from 'ng2-file-upload';
+import { ToastrService } from 'ngx-toastr';
+// UPLOAD FILE /
+
+// UPLOAD FILE
+const URL = 'http://localhost:3030/api/upload';
+
 @Component({
   selector: 'app-about-text',
   templateUrl: './about-text.component.html',
@@ -14,6 +25,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 })
 
 export class AboutTextComponent implements OnInit {
+
   // ATTRIBUTES
   about?: About[];
   ccccurrentAbout: About = {};
@@ -29,13 +41,20 @@ export class AboutTextComponent implements OnInit {
   // HIDE AND SHOW ELEMENT
   element = true;
 
-  // ATTRIBUTES
+  // ATTRIBUTES 2
   @Input() viewMode = false;
   @Input() currentAbout: About = {
     title: '',
     description: ''
   };
   message = '';
+
+  // UPLOAD FILE
+  public uploader: FileUploader = new FileUploader({
+    url: URL,
+    itemAlias: 'image',
+  });
+  // UPLOAD FILE /
 
   // CONSTRUCTOR
   constructor(
@@ -44,7 +63,10 @@ export class AboutTextComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     // ADDED /
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    // UPLOAD FILE /
+    private toastr: ToastrService
+    // UPLOAD FILE /
 
   ) { }
 
@@ -62,25 +84,40 @@ export class AboutTextComponent implements OnInit {
     }
     // ADDED /
 
+    // RETRIEVE DATA WITHOUT FOR
     if (!this.viewMode) {
       this.message = '';
       this.getAbout1(this.route.snapshot.params["id"]);
     }
 
+    // UPLOAD FILE
+    this.uploader.onAfterAddingFile = (file) => {
+      file.withCredentials = false;
+    };
+    this.uploader.onCompleteItem = (item: any, status: any) => {
+      console.log('Uploaded File Details:', item);
+      this.toastr.success('File successfully uploaded!');
+    };
+    // UPLOAD FILE /
+
   }
 
 
-  // GET DATA FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
+  // GET DATA (this.about) FROM SERVICES TO BE AVAILABLE IN THE HTML FILE
   retrieveAbout(): void {
     this.aboutService.getAll()
       .subscribe({
         next: (data) => {
           this.about = data;
-          console.log(data);
+          console.log(this.about);
         },
         error: (e) => console.error(e),
       });
+
   }
+
+
+  // RETRIEVE DATA WITHOUT FOR
   getAbout1(id: string): void {
     this.aboutService.get(1)
       .subscribe({
@@ -113,9 +150,6 @@ export class AboutTextComponent implements OnInit {
   }
   // HIDE AND SHOW ELEMENT/
 
-
-
-
   // DELETE DATA FROM DB
   deleteAbout(): void {
     this.aboutService.delete(this.currentAbout.id)
@@ -133,11 +167,33 @@ export class AboutTextComponent implements OnInit {
   // ADDED
   confirmDelete() {
     if (window.confirm('Borrar item seleccionado?')) {
-      this.deleteAbout()
+      return this.deleteAbout()
     }
   }
   // ADDED /
 
+
+
+
+
+  // ATRIBUTTES DRAG AND DROP
+  // THIS MOVIES IT MAY DRAG AND DROP
+  Movies = [
+    'Blade Runner',
+    'Cool Hand Luke',
+    'Heat',
+    'Juice',
+    'The Far Side of the World',
+    'Morituri',
+    'Napoleon Dynamite',
+    'Pulp Fiction'
+  ];
+
+  // APPLY Cdk TO MOVIES
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.about || [], event.previousIndex, event.currentIndex);
+  }
+  // ATRIBUTTES DRAG AND DROP /
 
 
 

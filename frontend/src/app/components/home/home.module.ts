@@ -1,5 +1,7 @@
 // HOW MUST BE  REGISTER COMPONENTS IN HIS MODULE SO THAT RUN ALSO, THESE DUE BE UNREGISTERED IF THE PREVIOUSLY REGISTERED COMPONENT IS ELIMINATED...
-import { NgModule } from '@angular/core';
+// DRAG AND DROP > CUSTOM_ELEMENTS_SCHEMA
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+// DRAG AND DROP > CUSTOM_ELEMENTS_SCHEMA /
 import { CommonModule } from '@angular/common';
 // THIS COUPLE OF BELOW WAS NOT REGISTERED!. WAS REQUIRED SO TO home COMPONENT TO CONTAIN OTHERS COMPONENTS
 import { HomeComponent } from './home.component';
@@ -9,6 +11,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+
+// DRAG AND DROP
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatTabsModule } from '@angular/material/tabs';
+// DRAG AND DROP /
+
+// DRAG AND DROP 2
+// import { ReactiveFormsModule } from '@angular/forms';
+// DRAG AND DROP 2 /
+
+// UPLOAD FILE
+import { ToastrModule } from 'ngx-toastr';
+import { FileUploadModule } from 'ng2-file-upload';
+// UPLOAD FILE /
+
 
 // THIS WAS THE LAST BUG LEFTOVER TO SOLVE
 import { RouterModule, Routes } from '@angular/router';
@@ -122,6 +140,19 @@ import { RoutingComponent } from './routing/routing.component';
     HttpClientModule,
     AppRoutingModule,
     // THIS TO RUN banner add edit /
+    // DRAG AND DROP
+    BrowserAnimationsModule,
+    DragDropModule,
+    MatTabsModule,
+    // DRAG AND DROP /
+
+    // DRAG AND DROP 2
+    // ReactiveFormsModule,
+    // DRAG AND DROP 2 /
+    // UPLOAD FILE
+    ToastrModule.forRoot(), // ToastrModule added
+    FileUploadModule,
+    // UPLOAD FILE /
 
   ],
   exports: [

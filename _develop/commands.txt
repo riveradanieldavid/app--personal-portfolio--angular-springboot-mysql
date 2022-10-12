@@ -21,6 +21,69 @@ UPLOAD TO GIT REPOSITORY IN BRANCHES.
 EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
+
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Edición Acerca de Nombre-Descripción agregado"
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-adaptacion
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Modal edición completando"
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-adaptacion
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Modal edición fix nuevo diseño."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-adaptacion
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Mejoras en responsividad. Editor responsivo. Botones de edición."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-adaptacion
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Editor de contenido terminado. Página responsiva."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: SignIn y SignOut rutas, redirección."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Redefino estilos y archivos. Completo con mis datos algunas tarjetas.."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Reacomodo tarjetas de texto, imágen, y edición."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-crud
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estructura finalizada. Banner y container ancho total. Adaptacion de elementos."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estilos tarjeta experiencia modo público, edición."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Estilos about, banner. body"
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
+git status
+
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Analizado backend. Estabecido conexión frontend-backend-db, en local y remoto."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
+git status
+
 git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-estructura-final
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Home Module habilitado. Acabando estructura final v1."

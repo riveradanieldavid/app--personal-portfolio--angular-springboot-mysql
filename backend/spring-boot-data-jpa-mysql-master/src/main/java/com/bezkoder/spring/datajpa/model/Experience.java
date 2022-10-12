@@ -26,6 +26,16 @@ public class Experience {
     this.description = description;
   }
 
+  // ADDED
+  // ASSOCIATE "images_has_experiences" with "image_id" AND "experience_id"
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(
+    name = "images_has_experiences",
+    joinColumns = @JoinColumn(name = "images_id"),
+    inverseJoinColumns = @JoinColumn(name = "experiences_id")
+  )
+  // ADDED /
+
   // GETTER AND SETTER
   public long getId() {
     return id;
@@ -51,7 +61,13 @@ public class Experience {
   @Override
   public String toString() {
     return (
-      "Experience [id=" + id + ", title=" + title + ", desc=" + description + "]"
+      "Experience [id=" +
+      id +
+      ", title=" +
+      title +
+      ", desc=" +
+      description +
+      "]"
     );
   }
 }
