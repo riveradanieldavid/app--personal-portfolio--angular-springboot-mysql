@@ -7,6 +7,13 @@ EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
 
+
+git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-animaciones-menus-skillComponent
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Continuando y finalizando metas de la rama creada."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-animaciones-menus-skillComponent
+git status
+
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: CRUD adaptado a requerimientos pedidos finalizado."
 git push origin RiveraDa--portfolio--ng-sb-sql--v1-crud-adaptacion
