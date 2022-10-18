@@ -1,1 +1,29 @@
-<p>project-image works!</p>
+<!---------------------STANDARD VIEW ARTICLE --------------------->
+<div class="list row">
+  <div class="col-md-6 article-text-public">
+    <!-- <h4>Acerca de</h4> -->
+
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let project of project; let i = index"
+        [class.active]="i == currentIndex"
+        data-aos="flip-right"
+      >
+        <img
+          src="../../../../../assets/images/project/formar700.png"
+          alt="image"
+          width="100%"
+          [ngClass]="{ 'dark-profile': darkMode }"
+        />
+      </li>
+    </ul>
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
+  </div>
+</div>
+<!--------------------- STANDARD VIEW ARTICLE /--------------------->
+
+<div class="project-image">
+  <!-- Fundación Formar -->
+</div>

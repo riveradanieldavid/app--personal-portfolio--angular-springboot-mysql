@@ -1,11 +1,17 @@
-<div class="article-experience-card">
+<div class="article-card" [ngClass]="{ 'dark-profile': darkMode }">
   <div class="article-header">
     <div class="about-image-article"></div>
     <div class="article-text article-text-header">
-      <h1 class="title-experience title-experience-about">Acerca de</h1>
-
+      <div id="about">
+        <!-- <div class="slide_bg" [ngClass]="{ 'dark-bg': darkMode }"></div> -->
+        <!-- <div class="slide_content"> -->
+        <!-- <h1 class="title-card title-experience-about" data-aos="fade-up"> -->
+        <h1 class="title-card" data-aos="fade-up">Acerca de...</h1>
+        <!-- </div> -->
+      </div>
     </div>
   </div>
+
   <!-- DINAMIC CARD -->
   <div class="about-dynamic-card">
     <app-about-image class="about-image-article"></app-about-image>

@@ -7,15 +7,10 @@
   <!-- IF currentSkill.id TRUE-->
   <div *ngIf="currentSkill.id">
     <h4>skill.details.component - viewMode</h4>
-    <!-- TITLE -->
+    <!-- HTML -->
     <div>
-      <label><strong>Title:</strong></label>
-      {{ currentSkill.title }}
-    </div>
-    <!-- DESCRIPTION -->
-    <div>
-      <label><strong>Description:</strong></label>
-      {{ currentSkill.description }}
+      <label><strong>Nivel Html</strong></label>
+      {{ currentSkill.html }}
     </div>
     <!-- LINK TO EDITE MODE -->
     <a
@@ -70,32 +65,18 @@
     <!-- BUTTONS EDIT / -->
     <!-- FORM -->
     <form class="editable">
-      <!-- TITLE -->
+      <!-- HTML -->
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="html">Nivel Html</label>
         <input
           type="text"
           class="form-control"
-          id="title"
-          [(ngModel)]="currentSkill.title"
-          name="title"
+          id="html"
+          [(ngModel)]="currentSkill.html"
+          name="html"
         />
       </div>
-      <!-- TITLE / -->
-      <!-- DESCRIPTION -->
-      <div class="form-group">
-        <label for="description">Descripción</label>
-        <textarea
-          type="text"
-          class="form-control"
-          id="description"
-          [(ngModel)]="currentSkill.description"
-          name="description "
-          rows="3"
-          cols="90"
-        ></textarea>
-      </div>
-      <!-- DESCRIPTION / -->
+      <!-- HTML / -->
     </form>
     <!-- FORM /-->
   </div>

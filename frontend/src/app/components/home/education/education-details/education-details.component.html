@@ -61,9 +61,9 @@
         Actualizar
       </button>
       <!-- MESSAGE "This education was updated successfully" -->
-      <p class="{{ message ? 'message' : '' }}">
+      <span class="{{ message ? 'message' : '' }}">
         {{ message }}
-      </p>
+      </span>
       <!-- MESSAGE "This education was updated successfully" / -->
       <!-- UPDATE / -->
     </div>
@@ -91,7 +91,7 @@
           id="description"
           [(ngModel)]="currentEducation.description"
           name="description "
-          rows="3"
+          rows="5"
           cols="90"
         ></textarea>
       </div>

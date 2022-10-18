@@ -4,11 +4,15 @@ import { BannerService } from 'src/app/_services/banner.service';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
+// MYRESUME
+import { DarkModeService } from 'src/app/_services/dark-mode.service';
+// MYRESUME /
+
 
 @Component({
   selector: 'app-banner-text',
   templateUrl: './banner-text.component.html',
-  styleUrls: ['./banner-text.component.css']
+  styleUrls: ['./banner-text.component.scss']
 })
 
 export class BannerTextComponent implements OnInit {
@@ -31,9 +35,12 @@ export class BannerTextComponent implements OnInit {
   constructor(
     private bannerService: BannerService,
     // ADDED
-    private tokenStorageService: TokenStorageService
-  ) // ADDED /
-  { }
+    private tokenStorageService: TokenStorageService,
+    // ADDED /
+    // MYRESUME
+    private darkModeService: DarkModeService
+    // MYRESUME /
+  ) { }
 
   // DATA AVAILABLE
   ngOnInit(): void {
@@ -79,6 +86,12 @@ export class BannerTextComponent implements OnInit {
     return (this.element = true);
   }
   // HIDE AND SHOW ELEMENT/
+
+  // MYRESUME
+  get darkMode() {
+    return this.darkModeService.darkMode;
+  }
+  // MYRESUME /
 
 }
 

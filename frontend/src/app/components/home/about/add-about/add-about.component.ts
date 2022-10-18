@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { About } from 'src/app/_models/about.model';
-import { AboutService } from 'src/app/_services/about.service';
+import { AboutService } from '../../../../_services/about.service';
 // ADDED
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';

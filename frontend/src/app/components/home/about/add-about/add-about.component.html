@@ -42,6 +42,10 @@
 
         <!-- FORM /-->
       </div>
+
+    <div *ngIf="submitted">
+      <h4>About was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newAbout()">Add</button>
     </div>
   </div>
-</ng-template>
+</div>

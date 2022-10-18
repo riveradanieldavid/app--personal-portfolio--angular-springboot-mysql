@@ -1,9 +1,29 @@
-<div class="article-image">
-  <img src="./assets/images/about/me1.jpg" alt="Rivera Daniel Developer" />
-  <h4>
-    Rivera Daniel
-  </h4>
-  <h5>
-    Full Stack Developer Jr
-  </h5>
+<!---------------------STANDARD VIEW ARTICLE --------------------->
+<div class="list row">
+  <div class="col-md-6 article-text-public">
+    <!-- <h4>Acerca de</h4> -->
+
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor) -->
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let skill of skill; let i = index"
+        [class.active]="i == currentIndex"
+        data-aos="flip-right"
+      >
+        <img
+          src="../../../../../assets/images/skill/formar700.png"
+          alt="image"
+          width="100%"
+          [ngClass]="{ 'dark-profile': darkMode }"
+        />
+      </li>
+    </ul>
+    <!-- SHOW ALL ARTICLES TO PUBLIC (ngFor)  / -->
+  </div>
+</div>
+<!--------------------- STANDARD VIEW ARTICLE /--------------------->
+
+<div class="skill-image">
+  <!-- Fundación Formar -->
 </div>

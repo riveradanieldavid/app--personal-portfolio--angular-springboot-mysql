@@ -32,6 +32,8 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { RouterModule, Routes } from '@angular/router';
 // THIS TO RUN banner add edit /
 
+import { NavbarComponent } from './navbar/navbar.component';
+
 // THIS TO RUN banner add edit
 import { BannerComponent } from './banner/banner.component';
 import { BannerDetailsComponent } from './banner/banner-details/banner-details.component';
@@ -61,12 +63,14 @@ import { EducationTextComponent } from './education/education-text/education-tex
 import { SkillComponent } from './skill/skill.component';
 import { SkillDetailsComponent } from './skill/skill-details/skill-details.component';
 import { AddSkillComponent } from './skill/add-skill/add-skill.component';
+import { SkillImageComponent } from './skill/skill-image/skill-image.component';
+import { SkillTextComponent } from './skill/skill-text/skill-text.component';
 
 import { ProjectComponent } from './project/project.component';
 import { ProjectDetailsComponent } from './project/project-details/project-details.component';
 import { AddProjectComponent } from './project/add-project/add-project.component';
-import { ProjectsImageComponent } from './project/project-image/project-image.component';
-import { ProjectsTextComponent } from './project/project-text/project-text.component';
+import { ProjectImageComponent } from './project/project-image/project-image.component';
+import { ProjectTextComponent } from './project/project-text/project-text.component';
 
 import { ContactComponent } from './contact/contact.component';
 import { ContactDetailsComponent } from './contact/contact-details/contact-details.component';
@@ -77,7 +81,7 @@ import { AddContactComponent } from './contact/add-contact/add-contact.component
 
 
 
-import { RoutingComponent } from './routing/routing.component';
+// import { RoutingComponent } from './routing/routing.component';
 
 
 
@@ -115,18 +119,22 @@ import { RoutingComponent } from './routing/routing.component';
     SkillComponent,
     SkillDetailsComponent,
     AddSkillComponent,
+    SkillImageComponent,
+    SkillTextComponent,
 
     ProjectComponent,
     ProjectDetailsComponent,
     AddProjectComponent,
-    ProjectsImageComponent,
-    ProjectsTextComponent,
+    ProjectImageComponent,
+    ProjectTextComponent,
 
     ContactComponent,
     ContactDetailsComponent,
     AddContactComponent,
 
-    RoutingComponent
+    // RoutingComponent,
+
+    NavbarComponent,
 
   ],
 

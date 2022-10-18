@@ -6,6 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
+// MYRESUME
+import { DarkModeService } from 'src/app/_services/dark-mode.service';
+// MYRESUME /
+
 
 // DRAG AND DROP > CDK FUNCTIONALITY FOR
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -21,7 +25,7 @@ const URL = 'http://localhost:3030/api/upload';
 @Component({
   selector: 'app-about-text',
   templateUrl: './about-text.component.html',
-  styleUrls: ['./about-text.component.css']
+  styleUrls: ['./about-text.component.scss']
 })
 
 export class AboutTextComponent implements OnInit {
@@ -65,8 +69,11 @@ export class AboutTextComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     // UPLOAD FILE /
-    private toastr: ToastrService
+    private toastr: ToastrService,
     // UPLOAD FILE /
+    // MYRESUME
+    private darkModeService: DarkModeService
+    // MYRESUME /
 
   ) { }
 
@@ -173,9 +180,6 @@ export class AboutTextComponent implements OnInit {
   // ADDED /
 
 
-
-
-
   // ATRIBUTTES DRAG AND DROP
   // THIS MOVIES IT MAY DRAG AND DROP
   Movies = [
@@ -195,6 +199,11 @@ export class AboutTextComponent implements OnInit {
   }
   // ATRIBUTTES DRAG AND DROP /
 
+  // MYRESUME
+  get darkMode() {
+    return this.darkModeService.darkMode;
+  }
+  // MYRESUME /
 
 
 }

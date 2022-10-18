@@ -5,14 +5,20 @@
 <!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X -->
 <div *ngIf="isLoggedIn">
-  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">
-    x
-  </button>
+  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">x</button>
 </div>
 <div (click)="showEditor()">
+  <!-- SHOW DOING CLICK CLOSE WINDOW MOVING MOUSE -->
+  <!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
   <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X / -->
   <!---------------------STANDARD VIEW ARTICLE --------------------->
-  <div class="list row">
+  <!-- DARKMODE -->
+  <div
+    [ngClass]="{ 'dark-profile': darkMode }"
+    id="home"
+    class="list row"
+    [ngClass]="{ 'area-dark': darkMode }"
+  >
     <div class="col-md-6 article-text-public">
       <!-- <h4>Acerca de</h4> -->
 
@@ -24,7 +30,11 @@
         (click)="setActiveBanner(banner, i)"
       >
         <!-- <img src="./assets/images/banner/hubble0.jpg" alt="banner" /> -->
-        <p class="sentence">
+        <p
+          [ngClass]="{ 'dark-profile': darkMode }"
+          data-aos="flip-right"
+          class="sentence"
+        >
           {{ banner.description }}
           <span>
             <cite>{{ banner.title }}</cite>
@@ -68,4 +78,5 @@
   <!-- <div *ngIf="element == true"></div> -->
   <!-- <div (mouseenter)="showEditor()"></div> -->
   <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
+  <!-- </div> -->
 </div>

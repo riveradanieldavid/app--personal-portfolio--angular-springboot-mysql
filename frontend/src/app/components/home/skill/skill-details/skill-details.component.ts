@@ -13,8 +13,7 @@ export class SkillDetailsComponent implements OnInit {
   // ATTRIBUTES
   @Input() viewMode = false;
   @Input() currentSkill: Skill = {
-    title: '',
-    description: ''
+    html: ''
   };
   message = '';
   // CONSTRUCTOR

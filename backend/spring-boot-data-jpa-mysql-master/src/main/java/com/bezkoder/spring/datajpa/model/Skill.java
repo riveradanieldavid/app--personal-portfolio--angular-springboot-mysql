@@ -12,18 +12,14 @@ public class Skill {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  @Column(name = "title")
-  private String title;
-
-  @Column(name = "description")
-  private String description;
+  @Column(name = "html")
+  private Integer html;
 
   // DEFINE EACH tutorial
   public Skill() {}
 
-  public Skill(String title, String description) {
-    this.title = title;
-    this.description = description;
+  public Skill(Integer html) {
+    this.html = html;
   }
 
   // GETTER AND SETTER
@@ -31,27 +27,17 @@ public class Skill {
     return id;
   }
 
-  public String getTitle() {
-    return title;
+  public Integer getHtml() {
+    return html;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
+  public void setHtml(Integer html) {
+    this.html = html;
   }
 
   // ASSEMBLE THE "Tutorial"
   @Override
   public String toString() {
-    return (
-      "Skill [id=" + id + ", title=" + title + ", desc=" + description + "]"
-    );
+    return ("Skill [id=" + id + ", html=" + html + "]");
   }
 }

@@ -6,7 +6,7 @@ import { Project } from 'src/app/_models/project.model';
 @Component({
   selector: 'app-project-details',
   templateUrl: './project-details.component.html',
-  styleUrls: ['./project-details.component.css']
+  styleUrls: ['./project-details.component.scss']
 })
 
 export class ProjectDetailsComponent implements OnInit {
@@ -48,9 +48,9 @@ export class ProjectDetailsComponent implements OnInit {
         next: (res) => {
           console.log(res);
           // ADDED
-          this.router.navigate(['/projects']);
+          // this.router.navigate(['/projects']);
           // ADDED /
-          // this.message = res.message ? res.message : 'This project was updated successfully!'; // ORIGINAL
+          this.message = res.message ? res.message : 'Actualizado'; // ORIGINAL
         },
         error: (e) => console.error(e)
       });
@@ -61,10 +61,23 @@ export class ProjectDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.router.navigate(['/projects']);
+          this.router.navigate(['/projects'])
+          // ADDED
+          window.location.reload();
+          // ADDED
         },
         error: (e) => console.error(e)
       });
   }
 
+  // ADDED
+  confirmDelete() {
+    if (window.confirm('Borrar item seleccionado?')) {
+      this.deleteProject()
+    }
+  }
+  // ADDED /
+
 }
+
+

@@ -14,8 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddSkillComponent {
   // ATTRIBUTES
   skill: Skill = {
-    title: '',
-    description: ''
+    html: ''
   };
   submitted = false;
   // CONSTRUCTOR
@@ -26,8 +25,7 @@ export class AddSkillComponent {
   // SAVE DATA
   saveSkill(): void {
     const data = {
-      title: this.skill.title,
-      description: this.skill.description
+      html: this.skill.html
     };
     // SERVICE
     this.skillService.create(data)
@@ -46,8 +44,7 @@ export class AddSkillComponent {
   newSkill(): void {
     this.submitted = false;
     this.skill = {
-      title: '',
-      description: ''
+      html: ''
     };
   }
 

@@ -51,46 +51,47 @@
 <!-- ERASE ng-template (below) -->
 <!-- ADD <div *ngIf="viewMode">edit mode...</div> (below) -->
 
-<!-- TEST -->
-<!-- {{currentAbout.title}} -->
 <!-------------- EDIT MODE VIEW------------------>
 <ng-template #editable>
   <div *ngIf="currentAbout.id" class="edit-form">
-    <!-- TITLE EDITION AND BUTTONS EDIT -->
-    <div class="title-edition-buttons">
-      <h4>Editando About</h4>
-      <!-- BUTTONS EDIT -->
-      <div class="article-buttons-edit">
-        <!-- DELETE -->
-        <button
-          *ngIf="currentAbout.id"
-          class="badge badge-danger mr-2"
-          (click)="confirmDelete()"
-        >
-          Eliminar
-        </button>
-        <!-- DELETE / -->
-        <!-- UPDATE -->
-        <button
-          type="submit"
-          class="badge badge-success mb-2"
-          (click)="updateAbout()"
-        >
-          Actualizar
-        </button>
-        <!-- MESSAGE "This about was updated successfully" -->
-        <p class="{{ message ? 'message' : '' }}">
-          {{ message }}
-        </p>
-        <!-- MESSAGE "This about was updated successfully" / -->
-        <!-- UPDATE / -->
-      </div>
-      <!-- BUTTONS EDIT / -->
+    <h4>Editando About</h4>
+    <!-- BUTTONS EDIT -->
+    <div class="article-buttons-edit">
+      <!-- DELETE -->
+      <button class="badge badge-danger mr-2" (click)="confirmDelete()">
+        Eliminar
+      </button>
+      <!-- DELETE / -->
+      <!-- UPDATE -->
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateAbout()"
+      >
+        Actualizar
+      </button>
+      <!-- MESSAGE "This about was updated successfully" -->
+      <p class="{{ message ? 'message' : '' }}">
+        {{ message }}
+      </p>
+      <!-- MESSAGE "This about was updated successfully" / -->
+      <!-- UPDATE / -->
     </div>
-    <!-- TITLE EDITION AND BUTTONS EDIT / -->
-
+    <!-- BUTTONS EDIT / -->
     <!-- FORM -->
     <form class="editable">
+      <!-- ID -->
+      <!-- <div class="form-group">
+        <label for="id">ID</label>
+        <input
+          type="text"
+          class="form-control"
+          id="id"
+          [(ngModel)]="currentAbout.id"
+          name="id"
+        />
+      </div> -->
+      <!-- ID / -->
       <!-- TITLE -->
       <div class="form-group">
         <label for="title">Title</label>
@@ -120,16 +121,10 @@
     </form>
     <!-- FORM /-->
   </div>
-  <!-- IF currentExperience.id FAIL -->
+  <!-- IF currentAbout.id FAIL -->
   <!-- <div *ngIf="!currentAbout.id">
     <br />
     <p>Seleccione un item a editar</p>
   </div> -->
 </ng-template>
 <!-------------- EDIT MODE VIEW----------------/ -->
-
-<!-- </div> ELEMENT TRUE-->
-<!-- </div> HIDE OR SHOW-->
-
-<!-- HIDE AND SHOW ELEMENT -->
-<!-- <button (click)="hideEditor()">Cerrar Editor</button> -->

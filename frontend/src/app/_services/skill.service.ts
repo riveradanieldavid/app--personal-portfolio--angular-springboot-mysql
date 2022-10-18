@@ -17,37 +17,37 @@ import { Skill } from '../_models/skill.model';
 const baseUrl = 'http://localhost:9090/api/skills';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class SkillService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    getAll(): Observable<Skill[]> {
-        return this.http.get<Skill[]>(baseUrl);
-    }
+  getAll(): Observable<Skill[]> {
+    return this.http.get<Skill[]>(baseUrl);
+  }
 
-    get(id: any): Observable<Skill> {
-        return this.http.get<Skill>(`${baseUrl}/${id}`);
-    }
+  get(id: any): Observable<Skill> {
+    return this.http.get<Skill>(`${baseUrl}/${id}`);
+  }
 
-    create(data: any): Observable<any> {
-        return this.http.post(baseUrl, data);
-    }
+  create(data: any): Observable<any> {
+    return this.http.post(baseUrl, data);
+  }
 
-    update(id: any, data: any): Observable<any> {
-        return this.http.put(`${baseUrl}/${id}`, data);
-    }
+  update(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, data);
+  }
 
-    delete(id: any): Observable<any> {
-        return this.http.delete(`${baseUrl}/${id}`);
-    }
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
 
-    deleteAll(): Observable<any> {
-        return this.http.delete(baseUrl);
-    }
+  deleteAll(): Observable<any> {
+    return this.http.delete(baseUrl);
+  }
 
-    findByTitle(title: any): Observable<Skill[]> {
-        return this.http.get<Skill[]>(`${baseUrl}?title=${title}`);
-    }
+  findByHtml(html: any): Observable<Skill[]> {
+    return this.http.get<Skill[]>(`${baseUrl}?html=${html}`);
+  }
 }

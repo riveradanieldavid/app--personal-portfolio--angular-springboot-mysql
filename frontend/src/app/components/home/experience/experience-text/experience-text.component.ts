@@ -6,11 +6,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
+// MYRESUME
+import { DarkModeService } from 'src/app/_services/dark-mode.service';
+// MYRESUME /
 
 @Component({
   selector: 'app-experience-text',
   templateUrl: './experience-text.component.html',
-  styleUrls: ['./experience-text.component.css']
+  styleUrls: ['./experience-text.component.scss']
 })
 
 export class ExperienceTextComponent implements OnInit {
@@ -44,7 +47,11 @@ export class ExperienceTextComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     // ADDED /
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    // MYRESUME
+    private darkModeService: DarkModeService
+    // MYRESUME /
+
 
   ) { }
 
@@ -138,6 +145,11 @@ export class ExperienceTextComponent implements OnInit {
   }
   // ADDED /
 
+  // MYRESUME
+  get darkMode() {
+    return this.darkModeService.darkMode;
+  }
+  // MYRESUME /
 
 
 

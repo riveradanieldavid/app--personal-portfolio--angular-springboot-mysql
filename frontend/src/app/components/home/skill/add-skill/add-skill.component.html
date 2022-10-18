@@ -4,28 +4,15 @@
     <div *ngIf="!submitted">
       <!-- FORM -->
       <div class="form-group">
-        <label for="title">Title</label>
+        <label for="html">Html</label>
         <input
           type="text"
           class="form-control"
-          id="title"
+          id="html"
           required
-          [(ngModel)]="skill.title"
-          name="title"
+          [(ngModel)]="skill.html"
+          name="html"
         />
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="skill.description"
-          name="description"
-          rows="10"
-          cols="70"
-        ></textarea>
       </div>
 
       <button (click)="saveSkill()" class="btn btn-success">Submit</button>

@@ -1,0 +1,25 @@
+a {
+  /* text-decoration: none; */
+  color: unset;
+}
+ul {
+  padding: 0;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196f3;
+  /* padding: 10px; */
+  /* margin: 1px -11px 1px; */
+  /* position: relative; */
+}
+.grid-item {
+  padding: 10px;
+  text-align: center;
+}
+
+.pwd {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}

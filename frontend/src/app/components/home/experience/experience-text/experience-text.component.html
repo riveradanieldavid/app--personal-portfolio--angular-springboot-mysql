@@ -5,14 +5,17 @@
 <!-- <div (click)="showEditor()" (mouseleave)="hideEditor()"> -->
 <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X -->
 <div *ngIf="isLoggedIn">
-  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">
-    x
-  </button>
+  <button (click)="hideEditor()" *ngIf="!element" class="closeEditor">x</button>
 </div>
 <div (click)="showEditor()">
   <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X / -->
   <!---------------------STANDARD VIEW ARTICLE --------------------->
-  <div class="list row">
+  <!-- DARKMODE -->
+  <div
+    id="experience"
+    class="list row"
+    [ngClass]="{ 'dark-content': darkMode }"
+  >
     <div class="col-md-6 article-text-public">
       <!-- <div *ngFor="let experience of experience">
         TEST
@@ -27,17 +30,12 @@
           </li> -->
         <!-- STYLES IN FIRST ELEMENT ONLY -->
         <li
+          data-aos="flip-right"
           class="list-group-item"
-          *ngFor="
-            let experience of experience;
-            let i = index;
-            let first = first;
-            let last = last
-          "
+          *ngFor="let experience of experience; let i = index"
           [class.active]="i == currentIndex"
-          [ngClass]="{ first: first, last: last }"
         >
-          <h6>{{ experience.title }}</h6>
+          <h5 class="articletitle">{{ experience.title }}</h5>
           <p>{{ experience.description }}</p>
         </li>
       </ul>
@@ -53,14 +51,8 @@
           <!-- STYLES IN FIRST ELEMENT ONLY -->
           <li
             class="list-group-item"
-            *ngFor="
-              let experience of experience;
-              let i = index;
-              let first = first;
-              let last = last
-            "
+            *ngFor="let experience of experience; let i = index"
             [class.active]="i == currentIndex"
-            [ngClass]="{ first: first, last: last }"
             (click)="setActiveExperience(experience, i)"
           >
             <!-- ICONS EDITION -->
@@ -91,7 +83,7 @@
               </a>
             </div>
             <!-- ICONS EDITION -->
-            <h6>{{ experience.title }}</h6>
+            <h5 class="articletitle">{{ experience.title }}</h5>
             <p>{{ experience.description }}</p>
           </li>
         </ul>
@@ -108,21 +100,27 @@
           [currentExperience]="ccccurrentExperience"
           class="article-details-edit"
         ></app-experience-details>
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- HIDE AND SHOW ELEMENT / -->
+        <!--------------------- STANDARD VIEW ARTICLE /--------------------->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- CLOSE DOING CLICK ON BUTTON-->
+        <!-- MUST BE OUT OF <div (click)="showEditor()">-->
+        <!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
+
+        <!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
+
+        <!-- HIDE AND SHOW ELEMENT -->
+        <!-- <div *ngIf="element == true"></div> -->
+        <!-- <div (mouseenter)="showEditor()"></div> -->
+        <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
       </div>
     </div>
-    <!-- HIDE AND SHOW ELEMENT / -->
-    <!--------------------- STANDARD VIEW ARTICLE /--------------------->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- CLOSE DOING CLICK ON BUTTON-->
-    <!-- MUST BE OUT OF <div (click)="showEditor()">-->
-    <!-- <button (click)="hideEditor()">Cerrar Editor</button> -->
-
-    <!-- <button (mouseleave)="hideEditor()">Cerrar Ventana</button> -->
-
-    <!-- HIDE AND SHOW ELEMENT -->
-    <!-- <div *ngIf="element == true"></div> -->
-    <!-- <div (mouseenter)="showEditor()"></div> -->
-    <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
   </div>
 </div>

@@ -1,32 +1,19 @@
-<!-- RESTRICT VIEW TO UNAUTHORIZED USERS -->
-<!-- IF isLoggedIn FAIL: FORBIDDEN -->
-<div *ngIf="!isLoggedIn; else editMode">FORBIDDEN</div>
-
-<!-- CONTENT FOR AUTHORIZED USERS -->
-<!-- ELSE SHOW ARTICLE -->
-<ng-template #editMode>
-  <!--STANDARD VIEW ARTICLE -->
-  <div class="list row">
-    <div class="col-md-6">
-      <h4>Project</h4>
-      <!-- SHOW ALL ARTICLES (ngFor) -->
-      <ul class="list-group">
-        <li
-          class="list-group-item"
-          *ngFor="let project of project; let i = index"
-          [class.active]="i == currentIndex"
-          (click)="setActiveProject(project, i)"
-        >
-          <h6>{{ project.title }}</h6>
-          <p>{{ project.description }}</p>
-        </li>
-      </ul>
-    </div>
-    <!-- SHOW ARTICLE TO EDIT -->
-    <div class="col-md-6">
-      <app-project-details [viewMode]="true" [currentProject]="ccccurrentProject">
-      </app-project-details>
+<div class="article-card">
+  <div class="article-header">
+    <div class="image-article"></div>
+    <div class="article-text article-text-header">
+      <div id="project">
+        <div class="slide_bg" [ngClass]="{ 'dark-bg': darkMode }"></div>
+        <div class="slide_content">
+          <h1 class="title-card" data-aos="fade-up">Proyectos</h1>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- STANDARD VIEW ARTICLE /-->
-</ng-template>
+  <!-- DINAMIC CARD -->
+  <div class="article-dynamic-card">
+    <app-project-image class="image-article"></app-project-image>
+    <app-project-text class="article-text"></app-project-text>
+  </div>
+  <!-- DINAMIC CARD / -->
+</div>

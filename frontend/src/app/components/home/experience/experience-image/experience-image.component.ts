@@ -4,6 +4,9 @@ import { ExperienceService } from 'src/app/_services/experience.service';
 // ADDED
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 // ADDED /
+// MYRESUME
+import { DarkModeService } from 'src/app/_services/dark-mode.service';
+// MYRESUME /
 
 @Component({
   selector: 'app-experience-image',
@@ -31,9 +34,12 @@ export class ExperienceImageComponent implements OnInit {
   constructor(
     private experienceService: ExperienceService,
     // ADDED
-    private tokenStorageService: TokenStorageService
-  ) // ADDED /
-  { }
+    private tokenStorageService: TokenStorageService,
+    // ADDED /
+    // MYRESUME
+    private darkModeService: DarkModeService
+    // MYRESUME /
+  ) { }
 
   // DATA AVAILABLE
   ngOnInit(): void {
@@ -65,4 +71,12 @@ export class ExperienceImageComponent implements OnInit {
     this.ccccurrentExperience = {};
     this.currentIndex = -1;
   }
+
+  // MYRESUME
+  get darkMode() {
+    return this.darkModeService.darkMode;
+  }
+  // MYRESUME /
+
+
 }

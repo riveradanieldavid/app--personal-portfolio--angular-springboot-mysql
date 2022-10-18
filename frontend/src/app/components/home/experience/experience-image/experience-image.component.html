@@ -9,11 +9,13 @@
         class="list-group-item"
         *ngFor="let experience of experience; let i = index"
         [class.active]="i == currentIndex"
+        data-aos="flip-right"
       >
         <img
           src="../../../../../assets/images/experience/formar700.png"
           alt="image"
           width="100%"
+          [ngClass]="{ 'dark-profile': darkMode }"
         />
       </li>
     </ul>

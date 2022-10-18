@@ -10,7 +10,8 @@
 <div (click)="showEditor()">
   <!-- SHOW DOING CLICK CLOSE WINDOW CLICK ON X / -->
   <!---------------------STANDARD VIEW ARTICLE --------------------->
-  <div class="list row">
+  <!-- DARKMODE -->
+  <div id="profile" class="list row" [ngClass]="{ 'dark-content': darkMode }">
     <div class="col-md-6 article-text-public">
       <!-- <div *ngFor="let about of about">
         TEST
@@ -26,6 +27,7 @@
         <!-- STYLES IN FIRST ELEMENT ONLY -->
         <!-- [ngClass]="{ first: first, last: last }" -->
         <li
+          data-aos="flip-right"
           class="list-group-item"
           *ngFor="
             let about of about;
@@ -36,8 +38,8 @@
           [class.active]="i == currentIndex"
           [ngClass]="{ first: first, last: last }"
         >
-          {{ about.id }}
-          <h6>{{ about.title }}</h6>
+          <!-- {{ about.id }} -->
+          <h5 class="articletitle">{{ about.title }}</h5>
           <p>{{ about.description }}</p>
         </li>
       </ul>
@@ -83,7 +85,7 @@
                 />
               </a> -->
               <!-- ADD -->
-              <a routerLink="abouts/add" class="add">
+              <a routerLink="abouts/add" class="addabout">
                 <img
                   src="../../../../assets/icons/edit/plus-solid.svg"
                   alt=""
@@ -92,49 +94,12 @@
               </a>
             </div>
             <!-- ICONS EDITION -->
-            {{ about.id }}
-            <h6>{{ about.title }}</h6>
+            <!-- {{ about.id }} -->
+            <h5 class="articletitle">{{ about.title }}</h5>
             <p>{{ about.description }}</p>
           </li>
         </ul>
         <!-- DRAG AND DROP  -->
-        <div class="wrapper">
-          <mat-tab-group>
-            <!-- REORDERING LISTS -->
-            <mat-tab label="Reordering lists">
-              <div
-                cdkDropList
-                class="movie-list"
-                (cdkDropListDropped)="drop($event)"
-              >
-                <div
-                  class="list-group-item"
-                  *ngFor="
-                    let about of about;
-                    let i = index;
-                    let first = first;
-                    let last = last
-                  "
-                  cdkDrag
-                  [class.active]="i == currentIndex"
-                  [ngClass]="{ first: first, last: last }"
-                  (click)="setActiveAbout(about, i)"
-                >
-                  {{ about.id }}
-                  <h6>{{ about.title }}</h6>
-                  <p>{{ about.description }}</p>
-                </div>
-                <!-- <div class="movie-block" *ngFor="let movieName of Movies" cdkDrag>
-                  {{ movieName }}
-                </div> -->
-              </div>
-            </mat-tab>
-            <!-- REORDERING LISTS / -->
-            <!-- TRANSFER ITEMS BETWEEN LISTS -->
-
-            <!-- TRANSFER ITEMS BETWEEN LISTS / -->
-          </mat-tab-group>
-        </div>
         <!-- DRAG AND DROP / -->
       </ng-template>
       <!-- SHOW ALL ARTICLES TO EDIT (ngFor)  / -->
@@ -165,4 +130,62 @@
   <!-- <div *ngIf="element == true"></div> -->
   <!-- <div (mouseenter)="showEditor()"></div> -->
   <!-- <button (mouseleave)="hideEditor()">Hide Data</button> -->
+  <!-- </div> -->
 </div>
+
+<!-- <div class="wrapper">
+  <mat-tab-group>
+    <!-- REORDERING LISTS -->
+<!-- <mat-tab label="Reordering lists"> -->
+<!-- <div cdkDropList class="movie-list" (cdkDropListDropped)="drop($event)"> -->
+<!-- <div class="movie-block" *ngFor="let movieName of Movies" cdkDrag> -->
+<!-- {{ movieName }} -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </mat-tab> -->
+<!-- REORDERING LISTS / -->
+
+<!-- TRANSFER ITEMS BETWEEN LISTS -->
+<!-- <mat-tab label="Transfer Items Between Lists">
+      <div class="container">
+        <h2>Movies</h2>
+        <div
+          cdkDropList
+          #moviesList="cdkDropList"
+          [cdkDropListData]="MoviesList"
+          [cdkDropListConnectedTo]="[doneMovieList]"
+          class="movie-list"
+          (cdkDropListDropped)="onDrop($event)"
+        >
+          <div
+            class="movie-block"
+            *ngFor="let moviesList of MoviesList"
+            cdkDrag
+          >
+            {{ moviesList }}
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <h2>Movies Watched</h2>
+        <div
+          cdkDropList
+          #doneMovieList="cdkDropList"
+          [cdkDropListData]="MoviesWatched"
+          [cdkDropListConnectedTo]="[moviesList]"
+          class="movie-list"
+          (cdkDropListDropped)="onDrop($event)"
+        >
+          <div
+            class="movie-block"
+            *ngFor="let moviesWatched of MoviesWatched"
+            cdkDrag
+          >
+            {{ moviesWatched }}
+          </div>
+        </div>
+      </div>
+    </mat-tab> -->
+<!-- TRANSFER ITEMS BETWEEN LISTS / -->
+<!-- </mat-tab-group> -->
+<!-- </div> -->
