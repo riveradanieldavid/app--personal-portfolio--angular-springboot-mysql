@@ -1,4 +1,5 @@
 ﻿export class Skill {
-    id?: any;
-    html?: string;
-  }
+  id?: any;
+  nameskill?: string;
+  levelskill?: string;
+}

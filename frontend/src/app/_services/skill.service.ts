@@ -47,7 +47,7 @@ export class SkillService {
     return this.http.delete(baseUrl);
   }
 
-  findByHtml(html: any): Observable<Skill[]> {
-    return this.http.get<Skill[]>(`${baseUrl}?html=${html}`);
+  findByNameskill(nameskill: any): Observable<Skill[]> {
+    return this.http.get<Skill[]>(`${baseUrl}?nameskill=${nameskill}`);
   }
 }

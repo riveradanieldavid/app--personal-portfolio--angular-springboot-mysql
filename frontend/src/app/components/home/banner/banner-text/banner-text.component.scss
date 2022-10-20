@@ -7,7 +7,7 @@
   background-size: cover;
   margin: auto;
   background-attachment: fixed;
-  box-shadow: inset 0px 0px 20px 8px black;
+  box-shadow: inset 0px 5px 20px 17px #100002;
   /* border-radius: 4rem; */
   /* margin-top: 3rem; */
   image-rendering: pixelated;
@@ -58,16 +58,18 @@
 
 .icons-edit-banner {
   position: absolute;
-  left: 67%;
-  top: 27%;
-  background-color: white;
+  left: 64%;
+  top: 30%;
   padding: 5px 4px 8px;
   border-radius: 3px;
   width: 48px;
   margin: auto;
   text-align: center;
-  border: 1px solid;
   cursor: pointer;
+}
+
+.icons-edit-banner img {
+  width: 77%;
 }
 
 @media (min-width: 830px) {

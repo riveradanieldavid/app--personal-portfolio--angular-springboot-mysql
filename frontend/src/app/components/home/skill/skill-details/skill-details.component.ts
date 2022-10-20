@@ -6,14 +6,14 @@ import { Skill } from 'src/app/_models/skill.model';
 @Component({
   selector: 'app-skill-details',
   templateUrl: './skill-details.component.html',
-  styleUrls: ['./skill-details.component.css']
+  styleUrls: ['./skill-details.component.scss']
 })
 
 export class SkillDetailsComponent implements OnInit {
   // ATTRIBUTES
   @Input() viewMode = false;
   @Input() currentSkill: Skill = {
-    html: ''
+    nameskill: ''
   };
   message = '';
   // CONSTRUCTOR

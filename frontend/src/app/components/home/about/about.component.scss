@@ -21,6 +21,8 @@
   font-size: large;
 }
 
+
+
 @media screen and (max-width: 1200px) {
   .profile_img {
     height: 48vh;
@@ -36,7 +38,9 @@
     text-align: start;
   }
 
-  ;
+  .abouttitle {
+    // margin: 3rem 5rem -3rem;
+  }
 }
 
 .profile {

@@ -35,7 +35,7 @@ export class SkillTextComponent implements OnInit {
   // ATTRIBUTES
   @Input() viewMode = false;
   @Input() currentSkill: Skill = {
-    html: ''
+    nameskill: ''
   };
   message = '';
 

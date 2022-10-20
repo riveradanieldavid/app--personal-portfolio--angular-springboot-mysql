@@ -8,6 +8,11 @@ EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
 
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Componente skill finalizado animado y editable. Estilos mejorados."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-animaciones-menus-skillComponent
+git status
+
 git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-animaciones-menus-skillComponent
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Continuando y finalizando metas de la rama creada."

@@ -30,15 +30,15 @@ public class SkillController {
 
   @GetMapping("/skills")
   public ResponseEntity<List<Skill>> getAllSkills(
-    @RequestParam(required = false) Integer html
+    @RequestParam(required = false) String nameskill
   ) {
     try {
       List<Skill> skills = new ArrayList<Skill>();
 
-      if (html == null) skillRepository
+      if (nameskill == null) skillRepository
         .findAll()
         .forEach(skills::add); else skillRepository
-        .findByHtmlContaining(html)
+        .findByNameskillContaining(nameskill)
         .forEach(skills::add);
 
       if (skills.isEmpty()) {
@@ -65,7 +65,9 @@ public class SkillController {
   @PostMapping("/skills")
   public ResponseEntity<Skill> createSkill(@RequestBody Skill skill) {
     try {
-      Skill _skill = skillRepository.save(new Skill(skill.getHtml()));
+      Skill _skill = skillRepository.save(
+        new Skill(skill.getNameskill(), skill.getLevelskill())
+      );
       return new ResponseEntity<>(_skill, HttpStatus.CREATED);
     } catch (Exception e) {
       return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -81,8 +83,12 @@ public class SkillController {
 
     if (skillData.isPresent()) {
       Skill _skill = skillData.get();
-      _skill.setHtml(skill.getHtml());
-      return new ResponseEntity<>(skillRepository.save(_skill), HttpStatus.OK);
+      _skill.setNameskill(skill.getNameskill());
+      _skill.setLevelskill(skill.getLevelskill());
+      return new ResponseEntity<>(
+        skillRepository.save(_skill),
+        HttpStatus.OK
+      );
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

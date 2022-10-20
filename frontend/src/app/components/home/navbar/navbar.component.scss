@@ -9,23 +9,24 @@
   transition: all 1s;
   left: -1vw;
   background-color: dodgerblue;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: inset 2px -4px 20px 5px darkblue;
 
   :hover {
-    // opacity: 0.8;
+    //opacity: 0.8;
     transition: 0.2s cubic-bezier(0.18, 1.89, 0.30, 1.0);
     transform: scale(1.03);
-    color: white;
-    border-radius: 7px;
-  }
+    color: #999;
+    //border-radius: 7px;
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
 }
 
 .navBar_pc:hover {
-  background-color: dodgerblue;
-  color: black;
   width: 114px;
-
 
 }
 

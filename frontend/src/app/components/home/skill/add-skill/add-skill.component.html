@@ -1,27 +1,47 @@
-<div>
-  <div class="submit-form">
-    <h4>Añadiendo skill</h4>
-    <div *ngIf="!submitted">
-      <!-- FORM -->
-      <div class="form-group">
-        <label for="html">Html</label>
-        <input
-          type="text"
-          class="form-control"
-          id="html"
-          required
-          [(ngModel)]="skill.html"
-          name="html"
-        />
+<!-- RESTRICT EDIT TO UNAUTHORIZED USERS -->
+<!-- IF isLoggedIn FAIL: FORBIDDEN -->
+<div *ngIf="!isLoggedIn; else editMode">FORBIDDEN</div>
+
+<!-- ELSE SHOW ARTICLE TO EDIT -->
+<ng-template #editMode>
+  <div *ngIf="isLoggedIn">
+    <div class="submit-form">
+      <h4>Añadiendo skill</h4>
+      <div *ngIf="!submitted">
+        <!-- FORM -->
+
+        <!-- TITLE -->
+        <div class="form-group">
+          <label for="nameskill">Habilidad</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameskill"
+            required
+            [(ngModel)]="skill.nameskill"
+            name="nameskill"
+          />
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="form-group">
+          <label for="levelskill">Nivel</label>
+          <textarea
+            class="form-control"
+            id="levelskill"
+            required
+            [(ngModel)]="skill.levelskill"
+            name="levelskill"
+            rows="5"
+            cols="40"
+          ></textarea>
+        </div>
+
+        <!-- SUBMIT -->
+        <button (click)="saveSkill()" class="btn btn-success">Submit</button>
+
+        <!-- FORM /-->
       </div>
-
-      <button (click)="saveSkill()" class="btn btn-success">Submit</button>
-      <!-- FORM /-->
-    </div>
-
-    <div *ngIf="submitted">
-      <h4>Skill was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newSkill()">Add</button>
     </div>
   </div>
-</div>
+</ng-template>

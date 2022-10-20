@@ -85,7 +85,10 @@ public class ProjectController {
       Project _project = projectData.get();
       _project.setTitle(project.getTitle());
       _project.setDescription(project.getDescription());
-      return new ResponseEntity<>(projectRepository.save(_project), HttpStatus.OK);
+      return new ResponseEntity<>(
+        projectRepository.save(_project),
+        HttpStatus.OK
+      );
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
