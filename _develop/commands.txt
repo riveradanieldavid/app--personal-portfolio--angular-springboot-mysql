@@ -6,7 +6,11 @@ EDITAR, COPIAR, Y PEGAR EN TERMINAL Y EJECUTA AUTOMATICAMENTE:
 
 
 
-
+git checkout -b RiveraDa--portfolio--ng-sb-sql--v1-imagenes
+git add .
+git commit -m "Rivera Daniel > Portfolio > S: Inicia intento de CRUD de imágenes."
+git push origin RiveraDa--portfolio--ng-sb-sql--v1-imagenes
+git status
 
 git add .
 git commit -m "Rivera Daniel > Portfolio > S: Componente skill finalizado animado y editable. Estilos mejorados."

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SpringBootUploadImageApplication",
+            "request": "launch",
+            "mainClass": "com.bezkoder.spring.datajpa.SpringBootUploadImageApplication",
+            "projectName": "spring-boot-data-jpa"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
